@@ -11,3 +11,8 @@ html {
     font-family: 'Chewy', cursive;
     margin:0;
 }
+
+body{
+    height: 100%;
+    width: 100%;
+}
