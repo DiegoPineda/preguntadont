@@ -1,25 +1,30 @@
-<div class="wrapper fadeInDown">
-    <div id="formContent">
-        <!--Tabs Titulos-->
-        <h2 class="active">Sign In</h2>
-        <h2 class="inactive underlineHover">Sign up</h2>
+<section>
+  <form>
+    <h2>Iniciar sesión.</h2>
 
-        <!--ACA PONEMOS EL ICONO-->
-        <div class="fadeIn First">
-            <img src="" id="icon" alt="User Icon" />
-        </div>
-
-        <!---formulario login-->
-        <form>
-            <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-            <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-            <input type="submit" class="fadeIn fourth" value="Log In">
-        </form>
-
-        <!---Remind Password-->
-        <div id="formFooter">
-            <a class="underlineHover" href="#">Olvidaste tu contraseña?</a>
-        </div>
-
+    <div class="campo">
+      <input 
+        type="email" 
+        id="email" 
+        class="email" 
+        placeholder="email" />
     </div>
-</div>
+    <div class="campo">
+      <input
+        type="password"
+        id="password"
+        class="password"
+        placeholder="Contraseña"
+      />
+    </div>
+    <div class="campo">
+      <input type="submit" value="Ingresar" />
+    </div>
+  </form>
+  <div>
+    <a>¿Olvidaste tu contraseña?</a>
+  </div>
+  <div>
+    <button> Registrarse</button>
+  </div>
+</section>
