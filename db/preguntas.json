@@ -1,0 +1,336 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es la capital de Francia?",
+      "opciones": ["Madrid", "París", "Londres", "Roma"],
+      "respuesta": "París"
+    },
+    {
+      "id": 2,
+      "categoria": "Geografía",
+      "enunciado": "¿Dónde se encuentra la Torre Eiffel?",
+      "opciones": ["Londres", "París", "Nueva York", "Roma"],
+      "respuesta": "París"
+    },
+    {
+      "id": 3,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es el río más largo del mundo?",
+      "opciones": ["Nilo", "Amazonas", "Misisipi", "Yangtsé"],
+      "respuesta": "Amazonas"
+    },
+    {
+      "id": 4,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es el país más grande del mundo en términos de superficie?",
+      "opciones": ["Estados Unidos", "Rusia", "China", "India"],
+      "respuesta": "Rusia"
+    },
+    {
+      "id": 5,
+      "categoria": "Geografía",
+      "enunciado": "¿En qué continente se encuentra la cordillera de los Andes?",
+      "opciones": ["África", "Europa", "América", "Asia"],
+      "respuesta": "América"
+    },
+    {
+      "id": 6,
+      "categoria": "Geografía",
+      "enunciado": "¿Qué país es conocido como 'El país del sol naciente'?",
+      "opciones": ["China", "India", "Japón", "México"],
+      "respuesta": "Japón"
+    },
+    {
+      "id": 7,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es la capital de Italia?",
+      "opciones": ["París", "Madrid", "Roma", "Londres"],
+      "respuesta": "Roma"
+    },
+    {
+      "id": 8,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es el punto más alto de la Tierra?",
+      "opciones": [
+        "Monte Everest",
+        "Monte Kilimanjaro",
+        "Monte Aconcagua",
+        "Monte McKinley"
+      ],
+      "respuesta": "Monte Everest"
+    },
+    {
+      "id": 9,
+      "categoria": "Geografía",
+      "enunciado": "¿Dónde se encuentra el Gran Cañón del Colorado?",
+      "opciones": ["Arizona", "Texas", "California", "Nevada"],
+      "respuesta": "Arizona"
+    },
+    {
+      "id": 10,
+      "categoria": "Geografía",
+      "enunciado": "¿Cuál es la capital de Rusia?",
+      "opciones": ["Moscú", "San Petersburgo", "Nueva York", "Kiev"],
+      "respuesta": "Moscú"
+    },
+    {
+      "id": 11,
+      "categoria": "Historia",
+      "enunciado": "¿En qué año comenzó la Primera Guerra Mundial?",
+      "opciones": ["1914", "1939", "1918", "1945"],
+      "respuesta": "1914"
+    },
+    {
+      "id": 12,
+      "categoria": "Historia",
+      "enunciado": "¿Quién fue el primer presidente de los Estados Unidos?",
+      "opciones": [
+        "Thomas Jefferson",
+        "Benjamin Franklin",
+        "George Washington",
+        "John Adams"
+      ],
+      "respuesta": "George Washington"
+    },
+    {
+      "id": 13,
+      "categoria": "Historia",
+      "enunciado": "¿Cuál fue el último faraón de Egipto?",
+      "opciones": ["Cleopatra", "Tutankamón", "Ramsés II", "Akenatón"],
+      "respuesta": "Cleopatra"
+    },
+    {
+      "id": 14,
+      "categoria": "Historia",
+      "enunciado": "¿Cuál fue el evento que desencadenó la Revolución Francesa?",
+      "opciones": [
+        "La ejecución de Luis XVI",
+        "La toma de la Bastilla",
+        "La Marcha sobre Versalles",
+        "El golpe de Estado de Napoleón"
+      ],
+      "respuesta": "La toma de la Bastilla"
+    },
+    {
+      "id": 15,
+      "categoria": "Historia",
+      "enunciado": "¿Quién fue el líder de la Revolución Rusa?",
+      "opciones": [
+        "Vladímir Lenin",
+        "José Stalin",
+        "Nicolás II",
+        "León Trotsky"
+      ],
+      "respuesta": "Vladímir Lenin"
+    },
+    {
+      "id": 16,
+      "categoria": "Historia",
+      "enunciado": "¿Qué tratado puso fin a la Segunda Guerra Mundial en Europa?",
+      "opciones": [
+        "Tratado de Versalles",
+        "Tratado de Trianón",
+        "Tratado de Brest-Litovsk",
+        "Tratado de París"
+      ],
+      "respuesta": "Tratado de Versalles"
+    },
+    {
+      "id": 17,
+      "categoria": "Historia",
+      "enunciado": "¿Quién escribió 'El origen de las especies'?",
+      "opciones": [
+        "Isaac Newton",
+        "Charles Darwin",
+        "Gregor Mendel",
+        "Albert Einstein"
+      ],
+      "respuesta": "Charles Darwin"
+    },
+    {
+      "id": 18,
+      "categoria": "Historia",
+      "enunciado": "¿En qué año terminó la Segunda Guerra Mundial?",
+      "opciones": ["1945", "1939", "1941", "1950"],
+      "respuesta": "1945"
+    },
+    {
+      "id": 19,
+      "categoria": "Historia",
+      "enunciado": "¿Quién fue el emperador romano conocido como 'El Grande'?",
+      "opciones": ["Julio César", "Marco Aurelio", "Trajano", "Augusto"],
+      "respuesta": "Augusto"
+    },
+    {
+      "id": 20,
+      "categoria": "Historia",
+      "enunciado": "¿Quién pintó la Mona Lisa?",
+      "opciones": [
+        "Vincent van Gogh",
+        "Leonardo da Vinci",
+        "Pablo Picasso",
+        "Michelangelo"
+      ],
+      "respuesta": "Leonardo da Vinci"
+    },
+    {
+      "id": 21,
+      "categoria": "Deportes",
+      "enunciado": "¿En qué deporte se utiliza una pelota de béisbol?",
+      "opciones": ["Béisbol", "Fútbol", "Baloncesto", "Golf"],
+      "respuesta": "Béisbol"
+    },
+    {
+      "id": 22,
+      "categoria": "Deportes",
+      "enunciado": "¿Quién es considerado el mejor jugador de baloncesto de todos los tiempos?",
+      "opciones": [
+        "Michael Jordan",
+        "LeBron James",
+        "Kobe Bryant",
+        "Magic Johnson"
+      ],
+      "respuesta": "Michael Jordan"
+    },
+    {
+      "id": 23,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuántos jugadores conforman un equipo de fútbol?",
+      "opciones": ["9", "11", "7", "10"],
+      "respuesta": "11"
+    },
+    {
+      "id": 24,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuál es el deporte más popular en la India?",
+      "opciones": ["Críquet", "Fútbol", "Hockey", "Tenis"],
+      "respuesta": "Críquet"
+    },
+    {
+      "id": 25,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuántos sets hay en un partido de tenis?",
+      "opciones": ["5", "3", "4", "6"],
+      "respuesta": "3"
+    },
+    {
+      "id": 26,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuál es el máximo logro en la carrera de un nadador?",
+      "opciones": [
+        "Oro olímpico",
+        "Record mundial",
+        "Marca personal",
+        "Participación en los Juegos Olímpicos"
+      ],
+      "respuesta": "Oro olímpico"
+    },
+    {
+      "id": 27,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuál es el evento principal en los Juegos Olímpicos?",
+      "opciones": [
+        "Ceremonia de clausura",
+        "Ceremonia de inauguración",
+        "Atletismo",
+        "Natación"
+      ],
+      "respuesta": "Atletismo"
+    },
+    {
+      "id": 28,
+      "categoria": "Deportes",
+      "enunciado": "¿Qué deporte practicaba Michael Phelps?",
+      "opciones": ["Atletismo", "Natación", "Ciclismo", "Fútbol"],
+      "respuesta": "Natación"
+    },
+    {
+      "id": 29,
+      "categoria": "Deportes",
+      "enunciado": "¿Quién es el máximo goleador en la historia de la Copa del Mundo de fútbol?",
+      "opciones": [
+        "Pelé",
+        "Diego Maradona",
+        "Cristiano Ronaldo",
+        "Miroslav Klose"
+      ],
+      "respuesta": "Miroslav Klose"
+    },
+    {
+      "id": 30,
+      "categoria": "Deportes",
+      "enunciado": "¿Qué equipo ganó más campeonatos en la NBA?",
+      "opciones": [
+        "Los Angeles Lakers",
+        "Boston Celtics",
+        "Golden State Warriors",
+        "Chicago Bulls"
+      ],
+      "respuesta": "Boston Celtics"
+    },
+    {
+      "id": 31,
+      "categoria": "Ciencia",
+      "enunciado": "¿Cuál es el símbolo químico del agua?",
+      "opciones": ["H", "Ag", "O", "H2O"],
+      "respuesta": "H2O"
+    },
+    {
+      "id": 32,
+      "categoria": "Ciencia",
+      "enunciado": "¿Quién desarrolló la teoría de la relatividad?",
+      "opciones": [
+        "Albert Einstein",
+        "Isaac Newton",
+        "Galileo Galilei",
+        "Stephen Hawking"
+      ],
+      "respuesta": "Albert Einstein"
+    },
+    {
+      "id": 33,
+      "categoria": "Ciencia",
+      "enunciado": "¿Qué causa la marea?",
+      "opciones": [
+        "Gravedad de la Tierra",
+        "Movimiento de los planetas",
+        "Energía solar",
+        "Magnetismo terrestre"
+      ],
+      "respuesta": "Gravedad de la Tierra"
+    },
+    {
+      "id": 34,
+      "categoria": "Ciencia",
+      "enunciado": "¿Qué planeta es conocido como 'El planeta rojo'?",
+      "opciones": ["Marte", "Venus", "Júpiter", "Mercurio"],
+      "respuesta": "Marte"
+    },
+    {
+      "id": 35,
+      "categoria": "Ciencia",
+      "enunciado": "¿Qué es un electrón?",
+      "opciones": [
+        "Partícula subatómica",
+        "Asteroide",
+        "Planeta enano",
+        "Constelación"
+      ],
+      "respuesta": "Partícula subatómica"
+    },
+    {
+      "id": 36,
+      "categoria": "Ciencia",
+      "enunciado": "¿Quién descubrió la ley de la gravedad?",
+      "opciones": [
+        "Isaac Newton",
+        "Albert Einstein",
+        "Galileo Galilei",
+        "Stephen Hawking"
+      ],
+      "respuesta": "Isaac Newton"
+    }
+  ]
+}

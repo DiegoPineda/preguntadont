@@ -1,0 +1,24 @@
+{
+  "partidas": [
+    {
+      "id": 1,
+      "idJ1": 1,
+      "correctasJ1": 0,
+      "idJ2": 2,
+      "correctasJ2": 0,
+      "listaPreguntas": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      "ganador": null
+    }
+  ],
+  "partidasTerminadas": [
+    {
+      "id": 1,
+      "idJ1": 1,
+      "correctasJ1": 0,
+      "idJ2": 2,
+      "correctasJ2": 0,
+      "listaPreguntas": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+      "ganador": null
+    }
+  ]
+}

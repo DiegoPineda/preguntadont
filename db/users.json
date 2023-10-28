@@ -1,0 +1,32 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "usuario1",
+      "contrasena": "contrasena1",
+      "monedas": 0
+    }
+  ],
+
+  "modificadores":[
+    {
+        "id":1,
+        "idUser": 1,
+        "bombas": 0,
+        "conejos": 0,
+        "relojes": 0,
+        "reintentar": 0
+    }
+  ],
+
+  "estadisticas":[
+    {
+        "id":1,
+        "idUser":1,
+        "victorias":0,
+        "empates":0,
+        "derrotas":0,
+        "puntos":0
+    }
+  ]
+}
