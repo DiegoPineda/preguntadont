@@ -36,12 +36,3 @@ section{
   border-radius: 2rem;
   border: none;
 }
-
-h2{
-  font: 5rem;
-  position: absolute;
-}
-
-.border{
-  color: black;
-}
