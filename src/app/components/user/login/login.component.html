@@ -1,15 +1,14 @@
 <section>
+    <h2>Iniciar sesión</h2>
 
-  <form class="container">
-    <h2 class="border">Iniciar sesión</h2>
-    <h2 class="wave">Iniciar sesión</h2>
-
+  <form class="container" formGroup="formLogin">
     <div class="campo">
       <input 
         type="email" 
         id="email" 
         class="email" 
-        placeholder="Email" />
+        placeholder="Email" 
+        formControlName="email"/>
     </div>
     <div class="campo">
       <input
@@ -17,6 +16,7 @@
         id="password"
         class="password"
         placeholder="Contraseña"
+        formControlName="password"
       />
     </div>
     <div class="campo">
@@ -24,7 +24,7 @@
     </div>
   </form>
 
-  <div class="container">
+  <div class="container forgot-pass">
     <a>¿Olvidaste tu contraseña?</a>
   </div>
 
