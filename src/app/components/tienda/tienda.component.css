@@ -1,0 +1,19 @@
+.productos-container {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 20%; /* Espacio entre productos */
+}
+
+.producto {
+  flex: 0 0 calc(33.33% - 20px); /* Ajusta el ancho para mostrar 3 productos por fila */
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.producto img {
+  max-width: 100%; /* Establece el tamaño máximo al 100% del contenedor */
+  height: auto; /* Mantiene la proporción de aspecto original */
+}

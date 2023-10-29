@@ -1,0 +1,46 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "bomba",
+      "precio": 20,
+      "descripcion": "Y nose que poner",
+      "urlImg": "https://www.shutterstock.com/image-vector/bomb-burning-wick-on-white-260nw-1403906366.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "conejo",
+      "precio": 20,
+      "descripcion": "Y nose que poner",
+      "urlImg": "https://www.francodex.com/media/cache/img_text_block_large_584x475_up/uploads/advice/square/5d6546e8977c0091740465.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Pelota de fútbol",
+      "precio": 15,
+      "descripcion": "Pelota de fútbol oficial de la FIFA.",
+      "urlImg": "https://http2.mlstatic.com/D_NQ_NP_812472-MLA49950821316_052022-O.webp"
+    },
+    {
+      "id": 4,
+      "nombre": "Laptop HP",
+      "precio": 800,
+      "descripcion": "Laptop con pantalla HD de 15 pulgadas y procesador Intel Core i7.",
+      "urlImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiGRILqddhL0wy-Oge2Zx3d-kzu07-pMmTBwl-ogrfgjkUs7dtPx_g5-OuIqNTC-eT3Z0&usqp=CAU"
+    },
+    {
+      "id": 5,
+      "nombre": "Libro de aventuras",
+      "precio": 10,
+      "descripcion": "Libro emocionante lleno de aventuras.",
+      "urlImg": "https://d22fxaf9t8d39k.cloudfront.net/3fe8ee42bf9738e14d5fcbd4a44eea962b02d12b8d1455850fa66365f08142a677414.jpg"
+    },
+    {
+      "id": 6,
+      "nombre": "Pistola de agua",
+      "precio": 4000,
+      "descripcion": "El X-SHOT Nano Drencher es el arma portátil perfecta para un ataque sorpresa!",
+      "urlImg": "https://http2.mlstatic.com/D_NQ_NP_718480-MLA48267493486_112021-O.webp"
+    }
+  ]
+}
