@@ -1,9 +1,13 @@
 <div class="productos-container">
   <div class="producto" *ngFor="let producto of listaProductos">
-    <img [src]="producto.urlImg" alt="{{producto.descripcion}}">
-    <h3>{{producto.nombre}}</h3>
-    <p>Descripción: {{producto.descripcion}}</p>
-    <p>Precio: ${{producto.precio}}</p>
-    <button >Agregar al carrito</button>
+    <div class="producto-img">
+      <img [src]="producto.urlImg" alt="{{producto.descripcion}}">
+    </div>
+    <div class="producto-info">
+      <h3>{{producto.nombre}}</h3>
+      <p>{{producto.descripcion}}</p>
+      <p>Precio: ${{producto.precio}}</p>
+      <button>Agregar al carrito</button>
+    </div>
   </div>
 </div>
