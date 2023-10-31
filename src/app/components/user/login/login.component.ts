@@ -1,6 +1,7 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from './../../../services/usuario.service';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,11 +13,15 @@ export class LoginComponent {
   formLogin:FormGroup;
 
 
-  constructor(private UsuarioService:UsuarioService, private fb:FormBuilder){
+  constructor(private UsuarioService:UsuarioService, private fb:FormBuilder, private router :Router){
     this.formLogin = this.fb.group({
       email:['', [Validators.required]],
       password:['', [Validators.required]]
     })
+  }
+
+  redireccionarARegistro() {
+    this.router.navigate(["/registro"])
   }
 
   loginUsuario(){

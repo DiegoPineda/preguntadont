@@ -1,0 +1,52 @@
+section{
+  width: 40%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 2rem;
+}
+
+.campo input, .campo button{
+  width: 95%;
+  margin: 0.5rem 0;
+  height: 4rem;
+  width: 95%;
+  text-align: center;
+  border-radius: 2rem;
+  border: none;
+  font-size: 2rem;
+  transition: 0.3 ease;
+}
+
+h2{
+  font-size: 5rem;
+  margin-bottom: 3rem;
+}
+
+.campo input:focus, .campo button:focus{
+  outline: none;
+}
+
+.campo input:hover, .campo button:hover{
+  background-color: aqua;
+  color: white;
+}
+
+.container{
+  margin: 1rem 0 1rem 0;
+}
+
+#registrarse{
+  width: 55%;
+  height: 4rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  border: none;
+}
+
+.forgot-pass{
+  font-size: 1.5rem;
+  margin-top: 3rem;
+}

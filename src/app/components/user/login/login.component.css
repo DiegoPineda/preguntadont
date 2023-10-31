@@ -8,7 +8,7 @@ section{
   border-radius: 2rem;
 }
 
-.campo input{
+.campo input, .campo button{
   width: 95%;
   margin: 0.5rem 0;
   height: 4rem;
@@ -25,11 +25,11 @@ h2{
   margin-bottom: 3rem;
 }
 
-.campo input:focus{
+.campo input:focus, .campo button:focus{
   outline: none;
 }
 
-.campo input:hover{
+.campo input:hover, .campo button:hover{
   background-color: aqua;
   color: white;
 }

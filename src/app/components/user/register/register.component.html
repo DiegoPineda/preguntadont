@@ -1,1 +1,21 @@
-<p>register works!</p>
+<section>
+  <h2>Formulario registro</h2>
+
+  <form method="POST" id="formRegister" (ngSubmit)="registrarUsuario()" [formGroup]="formRegister">
+    <div class="campo">
+      <input type="text" id="nickname" class="nickname" placeholder="nickname" formControlName="nickname" />
+    </div>
+    <div class="campo">
+      <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
+    </div>
+    <div class="campo">
+      <input type="password" id="password" class="password" placeholder="Contraseña" formControlName="password" />
+    </div>
+    <div class="campo">
+      <input type="hidden" id="id" class="id" placeholder="id" formControlName="id" />
+    </div>
+    <div class="campo">
+      <input type="submit" value="Registrarse" id="btnRegitro">
+    </div>
+  </form>
+</section>

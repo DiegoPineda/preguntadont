@@ -1,34 +1,24 @@
 <section>
-    <h2>Iniciar sesión</h2>
+  <h2>Iniciar sesión</h2>
 
-  <form class="container" formGroup="formLogin">
+  <form class="container" (ngSubmit)="loginUsuario()" [formGroup]="formLogin">
     <div class="campo">
-      <input 
-        type="email" 
-        id="email" 
-        class="email" 
-        placeholder="Email" 
-        formControlName="email"/>
+      <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
     </div>
     <div class="campo">
-      <input
-        type="password"
-        id="password"
-        class="password"
-        placeholder="Contraseña"
-        formControlName="password"
-      />
+      <input type="password" id="password" class="password" placeholder="Contraseña" formControlName="password" />
     </div>
     <div class="campo">
-      <input type="submit" value="Ingresar" id="ingresar"/>
+      <input type="submit" value="Ingresar" id="ingresar" />
     </div>
+    <div class="container forgot-pass">
+      <a>¿Olvidaste tu contraseña?</a>
+    </div>
+    <div class="campo">
+      <!-- <input type="submit" value="Registrarse" id="btnRegistro"> -->
+      <button (click)="redireccionarARegistro()"> Registro</button>
+    </div>
+
   </form>
 
-  <div class="container forgot-pass">
-    <a>¿Olvidaste tu contraseña?</a>
-  </div>
-
-  <div class="container">
-    <button id="registrarse"> Registrarse</button>
-  </div>
 </section>
