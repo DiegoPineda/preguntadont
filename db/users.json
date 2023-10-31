@@ -5,6 +5,23 @@
       "email": "adsadadaddadad@asdasd",
       "password": "adadaddadddadadad",
       "id": 1
+    },
+    {
+      "nickname": "asdads",
+      "email": "adsadaad@asdasd",
+      "password": "adadaddd",
+      "id": 2
+    },
+    {
+      "nickname": "as",
+      "email": "aadad@asdasd",
+      "password": "adadadddadadad",
+      "id": 3
+    },{
+      "nickname": "rafa",
+      "email": "rtoresani@gmail.com",
+      "password": "1234",
+      "id": 4
     }
   ],
   "tienda": [],

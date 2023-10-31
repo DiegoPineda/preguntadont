@@ -40,3 +40,7 @@ export interface Estadistica {
     aciertosHistoria: number,
     totalHistoria: number,
 }
+
+export interface Session{
+    userId:number;
+}

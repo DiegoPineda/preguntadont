@@ -9,7 +9,7 @@ export class UsuarioService {
 
   constructor(private router: Router) { }
 
-  url: string = "http://localhost:4000/usuarios";
+  url: string = "http://localhost:3000/usuarios";
 
   async postUsuario(cita : Usuario){
     try {
@@ -23,6 +23,19 @@ export class UsuarioService {
     	console.log(error);
     }
   }
+
+  async getUsuarios(): Promise <Usuario | undefined>{
+    try {
+      const resultados = await fetch(this.url, {method: 'GET'});
+      const usuarios = await resultados.json();
+      return usuarios;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
+
+
 
   /* async getUsuarios(email: string, password:string): Promise <Usuario | undefined> {
     try{
