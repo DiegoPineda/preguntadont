@@ -46,7 +46,16 @@ h2{
   border: none;
 }
 
-.forgot-pass{
+.textoLogin{
   font-size: 1.5rem;
   margin-top: 3rem;
+  margin-bottom: 1rem;
+  cursor:pointer;
+}
+.textoLogin a:focus{
+  color: aqua;
+}
+
+.textoLogin:hover{
+  color: black;
 }

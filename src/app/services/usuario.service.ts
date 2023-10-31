@@ -23,5 +23,20 @@ export class UsuarioService {
     	console.log(error);
     }
   }
+
+  /* async getUsuarios(email: string, password:string): Promise <Usuario | undefined> {
+    try{
+      const resultado = await fetch(this.url+"?${email}=${"+email+"}", {method: "GET"})
+      const citas= resultado.json();
+      if(citas.password==password)
+      {
+        return citas;
+      }
+      
+    }catch(error){
+      console.log(error);
+    }
+    return undefined;
+  } */
   
 }

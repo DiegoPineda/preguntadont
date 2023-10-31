@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/interfaces/interfaces';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -13,13 +14,17 @@ export class RegisterComponent {
   
   formRegister: FormGroup = this.formBuilder.group({
     nickname: ["", [Validators.required]],
-    email: ["", [Validators.required]],
+    email: ["", [Validators.required, Validators.email]],
     password: ["", [Validators.required]],
     id:0 
   })
 
-  constructor(private formBuilder: FormBuilder, private usuarioService : UsuarioService){
+  constructor(private formBuilder: FormBuilder, private usuarioService : UsuarioService, private router:Router){
 
+  }
+
+  redireccionarARegistro(){
+    this.router.navigate(["/login"])
   }
 
   registrarUsuario(){

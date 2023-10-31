@@ -1,16 +1,10 @@
 {
   "usuarios": [
     {
-      "nickname": "jasdjadja",
-      "email": "jasjdajsjda@gjajsdja.com",
-      "password": "asjdjasdjajda",
+      "nickname": "asdadssaddd",
+      "email": "adsadadaddadad@asdasd",
+      "password": "adadaddadddadadad",
       "id": 1
-    },
-    {
-      "nickname": "asdasdad",
-      "email": "adsasdadad",
-      "password": "adsasdasdads",
-      "id": 2
     }
   ],
   "tienda": [],
