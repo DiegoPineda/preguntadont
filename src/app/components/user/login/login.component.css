@@ -38,15 +38,13 @@ h2{
   margin: 1rem 0 1rem 0;
 }
 
-#registrarse{
-  width: 55%;
-  height: 4rem;
+.textoRegistro{
+  margin-top: 3rem;
   font-size: 2rem;
-  border-radius: 2rem;
-  border: none;
+  
 }
 
-.textoRegistro{
-  font-size: 1.5rem;
-  margin-top: 3rem;
+.textoRegistro a{
+  text-decoration: none;
+  color: black;
 }

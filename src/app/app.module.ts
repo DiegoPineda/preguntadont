@@ -12,6 +12,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { TiendaPageComponent } from './pages/tienda-page/tienda-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardPartidasComponent } from './components/dashboard-partidas/dashboard-partidas.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     TiendaComponent,
-    TiendaPageComponent
+    TiendaPageComponent,
+    DashboardPartidasComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ export class TiendaService {
 
   constructor(private router: Router) { }
 
-  url: string = "http://localhost:3000/productos";
+  url: string = "http://localhost:3003/productos";
 
   async getProductos(): Promise <Productos[] | undefined> {
     try{

@@ -1,0 +1,37 @@
+section{
+    width: 60%;
+    height: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+.jugar{
+    width: 75%;
+    height: 12rem;
+    background-color: none;
+    font-size: 5rem;
+    margin: 2rem 0;
+}
+
+.container-principal{
+    width: 95%;
+    font-size: 2rem;
+}
+
+#encabezado{
+    font-size: 2rem;
+    background-color: rgb(179, 179, 179);
+}
+
+.container-partidas{
+    height: 20rem;
+    overflow-y: auto;
+    margin-bottom: 2rem;
+    background-color: blue;
+    color:rgb(255, 255, 255);
+}
+

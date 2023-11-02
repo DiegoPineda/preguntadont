@@ -1,13 +1,19 @@
-<div class="productos-container">
-  <div class="producto" *ngFor="let producto of listaProductos">
-    <div class="producto-img">
-      <img [src]="producto.urlImg" alt="{{producto.descripcion}}">
-    </div>
-    <div class="producto-info">
-      <h3>{{producto.nombre}}</h3>
-      <p>{{producto.descripcion}}</p>
-      <p>Precio: ${{producto.precio}}</p>
-      <button>Agregar al carrito</button>
+<section>
+  <div class="productos-container">
+    <div class="producto" *ngFor="let producto of listaProductos">
+      
+        <img [src]="producto.urlImg" alt="{{ producto.descripcion }}" class="image-producto"/>
+        <div class="producto-info">
+          
+          <h3>{{ producto.nombre }}</h3>
+          <p>{{ producto.descripcion }}</p>
+          <p>Precio: ${{ producto.precio }}</p>
+        </div>
+        
+        <form>
+          <input type="number" name="" id="" minlength="1">
+          <input type="submit" value="¡Comprar!">
+        </form>
     </div>
   </div>
-</div>
+</section>
