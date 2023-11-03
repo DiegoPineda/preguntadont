@@ -17,8 +17,9 @@ export interface Tienda{
     id: number,
     monedas: number,
     cantBombas: number,
-    cantConejitos: number,
-    cantRelojitos: number
+    cantConejos: number,
+    cantRelojes: number,
+    cantReversa: number
 }
 
 export interface Estadistica {

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from '../interfaces/interfaces';
+import { Estadistica, Tienda, Usuario } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -9,16 +9,42 @@ export class UsuarioService {
 
   constructor(private router: Router) { }
 
-  url: string = "http://localhost:3000/usuarios";
+  url: string = "http://localhost:4000/usuarios";
+  url2: string = "http://localhost:4000/tienda";
+  url3: string = "http://localhost:4000/estadisticas";
 
-  async postUsuario(cita : Usuario){
+  async postUsuario(usuario : Usuario){
     try {
       await fetch(this.url, {
         method: "POST",
-        body: JSON.stringify(cita),
+        body: JSON.stringify(usuario),
         headers: {"Content-type" : "application/json"}
       })
-      this.router.navigate(["home"]);
+    } catch (error) {  
+    	console.log(error);
+    }
+  }
+
+  async postUsuarioTienda(tienda : Tienda){
+    try {
+      await fetch(this.url2, {
+        method: "POST",
+        body: JSON.stringify(tienda),
+        headers: {"Content-type" : "application/json"}
+      })
+    } catch (error) {  
+    	console.log(error);
+    }
+  }
+
+  async postUsuarioEstadistica(estadistica : Estadistica){
+    try {
+      await fetch(this.url3, {
+        method: "POST",
+        body: JSON.stringify(estadistica),
+        headers: {"Content-type" : "application/json"}
+      })
+      this.router.navigate(["login"]);
     } catch (error) {  
     	console.log(error);
     }

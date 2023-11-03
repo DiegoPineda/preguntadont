@@ -1,29 +1,74 @@
 {
   "usuarios": [
     {
-      "nickname": "asdadssaddd",
-      "email": "adsadadaddadad@asdasd",
-      "password": "adadaddadddadadad",
-      "id": 1
-    },
-    {
-      "nickname": "asdads",
-      "email": "adsadaad@asdasd",
-      "password": "adadaddd",
-      "id": 2
-    },
-    {
-      "nickname": "as",
-      "email": "aadad@asdasd",
-      "password": "adadadddadadad",
-      "id": 3
-    },{
       "nickname": "rafa",
       "email": "rtoresani@gmail.com",
       "password": "1234",
-      "id": 4
+      "id": 1
+    },
+    {
+      "nickname": "diego",
+      "email": "diegopineda819@gmail.com",
+      "password": "1234",
+      "id": 2
     }
   ],
-  "tienda": [],
-  "estadisticas": []
+  "tienda": [
+    {
+      "id": 1,
+      "monedas": 0,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    },
+    {
+      "id": 2,
+      "monedas": 0,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    }
+  ],
+  "estadisticas": [
+    {
+      "id": 1,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    },
+    {
+      "id": 2,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    }
+  ]
 }
