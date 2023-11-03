@@ -1,0 +1,45 @@
+.ruleta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .ruleta {
+    width: 450px;
+    height: 450px;
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .opcion {
+    font-size: 18px;
+    margin-top: 20px;
+
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    height: 100vh; 
+  }
+  
+  button {
+    width: 20%;
+    height: 12rem;
+    background-color: #eb31fc;
+    font-size: 5rem;
+    margin: 2rem 0;
+    border: none;
+    border-radius: 2rem;
+    transition: 0.2s ease-in-out;
+  }

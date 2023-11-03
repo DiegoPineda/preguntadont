@@ -15,6 +15,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardPartidasComponent } from './components/dashboard-partidas/dashboard-partidas.component';
 import { BackgroundComponent } from './shared/background/background.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PlayComponent } from './components/play/play.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -29,13 +32,15 @@ import { HttpClientModule } from '@angular/common/http';
     TiendaComponent,
     TiendaPageComponent,
     DashboardPartidasComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    PlayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

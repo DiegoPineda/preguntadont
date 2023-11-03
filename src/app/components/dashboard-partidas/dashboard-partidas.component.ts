@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard-partidas',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-partidas.component.css']
 })
 export class DashboardPartidasComponent {
+  constructor(private router: Router) {}
+
+  irAPlay() {
+    this.router.navigate(['/play']);
+  }
 
 }
