@@ -13,6 +13,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { TiendaPageComponent } from './pages/tienda-page/tienda-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardPartidasComponent } from './components/dashboard-partidas/dashboard-partidas.component';
+import { BackgroundComponent } from './shared/background/background.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { DashboardPartidasComponent } from './components/dashboard-partidas/dash
     RegisterComponent,
     TiendaComponent,
     TiendaPageComponent,
-    DashboardPartidasComponent
+    DashboardPartidasComponent,
+    BackgroundComponent
   ],
   imports: [
     BrowserModule,
