@@ -14,6 +14,7 @@ import { TiendaPageComponent } from './pages/tienda-page/tienda-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardPartidasComponent } from './components/dashboard-partidas/dashboard-partidas.component';
 import { BackgroundComponent } from './shared/background/background.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BackgroundComponent } from './shared/background/background.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

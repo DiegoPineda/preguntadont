@@ -5,12 +5,13 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { TiendaPageComponent } from './pages/tienda-page/tienda-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AuthGuard } from './guards/auth-guard';
 
 const routes: Routes = [
   {path:"login", component:LoginPageComponent},
   {path: "tienda", component:TiendaPageComponent},
   {path: "registro", component:RegisterPageComponent},
-  {path: 'home', component:HomePageComponent},
+  {path: 'home', component:HomePageComponent, canActivate: [AuthGuard]},
   {path:"**", redirectTo:"login"}
 ];
 

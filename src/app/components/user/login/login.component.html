@@ -1,7 +1,8 @@
 <section>
   <h2>Iniciar sesión</h2>
 
-  <form class="container" (ngSubmit)="loginUsuario()" [formGroup]="formLogin">
+  <!-- <form class="container" (ngSubmit)="loginUsuario()" [formGroup]="formLogin"> -->
+    <form class="container" (ngSubmit)="iniciarSession()" [formGroup]="formLogin">
     <div class="campo">
       <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
     </div>

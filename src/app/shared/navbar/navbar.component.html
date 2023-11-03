@@ -1,1 +1,6 @@
-<p>navbar works!</p>
+<header>
+    <nav class="navegacion">
+      <div class="user">Bienvenido {{getUser?.nickname}}!</div>
+      <a (click)="onLogOut()" class="logout">LogOut</a>
+    </nav>
+  </header>

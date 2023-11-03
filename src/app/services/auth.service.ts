@@ -2,21 +2,27 @@ import { UsuarioService } from './usuario.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Session, Usuario } from '../interfaces/interfaces';
+import { HttpClient } from '@angular/common/http';
+import { Observable, catchError, map, of, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  urlSession:string = 'http://localhost:3004/session';
-  usuarios : Usuario[] = [];
+/*   urlSession:string = 'http://localhost:3004/session';
+  usuarios : Usuario[] = []; */
 
-  constructor(private Router:Router, private UsuarioService:UsuarioService) { 
+  private url: string = 'http://localhost:3000/usuarios'
+  private user?: Usuario;
+
+
+  constructor(private Router:Router, private UsuarioService:UsuarioService, private http:HttpClient) { 
 
   }
 
 
-  async login(user:string, password:string){
+ /*  async login(user:string, password:string){
     try{
       const usuarios = await this.UsuarioService.getUsuarios();
       if(Array.isArray(usuarios)){
@@ -47,6 +53,48 @@ export class AuthService {
     }catch(error){
       console.log(error);
     }
+  } */
+
+
+
+  get currentUser(): Usuario | undefined {
+    if (!this.user) return undefined
+    return { ...this.user };
+  }
+
+  getUsers(): Observable<Usuario[]> {
+    return this.http.get<Usuario[]>(this.url)
+  }
+
+  verificarUserAndPass(email: string, pass: string) {
+
+    this.getUsers().subscribe(users => {
+      users.find(u => {
+        if (u.password === pass && u.email === email) {
+          this.user = u;
+          localStorage.setItem('token', u.id.toString())
+          this.Router.navigate(['/home'])
+        }
+      });
+    });
+  }
+
+  checkStatusAutenticacion(): Observable<boolean> {
+    const token = localStorage.getItem('token')
+    if (!token) {
+      return of(false)
+    }
+    return this.http.get<Usuario>(`${this.url}/${token}`)
+      .pipe(
+        tap(u => this.user = u),
+        map(u => !!u),
+        catchError(err => of(false))
+      )
+  }
+
+  logout() {
+    this.user = undefined;
+    localStorage.clear()
   }
   
 
