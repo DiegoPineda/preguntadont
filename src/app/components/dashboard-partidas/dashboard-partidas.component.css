@@ -6,32 +6,60 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: #F02D3A;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    gap: 2rem;
 }
 
 .jugar{
     width: 75%;
     height: 12rem;
-    background-color: none;
+    background-color: #3185FC;
     font-size: 5rem;
     margin: 2rem 0;
+    border: none;
+    border-radius: 2rem;
+    transition: 0.2s ease-in-out;
+}
+
+.jugar:hover{
+    background-color: #34E5FF;
 }
 
 .container-principal{
     width: 95%;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
-#encabezado{
-    font-size: 2rem;
-    background-color: rgb(179, 179, 179);
+.encabezado{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.pendientes .encabezado{
+    background-color: #34E5FF;
+}
+.finalizadas .encabezado{
+    background-color: #424651;
 }
 
 .container-partidas{
-    height: 20rem;
+    height: 15rem;
     overflow-y: auto;
     margin-bottom: 2rem;
-    background-color: blue;
     color:rgb(255, 255, 255);
+    text-align: center;
 }
 
+.lista-partidas{
+    width: 100%;
+}
+
+.aciertos{
+    background-color: black;
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100%;
+}

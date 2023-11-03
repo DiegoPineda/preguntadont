@@ -4,6 +4,8 @@ header{
     width: 60%;
     margin: 0 auto;
     margin-top: 3%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
 }
 
 nav{
@@ -30,13 +32,15 @@ a {
 
 #jugar{
     background-color: rgb(255, 0, 0);
+    border-top-left-radius: 2rem;
 }
 
 #tienda{
-    background-color: yellow;
+    background-color: #FFD972;
 }
 
 #estadisticas{
-    background-color: rgb(70, 154, 209);
+    background-color: #8E94F2;
+    border-top-right-radius: 2rem;
 }
 
