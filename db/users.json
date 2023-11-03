@@ -24,11 +24,11 @@
     },
     {
       "id": 2,
-      "monedas": 0,
-      "cantBombas": 0,
-      "cantConejos": 0,
-      "cantRelojes": 0,
-      "cantReversa": 0
+      "monedas": 200,
+      "cantBombas": 1,
+      "cantConejos": 2,
+      "cantRelojes": 3,
+      "cantReversa": 4
     }
   ],
   "estadisticas": [

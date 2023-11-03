@@ -1,13 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Estadistica, Tienda, Usuario } from '../interfaces/interfaces';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   url: string = "http://localhost:4000/usuarios";
   url2: string = "http://localhost:4000/tienda";
@@ -61,6 +63,7 @@ export class UsuarioService {
     return undefined;
   }
 
+  
   
 
 
