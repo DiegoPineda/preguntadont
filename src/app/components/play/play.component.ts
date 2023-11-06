@@ -1,39 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { animate, style, transition, trigger } from '@angular/animations';
-
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-play',
   templateUrl: './play.component.html',
-  styleUrls: ['./play.component.css'],
-  animations: [
-    trigger('spin', [
-      transition('* => spin', [ 
-        style({ transform: 'rotate(0deg)' }),
-        animate('5s cubic-bezier(0.23, 1, 0.32, 1)', style({ transform: 'rotate(7200deg)' })),
-      ]),
-    ]),
-  ],   
+  styleUrls: ['./play.component.css']
 })
-export class PlayComponent implements OnInit {
+export class PlayComponent {
   spinState: 'spin' | 'stop' = 'stop';
+  @ViewChild('wheel') wheelRef: ElementRef | undefined; // Cambia el nombre de la propiedad
+  value: number = Math.ceil(Math.random() * 3600);
 
   constructor() {}
 
-  ngOnInit(): void {}
-
-  spin() {
-    this.spinState = 'spin';
-    setTimeout(() => {
-      this.spinState = 'stop';
-      const temaSeleccionado = this.obtenerTemaAleatorio();
-      console.log('Tema seleccionado:', temaSeleccionado);
-    }, 5000); // El tiempo debe coincidir con la duración de la animación
-  }
-
-  obtenerTemaAleatorio() {
-    const temas = ['Tema 1', 'Tema 2', 'Tema 3', 'Tema 4']; // Agrega más temas
-    const indice = Math.floor(Math.random() * temas.length);
-    return temas[indice];
+  girar() {
+    if (this.wheelRef) {
+      this.wheelRef.nativeElement.style.transform = `rotate(${this.value}deg)`;
+      this.value += Math.ceil(Math.random() * 3600);
+    }
   }
 }
+
+
+
+

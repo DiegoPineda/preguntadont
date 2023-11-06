@@ -1,14 +1,17 @@
-<div class="ruleta-container">
-    <div class="ruleta" [@spin]="spinState">
-      <div id="1" class="opcion" style="color: blue;">DEPORTE</div>
-      <div id="2" class="opcion" style="color: red;">HISTORIA</div>
-      <div id="3" class="opcion" style="color: green;">GEOGRAFIA</div>
-      <div id="4" class="opcion" style="color: orange;">ARTE</div>
-      <div id="5" class="opcion" style="color: purple;">ENTRETENIMIENTO</div>
-      <div id="6" class="opcion" style="color: brown;">CIENCIA</div>
 
+
+<body>
+  <div class="container">
+    <div class="spinBtn" (click)="girar()">Girar</div>
+    <div class="wheel" #wheel>
+      <div class="number" style="--i:1;--clr:#feae00;"><span>⚽🏈</span></div>
+      <div class="number" style="--i:2;--clr:#b102b7;"><span>🗿🏛️</span></div>      
+      <div class="number" style="--i:3;--clr:#1937e0;"><span>🗺️🌎</span></div>
+      <div class="number" style="--i:4;--clr:rgb(219, 112, 162);"><span>🎨🎭</span></div>
+      <div class="number" style="--i:5;--clr:rgb(228, 0, 0);"><span>🎈🎮</span></div>
+      <div class="number" style="--i:6;--clr:rgb(38, 228, 0);"><span>🧪👨‍🔬</span></div>
     </div>
   </div>
-  <div class="container">
-    <button (click)="spin()">Girar</button>
-  </div>
+</body>
+
+ 
