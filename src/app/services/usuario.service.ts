@@ -11,9 +11,9 @@ export class UsuarioService {
 
   constructor(private router: Router, private http: HttpClient) { }
 
-  url: string = "http://localhost:4000/usuarios";
-  url2: string = "http://localhost:4000/tienda";
-  url3: string = "http://localhost:4000/estadisticas";
+  url: string = "http://localhost:3000/usuarios";
+  url2: string = "http://localhost:3000/tienda";
+  url3: string = "http://localhost:3000/estadisticas";
 
   async postUsuario(usuario : Usuario){
     try {

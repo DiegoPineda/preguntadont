@@ -8,9 +8,30 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuarioTiendaService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
+
+  url: string = "http://localhost:3000/tienda/";
 
   getUserTienda(userId: number): Observable<Tienda> {
-    return this.http.get<Tienda>(`http://localhost:3000/tienda/${userId}`);
+    return this.http.get<Tienda>(this.url + userId);
   }
+
+  updateUserTienda(usuarioTienda: Tienda){
+    
+    this.http.put<Tienda>(this.url+usuarioTienda.id, usuarioTienda)
+      .subscribe({
+        next: data => {
+          console.log("Tienda del usuario actualizada correctamente");
+        },
+        error: error => {
+          console.error('Hubo un error al actualizar la tienda del usuario', error);
+        }
+      });
+  }
+
+
+
+
+
+
 }

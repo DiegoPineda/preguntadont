@@ -10,8 +10,8 @@
           <p>Precio: ${{ producto.precio }}</p>
         </div>
         
-        <form>
-          <input type="number" name="" id="" minlength="1">
+        <form [formGroup]="formCompra" (ngSubmit)="comprarProducto(producto.id, producto.precio)">
+          <input type="number" name="cantidad" id="cantidad" formControlName="cantidad">
           <input type="submit" value="¡Comprar!">
         </form>
     </div>

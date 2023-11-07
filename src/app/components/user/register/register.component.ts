@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { map } from 'rxjs';
 import { Estadistica, Tienda, Usuario } from 'src/app/interfaces/interfaces';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { checkEmail, checkNickName } from 'src/app/shared/validators/registro.validator';
+
 
 @Component({
   selector: 'app-register',
@@ -13,8 +16,8 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class RegisterComponent {
 
   formRegister: FormGroup = this.formBuilder.group({
-    nickname: ["", [Validators.required]],
-    email: ["", [Validators.required, Validators.email]],
+    nickname: ["", [Validators.required],[this.validateNickname.bind(this)]],
+    email: ["", [Validators.required, Validators.email],[this.validateEmail.bind(this)]],
     password: ["", [Validators.required]],
     id: 0
   })
@@ -22,6 +25,23 @@ export class RegisterComponent {
   constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService, private router: Router) {
 
   }
+
+
+
+  validateNickname(control: AbstractControl) {
+    const nickname = control.value;
+    return checkNickName(nickname).pipe(
+      map((valid) => (valid ? null : { nicknameTaken: true }))
+    );
+  }
+  
+  validateEmail(control: AbstractControl) {
+    const email = control.value;
+    return checkEmail(email).pipe(
+      map((valid) => (valid ? null : { emailTaken: true }))
+    );
+  }
+
 
   redireccionarARegistro() {
     this.router.navigate(["/login"])

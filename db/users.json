@@ -11,6 +11,12 @@
       "email": "diegopineda819@gmail.com",
       "password": "1234",
       "id": 2
+    },
+    {
+      "nickname": "diego2",
+      "email": "diego@gmail.com",
+      "password": "1234",
+      "id": 3
     }
   ],
   "tienda": [
@@ -24,11 +30,19 @@
     },
     {
       "id": 2,
-      "monedas": 200,
+      "monedas": 60,
+      "cantBombas": 6,
+      "cantConejos": 1,
+      "cantRelojes": 2,
+      "cantReversa": 2
+    },
+    {
+      "id": 3,
+      "monedas": 280,
       "cantBombas": 1,
-      "cantConejos": 2,
-      "cantRelojes": 3,
-      "cantReversa": 4
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
     }
   ],
   "estadisticas": [
@@ -53,6 +67,25 @@
     },
     {
       "id": 2,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    },
+    {
+      "id": 3,
       "puntos": 0,
       "partidasGanadas": 0,
       "partidasPerdidas": 0,
