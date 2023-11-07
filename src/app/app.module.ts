@@ -17,6 +17,7 @@ import { BackgroundComponent } from './shared/background/background.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PlayComponent } from './components/play/play.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PlayPageComponent } from './pages/play-page/play-page.component';
 
 
 
@@ -33,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TiendaPageComponent,
     DashboardPartidasComponent,
     BackgroundComponent,
-    PlayComponent
+    PlayComponent,
+    PlayPageComponent
   ],
   imports: [
     BrowserModule,
