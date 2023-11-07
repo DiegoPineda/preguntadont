@@ -8,17 +8,28 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 export class PlayComponent {
   spinState: 'spin' | 'stop' = 'stop';
   @ViewChild('wheel') wheelRef: ElementRef | undefined; // Cambia el nombre de la propiedad
-  value: number = Math.ceil(Math.random() * 3600);
+  currentRotation: number = 0;
+  numberOfElements: number = 6; // Número de elementos en la ruleta
 
   constructor() {}
 
   girar() {
     if (this.wheelRef) {
-      this.wheelRef.nativeElement.style.transform = `rotate(${this.value}deg)`;
-      this.value += Math.ceil(Math.random() * 3600);
+      // Simula una rotación aleatoria de la ruleta
+      const randomRotation = Math.ceil(Math.random() * 3600);
+      this.currentRotation += randomRotation;
+      this.wheelRef.nativeElement.style.transform = `rotate(${this.currentRotation}deg`;
+
+      // Calcula el valor al que apunta el "spin" en función de la rotación
+      const anglePerElement = 360 / this.numberOfElements;
+      const spinValue = Math.floor((this.currentRotation % 360) / anglePerElement) + 1;
+
+      // Utiliza spinValue según tus necesidades
+      console.log('El spin apunta al valor:', spinValue);
     }
   }
-}
+  }
+
 
 
 
