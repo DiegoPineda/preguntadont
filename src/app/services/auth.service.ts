@@ -66,18 +66,22 @@ export class AuthService {
     return this.http.get<Usuario[]>(this.url)
   }
 
-  verificarUserAndPass(email: string, pass: string) {
-
-    this.getUsers().subscribe(users => {
-      users.find(u => {
-        if (u.password === pass && u.email === email) {
-          this.user = u;
-          localStorage.setItem('token', u.id.toString())
-          this.Router.navigate(['/home'])
+  verificarUserAndPass(email: string, pass: string): Observable<boolean> {
+    return new Observable<boolean>(observer => {
+      this.getUsers().subscribe(users => {
+        const userFound = users.find(u => u.password === pass && u.email === email);
+  
+        if (userFound) {
+          localStorage.setItem('token', userFound.id.toString());
+          observer.next(true); // Emite true si el usuario es válido
+        } else {
+          observer.next(false); // Emite false si el usuario no es válido
         }
+        observer.complete();
       });
     });
   }
+  
 
   checkStatusAutenticacion(): Observable<boolean> {
     const token = localStorage.getItem('token')

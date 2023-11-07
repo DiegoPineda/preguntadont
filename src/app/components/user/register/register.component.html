@@ -3,14 +3,44 @@
 
   <form method="POST" id="formRegister" (ngSubmit)="registrarUsuario()" [formGroup]="formRegister">
     <div class="campo">
-      <input type="text" id="nickname" class="nickname" placeholder="nickname" formControlName="nickname" />
+      <input type="text" id="nickname" class="nickname" placeholder="nickname" formControlName="nickname" (input)="validar('nickname', 'error')"/>
     </div>
+    <div class="error" *ngIf="validar('nickname', 'nicknameTaken')">
+      <span>El nombre de usuario ya está en uso.</span>
+    </div>
+    <div class="error" *ngIf="validar('nickname', 'minlength')">
+      <span>El nombre de usuario debe tener al menos 4 caracteres.</span>
+    </div>
+    <div class="error" *ngIf="validar('nickname', 'required')">
+      <span>El nombre de usuario es requerido.</span>
+    </div>
+
+
     <div class="campo">
       <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
     </div>
+    <div class="error" *ngIf="validar('email', 'emailTaken')">
+      <span>El email ya está en uso.</span>
+    </div>
+    <div class="error" *ngIf="validar('email', 'email')">
+      <span>Ingrese un email valido.</span>
+    </div>
+    <div class="error" *ngIf="validar('email', 'required')">
+      <span>El email es requerido.</span>
+    </div>
+
+
     <div class="campo">
       <input type="password" id="password" class="password" placeholder="Contraseña" formControlName="password" />
     </div>
+    <div class="error" *ngIf="validar('email', 'minlength')">
+      <span>La contraseña debe tener al menos 8 caracteres.</span>
+    </div>
+    <div class="error" *ngIf="validar('email', 'required')">
+      <span>La contraseña es requerida.</span>
+    </div>
+
+
     <div class="campo">
       <input type="hidden" id="id" class="id" placeholder="id" formControlName="id" />
     </div>

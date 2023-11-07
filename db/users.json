@@ -17,6 +17,12 @@
       "email": "diego@gmail.com",
       "password": "1234",
       "id": 3
+    },
+    {
+      "nickname": "DieguiihtoohFiif:$",
+      "email": "diego10@gmail.com",
+      "password": "asdasdasd",
+      "id": 4
     }
   ],
   "tienda": [
@@ -40,6 +46,22 @@
       "id": 3,
       "monedas": 280,
       "cantBombas": 1,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    },
+    {
+      "id": 4,
+      "monedas": 0,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    },
+    {
+      "id": 5,
+      "monedas": 0,
+      "cantBombas": 0,
       "cantConejos": 0,
       "cantRelojes": 0,
       "cantReversa": 0
@@ -86,6 +108,44 @@
     },
     {
       "id": 3,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    },
+    {
+      "id": 4,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    },
+    {
+      "id": 5,
       "puntos": 0,
       "partidasGanadas": 0,
       "partidasPerdidas": 0,

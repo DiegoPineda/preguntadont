@@ -2,7 +2,7 @@
   <h2>Iniciar sesión</h2>
 
   <!-- <form class="container" (ngSubmit)="loginUsuario()" [formGroup]="formLogin"> -->
-    <form class="container" (ngSubmit)="iniciarSession()" [formGroup]="formLogin">
+    <form class="container" (ngSubmit)="iniciarSesion()" [formGroup]="formLogin">
     <div class="campo">
       <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
     </div>
@@ -11,6 +11,9 @@
     </div>
     <div class="campo">
       <input type="submit" value="Ingresar" id="ingresar" />
+    </div>
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
     </div>
     <div class="textoRegistro">
       <a routerLink="/registro">Registrarse</a>

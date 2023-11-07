@@ -16,9 +16,9 @@ import { checkEmail, checkNickName } from 'src/app/shared/validators/registro.va
 export class RegisterComponent {
 
   formRegister: FormGroup = this.formBuilder.group({
-    nickname: ["", [Validators.required],[this.validateNickname.bind(this)]],
+    nickname: ["", [Validators.required, Validators.minLength(4)],[this.validateNickname.bind(this)]],
     email: ["", [Validators.required, Validators.email],[this.validateEmail.bind(this)]],
-    password: ["", [Validators.required]],
+    password: ["", [Validators.required, Validators.minLength(8)]],
     id: 0
   })
 
@@ -90,4 +90,11 @@ export class RegisterComponent {
     this.usuarioService.postUsuarioEstadistica(estadistica);
   }
 
+  validar(field: string, error: string){
+    return this.formRegister.controls[field].getError(error)
+    &&
+    this.formRegister.controls[field].touched
+  }
+
+  
 }

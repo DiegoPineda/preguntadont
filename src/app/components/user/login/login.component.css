@@ -1,15 +1,19 @@
 section{
-  width: 40%;
+  position: relative;
+  top: 25rem;
+  width: 50rem;
+  height: 45rem;
   margin: 0 auto;
   padding: 0 2rem;
   justify-content: center;
   text-align: center;
-  border: 1px solid black;
   border-radius: 2rem;
+  background-color: rgba(255, 255, 255, 0.63);
 }
 
+
 .campo input, .campo button{
-  width: 95%;
+  width: 80%;
   margin: 0.5rem 0;
   height: 4rem;
   width: 95%;
