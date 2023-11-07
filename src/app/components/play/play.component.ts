@@ -26,7 +26,33 @@ export class PlayComponent {
 
       // Utiliza spinValue según tus necesidades
       console.log('El spin apunta al valor:', spinValue);
+      switch (spinValue) {
+        case 1:
+          return "ciencia";
+      
+        case 2:
+          return "entretenimiento";
+      
+        case 3:
+          return "arte";
+      
+        case 4:
+          return "geografía";
+      
+        case 5:
+          return "historia";
+      
+        case 6:
+          return "deportes";
+      
+        default:
+          return "valor no reconocido";
+      }
+    }else{
+      return "valor no reconocido";
     }
+    
+
   }
   }
 

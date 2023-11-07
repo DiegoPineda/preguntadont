@@ -6,14 +6,14 @@ import { TiendaPageComponent } from './pages/tienda-page/tienda-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AuthGuard } from './guards/auth-guard';
-import { PlayPageComponent } from './pages/play-page/play-page.component';
+import { PartidaPageComponent } from './pages/partida-page/partida-page.component';
 
 
 const routes: Routes = [
   {path:"login", component:LoginPageComponent},
   {path: "tienda", component:TiendaPageComponent},
   {path: "registro", component:RegisterPageComponent},
-  {path: 'play', component:PlayPageComponent, canActivate: [AuthGuard]},
+  {path: 'partida', component:PartidaPageComponent, canActivate: [AuthGuard]},
   {path: 'home', component:HomePageComponent, canActivate: [AuthGuard]},
   {path:"**", redirectTo:"login"}
 ];

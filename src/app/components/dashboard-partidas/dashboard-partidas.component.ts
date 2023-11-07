@@ -11,7 +11,7 @@ export class DashboardPartidasComponent {
   constructor(private router: Router) {}
 
   irAPlay() {
-    this.router.navigate(['/play']);
+    this.router.navigate(['/partida']);
   }
 
 }

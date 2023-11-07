@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PlayComponent } from './components/play/play.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
+import { PartidaComponent } from './components/partida/partida.component';
+import { PartidaPageComponent } from './pages/partida-page/partida-page.component';
 
 
 
@@ -35,7 +37,9 @@ import { PlayPageComponent } from './pages/play-page/play-page.component';
     DashboardPartidasComponent,
     BackgroundComponent,
     PlayComponent,
-    PlayPageComponent
+    PlayPageComponent,
+    PartidaComponent,
+    PartidaPageComponent
   ],
   imports: [
     BrowserModule,

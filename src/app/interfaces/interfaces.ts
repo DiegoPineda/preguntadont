@@ -13,7 +13,7 @@ export interface Usuario {
     password: string
 }
 
-export interface Tienda{
+export interface Tienda {
     id: number,
     monedas: number,
     cantBombas: number,
@@ -42,6 +42,24 @@ export interface Estadistica {
     totalHistoria: number,
 }
 
-export interface Session{
-    userId:number;
+export interface Session {
+    userId: number;
+}
+
+export interface Pregunta {
+    id: number,
+    categoria: string,
+    enunciado: string,
+    opciones: string[],
+    respuesta: string
+}
+
+export interface Partida{
+    id:number,
+    idUsuario1:number,
+    idUsuario2:number,
+    aciertosUsuario1: number,
+    aciertosUsuario2: number,
+    usuarioFinalizo1: boolean,
+    usuarioFinalizo2: boolean
 }

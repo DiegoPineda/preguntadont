@@ -2,23 +2,121 @@
   "partidas": [
     {
       "id": 1,
-      "idJ1": 1,
-      "correctasJ1": 0,
-      "idJ2": 2,
-      "correctasJ2": 0,
-      "listaPreguntas": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-      "ganador": null
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 2,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 3,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 4,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 5,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 6,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 7,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 8,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 9,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 10,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 11,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 12,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
+    },
+    {
+      "id": 13,
+      "idUsuario1": 2,
+      "idUsuario2": 0,
+      "aciertosUsuario1": 0,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": false,
+      "usuarioFinalizo2": false
     }
   ],
-  "partidasTerminadas": [
-    {
-      "id": 1,
-      "idJ1": 1,
-      "correctasJ1": 0,
-      "idJ2": 2,
-      "correctasJ2": 0,
-      "listaPreguntas": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
-      "ganador": null
-    }
-  ]
+  "partidasTerminadas": []
 }

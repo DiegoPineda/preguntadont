@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { Productos } from '../interfaces/interfaces';
 
 @Injectable({
@@ -7,7 +6,7 @@ import { Productos } from '../interfaces/interfaces';
 })
 export class TiendaService {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   url: string = "http://localhost:3003/productos";
 
