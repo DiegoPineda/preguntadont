@@ -6,9 +6,12 @@ import { Partida } from '../interfaces/interfaces';
 })
 export class PartidaService {
 
+  listaPartidas: Partida[] | undefined;
+  
+
   constructor() { }
 
-  url: string = "http://localhost:3002/partidas/";
+  url: string = "http://localhost:3002/partidas";
 
   async getPartidas(): Promise <Partida[] | undefined> {
     try{
@@ -20,6 +23,7 @@ export class PartidaService {
     }
     return undefined;
   }
+  
 
   async postPartida(partida : Partida){
     try {
@@ -35,7 +39,7 @@ export class PartidaService {
 
   async putPartida(partida: Partida){
     try {
-      await fetch(this.url+"/"+partida.id,{
+      await fetch(`${this.url}/${partida.id}`,{
         method: "PUT",
         body: JSON.stringify(partida),
         headers: {"Content-type" : "application/json"}
@@ -45,4 +49,14 @@ export class PartidaService {
     }
   }
 
+  async buscarPartida(partida:Partida): Promise <Partida | undefined>{
+    try{
+      this.listaPartidas = await this.getPartidas();
+      const partidaEncontrada = this.listaPartidas?.find((e) => e.uuid === partida.uuid);
+      return partidaEncontrada;
+    }catch(err){
+      console.log(err);
+      return undefined;
+    }
+  } 
 }

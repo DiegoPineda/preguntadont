@@ -14,4 +14,5 @@ export class DashboardPartidasComponent {
     this.router.navigate(['/partida']);
   }
 
+  
 }
