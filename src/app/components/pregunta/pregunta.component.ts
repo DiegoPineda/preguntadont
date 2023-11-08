@@ -10,6 +10,7 @@ export class PreguntaComponent {
   @Input() valoresPreguntas: string[] = [];
   @Input() enunciado: string = '';
   @Output() inputClicked: EventEmitter<string> = new EventEmitter<string>();
+  
   constructor(){
 
   }

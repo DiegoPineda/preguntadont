@@ -64,29 +64,7 @@ export class PartidaComponent {
   }
 
   async iniciarPartida(partida: Partida) {
-        /*  this.listaPartidas = await this.partidaService.getPartidas();
-  
-    for (const e of this.listaPartidas || []) {
-      if (e && e.idUsuario1 !== this.usuario?.id) {
-        if (this.usuario?.id !== undefined) {
-          e.idUsuario2 = this.usuario.id;
-          e.usuarioFinalizo2=true;
-          // unirme a la partida
-          this.partidaService.putPartida(e);
-          return e;
-        }
-        return undefined;
-      }
-    }
-  
-    if (this.usuario?.id !== undefined) {
-      this.partida.idUsuario1 = this.usuario?.id;
-      this.partida.usuarioFinalizo1=true;
-      this.partidaService.postPartida(this.partida);
-      return this.partidaService.buscarPartida(this.partida);
-    } else {
-      return undefined;
-    } */
+
   }
 
   async crearPartida(){
@@ -140,7 +118,6 @@ export class PartidaComponent {
 
   async cargarPregunta(categoria: string) {
     this.pregunta = await this.preguntaServise.preguntaAleatoria(categoria);
-    console.log(this.preguntaComponent);
     if (this.preguntaComponent && this.pregunta) {
       this.preguntaComponent.enunciado = this.pregunta.enunciado;
       this.preguntaComponent.valoresPreguntas = this.pregunta.opciones;
