@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayPageComponent } from './pages/play-page/play-page.component';
 import { PartidaComponent } from './components/partida/partida.component';
 import { PartidaPageComponent } from './pages/partida-page/partida-page.component';
+import { PreguntaComponent } from './components/pregunta/pregunta.component';
 
 
 
@@ -39,7 +40,8 @@ import { PartidaPageComponent } from './pages/partida-page/partida-page.componen
     PlayComponent,
     PlayPageComponent,
     PartidaComponent,
-    PartidaPageComponent
+    PartidaPageComponent,
+    PreguntaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Partida, Usuario } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { PartidaService } from 'src/app/services/partida-proceso.service';
+import { PlayComponent } from '../play/play.component';
+import { PreguntaService } from 'src/app/services/pregunta.service';
+import { PreguntaComponent } from '../pregunta/pregunta.component';
 
 @Component({
   selector: 'app-partida',
@@ -9,31 +12,66 @@ import { PartidaService } from 'src/app/services/partida-proceso.service';
   styleUrls: ['./partida.component.css']
 })
 export class PartidaComponent {
-  constructor(private partidaService: PartidaService, private auth: AuthService) { }
+
   listaPartidas: Partida[] | undefined = [];
-
   usuario: Usuario | undefined;
+  partida:Partida | undefined;
 
-  mostrarPlayComponent = true;
+  @ViewChild('preguntaComponent') preguntaComponent:PreguntaComponent | undefined;
+  @ViewChild(PlayComponent) playComponent!: PlayComponent;
+
+  ngAfterViewInit() {
+    this.playComponent.spinClick.subscribe((resultado: string) => {
+      this.cargarPregunta(resultado); 
+    });
+    this.preguntaComponent?.inputClicked.subscribe((respuesta: string) => {
+      
+      // Realizar otras acciones con la respuesta aquí
+    });
+  }
+
+  
+
+  
+
+  constructor(
+    private partidaService: PartidaService,
+    private auth: AuthService,
+    private pregunta:PreguntaService) { }
+
+    mostrarPlayClass = false;
+    mostrarPreguntaClass = true;
 
 
-
-  ngOnInit() {
+  async ngOnInit() {
     this.usuario = this.auth.currentUser;
-    this.crearPartida();
-    this.iniciarPartida();
+    this.partida = await this.crearPartida();
+    if(this.partida !== undefined){
+      this.iniciarPartida(this.partida);
+    }
 
   }
 
-  iniciarPartida(){
-
+  iniciarPartida(partida:Partida){
+    
   }
 
-  togglePlayComponent() {
-    this.mostrarPlayComponent = !this.mostrarPlayComponent;
+   async cargarPregunta(categoria:string){
+    const pregunta = await this.pregunta.preguntaAleatoria(categoria);
+    console.log(this.preguntaComponent);
+    if(this.preguntaComponent && pregunta){
+      this.preguntaComponent.enunciado=pregunta.enunciado;
+      this.preguntaComponent.valoresPreguntas = pregunta.opciones;
+      this.toggleComponents();
+    }
   }
 
-  async crearPartida() {
+  toggleComponents() {
+    this.mostrarPlayClass = !this.mostrarPlayClass;
+    this.mostrarPreguntaClass = !this.mostrarPreguntaClass;
+  }
+
+  async crearPartida():Promise<Partida | undefined> {
     const partida: Partida = {
       id: 0,
       idUsuario1: 0,
@@ -54,7 +92,7 @@ export class PartidaComponent {
           this.partidaService.putPartida(e);
           return e;
         }
-        return null;
+        return undefined;
       }
     }
   
@@ -63,7 +101,7 @@ export class PartidaComponent {
       this.partidaService.postPartida(partida);
       return partida;
     } else {
-      return null;
+      return undefined;
     }
   }
 
@@ -71,24 +109,3 @@ export class PartidaComponent {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-/* const estadistica: Estadistica= {
-      
-        id: this.formRegister.controls["id"].value,
-        puntos: 0,
-        partidasGanadas: 0,
-        partidasPerdidas: 0,
-      
-
-    }
-    this.usuarioService.postUsuario(usuario); */

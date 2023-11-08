@@ -3,7 +3,7 @@
     {
       "id": 1,
       "idUsuario1": 2,
-      "idUsuario2": 0,
+      "idUsuario2": 1,
       "aciertosUsuario1": 0,
       "aciertosUsuario2": 0,
       "usuarioFinalizo1": false,
