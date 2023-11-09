@@ -24,7 +24,7 @@ export class PlayComponent {
   girar() {
     if (this.wheelRef) {
       // Simula una rotación aleatoria de la ruleta
-      const randomRotation = Math.ceil(Math.random() * 3600);
+      const randomRotation = Math.ceil(1000);
       this.currentRotation += randomRotation;
       this.wheelRef.nativeElement.style.transform = `rotate(${this.currentRotation}deg`;
 

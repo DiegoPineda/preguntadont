@@ -28,10 +28,5 @@ export class UsuarioTiendaService {
         }
       });
   }
-
-
-
-
-
-
+  
 }

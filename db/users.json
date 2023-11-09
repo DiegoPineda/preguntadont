@@ -28,8 +28,8 @@
   "tienda": [
     {
       "id": 1,
-      "monedas": 0,
-      "cantBombas": 0,
+      "monedas": 159600000,
+      "cantBombas": 20000,
       "cantConejos": 0,
       "cantRelojes": 0,
       "cantReversa": 0

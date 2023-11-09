@@ -1,10 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
 import { Partida, Pregunta, Usuario } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { PartidaService } from 'src/app/services/partida-proceso.service';
 import { PlayComponent } from '../play/play.component';
-import { PreguntaService } from 'src/app/services/pregunta.service';
 import { PreguntaComponent } from '../pregunta/pregunta.component';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-partida',
@@ -24,6 +24,8 @@ export class PartidaComponent {
     aciertosUsuario2: 0,
     usuarioFinalizo1: false,
     usuarioFinalizo2: false,
+    contadorUsuario1: 0,
+    contadorUsuario2: 0,
     uuid: this.getUniqueId(4),
   }
 
@@ -31,6 +33,8 @@ export class PartidaComponent {
     | PreguntaComponent
     | undefined;
   @ViewChild(PlayComponent) playComponent!: PlayComponent;
+
+  @Output() enviarCategoria: EventEmitter<any> = new EventEmitter();
 
   ngAfterViewInit() {
     this.playComponent.spinClick.subscribe((resultado: string) => {
@@ -49,8 +53,7 @@ export class PartidaComponent {
   constructor(
     private partidaService: PartidaService,
     private auth: AuthService,
-    private preguntaServise: PreguntaService
-  ) {}
+    private enviarcategoria:SharingService  ) {}
 
   mostrarPlayClass = false;
   mostrarPreguntaClass = true;
@@ -93,8 +96,6 @@ export class PartidaComponent {
     }
   }
 
-
-
   validarRespuesta(respuesta: string) {
     if (this.partida?.idUsuario1 === this.usuario?.id) {
       if (
@@ -116,11 +117,10 @@ export class PartidaComponent {
     }
   }
 
-  async cargarPregunta(categoria: string) {
-    this.pregunta = await this.preguntaServise.preguntaAleatoria(categoria);
-    if (this.preguntaComponent && this.pregunta) {
-      this.preguntaComponent.enunciado = this.pregunta.enunciado;
-      this.preguntaComponent.valoresPreguntas = this.pregunta.opciones;
+  cargarPregunta(categoria: string) {
+    if (this.preguntaComponent) {
+      this.enviarcategoria.enviarCategoria(categoria);
+      //this.enviarCategoria.emit(categoria);
       this.toggleComponents();
     }
   }

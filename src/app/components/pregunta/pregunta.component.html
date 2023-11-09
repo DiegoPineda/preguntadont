@@ -1,12 +1,12 @@
-<section>
+<section >
     <div>
         <h3>{{enunciado}}</h3>
         
     </div>
     <form action="">
-        <input type="button" [value]="valoresPreguntas[0]" (click)="onInputClick(valoresPreguntas[0])">
-        <input type="button" [value]="valoresPreguntas[1]" (click)="onInputClick(valoresPreguntas[1])">
-        <input type="button" [value]="valoresPreguntas[2]" (click)="onInputClick(valoresPreguntas[2])">
-        <input type="button" [value]="valoresPreguntas[3]" (click)="onInputClick(valoresPreguntas[3])">
+        <input type="button" [value]="valores?.[0]" >
+        <input type="button" [value]="valores?.[1]" >
+        <input type="button" [value]="valores?.[2]" >
+        <input type="button" [value]="valores?.[3]" >
     </form>
 </section>

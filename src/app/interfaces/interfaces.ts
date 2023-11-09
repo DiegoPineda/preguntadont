@@ -62,5 +62,7 @@ export interface Partida{
     aciertosUsuario1: number,
     aciertosUsuario2: number,
     usuarioFinalizo1: boolean,
-    usuarioFinalizo2: boolean
+    usuarioFinalizo2: boolean,
+    contadorUsuario1: number,
+    contadorUsuario2: number
 }

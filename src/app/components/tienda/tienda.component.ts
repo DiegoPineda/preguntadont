@@ -67,7 +67,7 @@ export class TiendaComponent {
           this.sharingObservableTienda.updateTiendaUsuario(usuarioTienda);
 
 
-          alert("Gracias por la compra :)")
+          alert("Gracias por la compra 😀")
 
         } else {
           alert("Monedas insuficientes");
