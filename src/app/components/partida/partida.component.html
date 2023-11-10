@@ -1,4 +1,2 @@
-<app-play [ngClass]="{oculto: mostrarPlayClass}"></app-play>
-<app-pregunta #preguntaComponent [ngClass]="{oculto: mostrarPreguntaClass}"></app-pregunta>
-
-
+<app-play *ngIf="mostrarPlay"></app-play>
+<app-pregunta *ngIf="mostrarPregunta"></app-pregunta>

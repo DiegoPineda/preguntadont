@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { PartidaService } from 'src/app/services/partida.service';
 
 
 @Component({
@@ -8,10 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard-partidas.component.css']
 })
 export class DashboardPartidasComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private partidaService:PartidaService) {}
 
+  ngOnInit():void{
+    
+  }
   irAPlay() {
-    this.router.navigate(['/partida']);
+    
+    this.partidaService.crearPartida();
+    
   }
 
   

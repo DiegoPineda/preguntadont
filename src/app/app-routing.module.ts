@@ -13,8 +13,8 @@ const routes: Routes = [
   {path:"login", component:LoginPageComponent},
   {path: "tienda", component:TiendaPageComponent},
   {path: "registro", component:RegisterPageComponent},
-  {path: 'partida', component:PartidaPageComponent, canActivate: [AuthGuard]},
-  {path: 'home', component:HomePageComponent, canActivate: [AuthGuard]},
+  {path: 'partida/:id', component:PartidaPageComponent, canActivate: [AuthGuard]},
+  {path: "home", component:HomePageComponent, canActivate: [AuthGuard]},
   {path:"**", redirectTo:"login"}
 ];
 

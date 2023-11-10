@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { Pregunta } from 'src/app/interfaces/interfaces';
 import { PreguntaService } from 'src/app/services/pregunta.service';
 import { SharingService } from 'src/app/services/sharing.service';
@@ -14,30 +14,38 @@ export class PreguntaComponent {
   pregunta: Pregunta | undefined;
   categoria:string = '';
 
-  @Output() inputClicked: EventEmitter<string> = new EventEmitter<string>();
-
   constructor(private preguntaService: PreguntaService, private sharingService:SharingService) {}
 
 
-  onInputClick(value: string) {
-    this.inputClicked.emit(value);
-  }
-
   async ngOnInit() {
-    
-    
     await this.cargarPregunta();
   }
 
   async cargarPregunta() {
     this.sharingService.categoria.subscribe(async (categoria) => {
-      if (categoria) {
+      if (categoria && typeof categoria ==="string") {
         this.categoria = categoria;
         this.pregunta = await this.preguntaService.preguntaAleatoria(this.categoria);
         this.enunciado = this.pregunta?.enunciado;
         this.valores = this.pregunta?.opciones;
+        
       }
     });
   }
+
+
+  verificarRespuesta(respuestaSeleccionada: string | undefined) {
+    // Verifica si la respuesta seleccionada es la correcta
+    if (respuestaSeleccionada === this.pregunta?.respuesta) {
+      console.log('¡Respuesta correcta!');
+      this.sharingService.enviarResultado(true);
+    } else {
+      console.log('Respuesta incorrecta. Intenta de nuevo.');
+      this.sharingService.enviarResultado(false);
+    }
+  }
+
+
+
   
 }

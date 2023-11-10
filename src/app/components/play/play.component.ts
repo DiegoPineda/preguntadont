@@ -5,6 +5,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { SharingService } from 'src/app/services/sharing.service';
 
 @Component({
   selector: 'app-play',
@@ -17,14 +18,14 @@ export class PlayComponent {
   currentRotation: number = 0;
   numberOfElements: number = 6; // Número de elementos en la ruleta
 
-  @Output() spinClick: EventEmitter<any> = new EventEmitter();
+   @Output() spinClick: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor(private sharingService: SharingService) { }
 
   girar() {
     if (this.wheelRef) {
       // Simula una rotación aleatoria de la ruleta
-      const randomRotation = Math.ceil(1000);
+      const randomRotation = Math.ceil(Math.random()*3600);
       this.currentRotation += randomRotation;
       this.wheelRef.nativeElement.style.transform = `rotate(${this.currentRotation}deg`;
 
@@ -58,12 +59,10 @@ export class PlayComponent {
           result = 'valor no reconocido';
           break;
       }
-      
-      setTimeout(() => {
-        this.spinClick.emit(result);
-      }, (this.currentRotation+4000));
-    } else {
-      this.spinClick.emit('valor no reconocido');
+
+        setTimeout(() => {
+          this.sharingService.enviarCategoriaSpin(result);
+        }, (this.currentRotation + 4000));
+      } 
     }
   }
-}

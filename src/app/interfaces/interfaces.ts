@@ -55,8 +55,7 @@ export interface Pregunta {
 }
 
 export interface Partida{
-    id:number,
-    uuid: string,
+    id:string,
     idUsuario1:number,
     idUsuario2:number,
     aciertosUsuario1: number,
@@ -64,5 +63,6 @@ export interface Partida{
     usuarioFinalizo1: boolean,
     usuarioFinalizo2: boolean,
     contadorUsuario1: number,
-    contadorUsuario2: number
+    contadorUsuario2: number,
+    amigo: boolean
 }

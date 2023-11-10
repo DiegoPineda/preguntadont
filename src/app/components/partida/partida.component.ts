@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Output, ViewChild } from '@angular/core';
-import { Partida, Pregunta, Usuario } from 'src/app/interfaces/interfaces';
+import { Component, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription, first} from 'rxjs';
+import { Partida, Usuario } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
-import { PartidaService } from 'src/app/services/partida-proceso.service';
-import { PlayComponent } from '../play/play.component';
-import { PreguntaComponent } from '../pregunta/pregunta.component';
+import { PartidaService } from 'src/app/services/partida.service';
 import { SharingService } from 'src/app/services/sharing.service';
+import { PlayComponent } from '../play/play.component';
 
 @Component({
   selector: 'app-partida',
@@ -12,12 +13,15 @@ import { SharingService } from 'src/app/services/sharing.service';
   styleUrls: ['./partida.component.css'],
 })
 export class PartidaComponent {
-  contador:number = 0;
   listaPartidas: Partida[] | undefined = [];
-  pregunta: Pregunta | undefined;
+  pregunta: boolean | undefined;
   usuario: Usuario | undefined;
-  partida: Partida  = {
-    id: 0,
+  categoria: string | null = "";
+  
+
+
+  partida: Partida = {
+    id: "",
     idUsuario1: 0,
     idUsuario2: 0,
     aciertosUsuario1: 0,
@@ -26,77 +30,130 @@ export class PartidaComponent {
     usuarioFinalizo2: false,
     contadorUsuario1: 0,
     contadorUsuario2: 0,
-    uuid: this.getUniqueId(4),
-  }
-
-  @ViewChild('preguntaComponent') preguntaComponent:
-    | PreguntaComponent
-    | undefined;
-  @ViewChild(PlayComponent) playComponent!: PlayComponent;
-
-  @Output() enviarCategoria: EventEmitter<any> = new EventEmitter();
-
-  ngAfterViewInit() {
-    this.playComponent.spinClick.subscribe((resultado: string) => {
-      this.cargarPregunta(resultado);
-    });
-    this.preguntaComponent?.inputClicked.subscribe((respuesta: string) => {
-      this.validarRespuesta(respuesta);
-      this.partidaService.putPartida(this.partida);
-      if(this.contador<10){
-        this.contador++;
-        this.toggleComponents();
-      }
-    });
+    amigo: false
   }
 
   constructor(
     private partidaService: PartidaService,
     private auth: AuthService,
-    private enviarcategoria:SharingService  ) {}
+    private sharingService: SharingService,
+    private route: ActivatedRoute
+  ) { }
 
-  mostrarPlayClass = false;
-  mostrarPreguntaClass = true;
+  mostrarPlay = false;
+  mostrarPregunta = false;
 
-  async ngOnInit() {
-    this.usuario = this.auth.currentUser;
-    await this.crearPartida();
-    if (this.partida !== undefined) {
-      this.iniciarPartida(this.partida);
+  ngOnInit() {
+    this.iniciarPartida();
+  }
+
+
+ 
+
+
+
+  async iniciarPartida() {
+
+    this.usuario = await this.auth.currentUser;
+
+    //consigo el id de la url
+    let partidaId;
+    this.route.params.subscribe(params => {
+      partidaId = params['id'];
+      console.log(partidaId);
+    });
+
+
+    //busco la partida en base al id
+    if (partidaId != undefined) {
+      let part = await this.partidaService.getPartida(partidaId);
+      if (part) {
+        this.partida = part;
+      }
     }
-  }
 
-  async iniciarPartida(partida: Partida) {
+    console.log("id usuario conectado " + this.usuario?.id);
+    console.log("partida idusuario1 " + this.partida.idUsuario1);
+    console.log("partida idusuario2 " + this.partida.idUsuario2);
+    if ((this.usuario?.id === this.partida.idUsuario1) || (this.usuario?.id === this.partida.idUsuario2)) {
+      if (this.usuario.id == this.partida.idUsuario1 && this.partida.usuarioFinalizo1 == true) {
+        alert("No tenes nada que hacer aca compa1");
+      } else if (this.usuario.id == this.partida.idUsuario2 && this.partida.usuarioFinalizo2 == true) {
+        alert("No tenes nada que hacer aca compa2");
+      } else {
+        //ACA VA LA LOGICA
+        //usuario1
+        if (this.usuario.id === this.partida.idUsuario1) {
+          // Lógica para el usuario 1
 
-  }
 
-  async crearPartida(){
-    this.listaPartidas = await this.partidaService.getPartidas();
-  
-    for (const e of this.listaPartidas || []) {
-      if (e && e.idUsuario1 !== this.usuario?.id) {
-        if (this.usuario?.id !== undefined) {
-          this.partida=e;
-          this.partida.idUsuario2=this.usuario.id;
-          this.partida.usuarioFinalizo2=true;
+          while (this.partida.contadorUsuario1 < 10) {
+            this.mostrarPlay = true;
 
-          this.partidaService.putPartida(this.partida);
+            const valorRecibido = await new Promise<string | null>((resolve) => {
+              let sub: Subscription;
+              sub = this.sharingService.recibirCategoriaSpin.subscribe((valor) => {
+                if (sub) {
+                  sub.unsubscribe();
+                  this.categoria = valor;
+                  resolve(valor);
+                }
+              });
+            });
+
+
+            
+            this.mostrarPlay = false;
+            console.log(this.categoria);
+
+            this.mostrarPregunta=true;
+            if(this.categoria!=null){
+              this.sharingService.enviarCategoria(this.categoria);
+            }
+            //aumentar 1 a los errores del usuario en la categoria y hacer put
+            this.partida.contadorUsuario1++;
+            //hacer un put del contador de usuario
+
+            const respuestaPregunta = await new Promise<boolean | null>((resolve) => {
+              let sub: Subscription;
+              sub = this.sharingService.recibirResultado.subscribe((valor) => {
+                if (sub) {
+                  sub.unsubscribe();
+                  if(valor !=null){
+                    this.pregunta = valor;
+                  }
+                  resolve(valor);
+                }
+              });
+            });
+            this.mostrarPregunta=false;
+            //put en base a verdadero o falso 
+            console.log(this.pregunta);
+            
+
+            console.log("iteracion " + this.partida.contadorUsuario1);
+
+          }
+          console.log("esta es la categoria " + this.categoria);
+        } else {//usuario2
+
         }
       }
+
+    } else {
+      alert("No tenes nada que hacer aca compa3")
     }
 
-    if (this.usuario !== undefined) {
-      this.partida.idUsuario1 = this.usuario.id;
-      this.partida.usuarioFinalizo1=true;
-      this.partidaService.postPartida(this.partida);
-      const partidaBuscada = await this.partidaService.buscarPartida(this.partida);
-      if(partidaBuscada !== undefined){
-        this.partida = partidaBuscada;
-      }
-    }
+
   }
+}
 
-  validarRespuesta(respuesta: string) {
+
+
+
+
+
+/*   validarRespuesta(respuesta: string) {
     if (this.partida?.idUsuario1 === this.usuario?.id) {
       if (
         this.pregunta?.respuesta === respuesta &&
@@ -115,30 +172,26 @@ export class PartidaComponent {
         this.partida.aciertosUsuario2++;
       }
     }
-  }
+  } */
 
-  cargarPregunta(categoria: string) {
+/*   cargarPregunta(categoria: string) {
     if (this.preguntaComponent) {
-      this.enviarcategoria.enviarCategoria(categoria);
+      this.sharingService.enviarCategoria(categoria);
       //this.enviarCategoria.emit(categoria);
       this.toggleComponents();
     }
-  }
+  } */
 
-  toggleComponents() {
-    this.mostrarPlayClass = !this.mostrarPlayClass;
-    this.mostrarPreguntaClass = !this.mostrarPreguntaClass;
-  }
 
-  getUniqueId(parts: number): string {
-    const stringArr = [];
-    for (let i = 0; i < parts; i++) {
-      // tslint:disable-next-line:no-bitwise
-      const S4 = (((1 + Math.random()) * 0x10000) | 0)
-        .toString(16)
-        .substring(1);
-      stringArr.push(S4);
-    }
-    return stringArr.join('-');
+/* getUniqueId(parts: number): string {
+  const stringArr = [];
+  for (let i = 0; i < parts; i++) {
+    // tslint:disable-next-line:no-bitwise
+    const S4 = (((1 + Math.random()) * 0x10000) | 0)
+      .toString(16)
+      .substring(1);
+    stringArr.push(S4);
   }
-}
+  return stringArr.join('-');
+} */
+

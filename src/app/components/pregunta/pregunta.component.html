@@ -4,9 +4,9 @@
         
     </div>
     <form action="">
-        <input type="button" [value]="valores?.[0]" >
-        <input type="button" [value]="valores?.[1]" >
-        <input type="button" [value]="valores?.[2]" >
-        <input type="button" [value]="valores?.[3]" >
+        <input type="button" [value]="valores?.[0]" (click)="verificarRespuesta(valores?.[0])">
+        <input type="button" [value]="valores?.[1]" (click)="verificarRespuesta(valores?.[1])">
+        <input type="button" [value]="valores?.[2]" (click)="verificarRespuesta(valores?.[2])">
+        <input type="button" [value]="valores?.[3]" (click)="verificarRespuesta(valores?.[3])">
     </form>
 </section>
