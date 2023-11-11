@@ -4,49 +4,84 @@
       "id": 1,
       "categoria": "Geografía",
       "enunciado": "¿Cuál es la capital de Francia?",
-      "opciones": ["Madrid", "París", "Londres", "Roma"],
+      "opciones": [
+        "Madrid",
+        "París",
+        "Londres",
+        "Roma"
+      ],
       "respuesta": "París"
     },
     {
       "id": 2,
       "categoria": "Geografía",
       "enunciado": "¿Dónde se encuentra la Torre Eiffel?",
-      "opciones": ["Londres", "París", "Nueva York", "Roma"],
+      "opciones": [
+        "Londres",
+        "París",
+        "Nueva York",
+        "Roma"
+      ],
       "respuesta": "París"
     },
     {
       "id": 3,
       "categoria": "Geografía",
       "enunciado": "¿Cuál es el río más largo del mundo?",
-      "opciones": ["Nilo", "Amazonas", "Misisipi", "Yangtsé"],
+      "opciones": [
+        "Nilo",
+        "Amazonas",
+        "Misisipi",
+        "Yangtsé"
+      ],
       "respuesta": "Amazonas"
     },
     {
       "id": 4,
       "categoria": "Geografía",
       "enunciado": "¿Cuál es el país más grande del mundo en términos de superficie?",
-      "opciones": ["Estados Unidos", "Rusia", "China", "India"],
+      "opciones": [
+        "Estados Unidos",
+        "Rusia",
+        "China",
+        "India"
+      ],
       "respuesta": "Rusia"
     },
     {
       "id": 5,
       "categoria": "Geografía",
       "enunciado": "¿En qué continente se encuentra la cordillera de los Andes?",
-      "opciones": ["África", "Europa", "América", "Asia"],
+      "opciones": [
+        "África",
+        "Europa",
+        "América",
+        "Asia"
+      ],
       "respuesta": "América"
     },
     {
       "id": 6,
       "categoria": "Geografía",
       "enunciado": "¿Qué país es conocido como 'El país del sol naciente'?",
-      "opciones": ["China", "India", "Japón", "México"],
+      "opciones": [
+        "China",
+        "India",
+        "Japón",
+        "México"
+      ],
       "respuesta": "Japón"
     },
     {
       "id": 7,
       "categoria": "Geografía",
       "enunciado": "¿Cuál es la capital de Italia?",
-      "opciones": ["París", "Madrid", "Roma", "Londres"],
+      "opciones": [
+        "París",
+        "Madrid",
+        "Roma",
+        "Londres"
+      ],
       "respuesta": "Roma"
     },
     {
@@ -65,21 +100,36 @@
       "id": 9,
       "categoria": "Geografía",
       "enunciado": "¿Dónde se encuentra el Gran Cañón del Colorado?",
-      "opciones": ["Arizona", "Texas", "California", "Nevada"],
+      "opciones": [
+        "Arizona",
+        "Texas",
+        "California",
+        "Nevada"
+      ],
       "respuesta": "Arizona"
     },
     {
       "id": 10,
       "categoria": "Geografía",
       "enunciado": "¿Cuál es la capital de Rusia?",
-      "opciones": ["Moscú", "San Petersburgo", "Nueva York", "Kiev"],
+      "opciones": [
+        "Moscú",
+        "San Petersburgo",
+        "Nueva York",
+        "Kiev"
+      ],
       "respuesta": "Moscú"
     },
     {
       "id": 11,
       "categoria": "Historia",
       "enunciado": "¿En qué año comenzó la Primera Guerra Mundial?",
-      "opciones": ["1914", "1939", "1918", "1945"],
+      "opciones": [
+        "1914",
+        "1939",
+        "1918",
+        "1945"
+      ],
       "respuesta": "1914"
     },
     {
@@ -98,7 +148,12 @@
       "id": 13,
       "categoria": "Historia",
       "enunciado": "¿Cuál fue el último faraón de Egipto?",
-      "opciones": ["Cleopatra", "Tutankamón", "Ramsés II", "Akenatón"],
+      "opciones": [
+        "Cleopatra",
+        "Tutankamón",
+        "Ramsés II",
+        "Akenatón"
+      ],
       "respuesta": "Cleopatra"
     },
     {
@@ -153,14 +208,24 @@
       "id": 18,
       "categoria": "Historia",
       "enunciado": "¿En qué año terminó la Segunda Guerra Mundial?",
-      "opciones": ["1945", "1939", "1941", "1950"],
+      "opciones": [
+        "1945",
+        "1939",
+        "1941",
+        "1950"
+      ],
       "respuesta": "1945"
     },
     {
       "id": 19,
       "categoria": "Historia",
       "enunciado": "¿Quién fue el emperador romano conocido como 'El Grande'?",
-      "opciones": ["Julio César", "Marco Aurelio", "Trajano", "Augusto"],
+      "opciones": [
+        "Julio César",
+        "Marco Aurelio",
+        "Trajano",
+        "Augusto"
+      ],
       "respuesta": "Augusto"
     },
     {
@@ -179,7 +244,12 @@
       "id": 21,
       "categoria": "Deportes",
       "enunciado": "¿En qué deporte se utiliza una pelota de béisbol?",
-      "opciones": ["Béisbol", "Fútbol", "Baloncesto", "Golf"],
+      "opciones": [
+        "Béisbol",
+        "Fútbol",
+        "Baloncesto",
+        "Golf"
+      ],
       "respuesta": "Béisbol"
     },
     {
@@ -198,21 +268,36 @@
       "id": 23,
       "categoria": "Deportes",
       "enunciado": "¿Cuántos jugadores conforman un equipo de fútbol?",
-      "opciones": ["9", "11", "7", "10"],
+      "opciones": [
+        "9",
+        "11",
+        "7",
+        "10"
+      ],
       "respuesta": "11"
     },
     {
       "id": 24,
       "categoria": "Deportes",
       "enunciado": "¿Cuál es el deporte más popular en la India?",
-      "opciones": ["Críquet", "Fútbol", "Hockey", "Tenis"],
+      "opciones": [
+        "Críquet",
+        "Fútbol",
+        "Hockey",
+        "Tenis"
+      ],
       "respuesta": "Críquet"
     },
     {
       "id": 25,
       "categoria": "Deportes",
       "enunciado": "¿Cuántos sets hay en un partido de tenis?",
-      "opciones": ["5", "3", "4", "6"],
+      "opciones": [
+        "5",
+        "3",
+        "4",
+        "6"
+      ],
       "respuesta": "3"
     },
     {
@@ -243,7 +328,12 @@
       "id": 28,
       "categoria": "Deportes",
       "enunciado": "¿Qué deporte practicaba Michael Phelps?",
-      "opciones": ["Atletismo", "Natación", "Ciclismo", "Fútbol"],
+      "opciones": [
+        "Atletismo",
+        "Natación",
+        "Ciclismo",
+        "Fútbol"
+      ],
       "respuesta": "Natación"
     },
     {
@@ -274,7 +364,12 @@
       "id": 31,
       "categoria": "Ciencia",
       "enunciado": "¿Cuál es el símbolo químico del agua?",
-      "opciones": ["H", "Ag", "O", "H2O"],
+      "opciones": [
+        "H",
+        "Ag",
+        "O",
+        "H2O"
+      ],
       "respuesta": "H2O"
     },
     {
@@ -305,7 +400,12 @@
       "id": 34,
       "categoria": "Ciencia",
       "enunciado": "¿Qué planeta es conocido como 'El planeta rojo'?",
-      "opciones": ["Marte", "Venus", "Júpiter", "Mercurio"],
+      "opciones": [
+        "Marte",
+        "Venus",
+        "Júpiter",
+        "Mercurio"
+      ],
       "respuesta": "Marte"
     },
     {
@@ -331,6 +431,126 @@
         "Stephen Hawking"
       ],
       "respuesta": "Isaac Newton"
+    },
+    {
+      "id": 37,
+      "categoria": "Arte",
+      "enunciado": "¿Quién pintó 'La persistencia de la memoria'?",
+      "opciones": [
+        "Pablo Picasso",
+        "Salvador Dalí",
+        "Vincent van Gogh",
+        "Claude Monet"
+      ],
+      "respuesta": "Salvador Dalí"
+    },
+    {
+      "id": 38,
+      "categoria": "Arte",
+      "enunciado": "¿En qué siglo nació el pintor italiano Leonardo da Vinci?",
+      "opciones": [
+        "Siglo XV",
+        "Siglo XVI",
+        "Siglo XVII",
+        "Siglo XIV"
+      ],
+      "respuesta": "Siglo XV"
+    },
+    {
+      "id": 39,
+      "categoria": "Arte",
+      "enunciado": "¿Cuál es la escultura más famosa de Miguel Ángel?",
+      "opciones": [
+        "El David",
+        "La Piedad",
+        "El Moisés",
+        "La Última Cena"
+      ],
+      "respuesta": "El David"
+    },
+    {
+      "id": 40,
+      "categoria": "Arte",
+      "enunciado": "¿Quién pintó la Mona Lisa?",
+      "opciones": [
+        "Vincent van Gogh",
+        "Leonardo da Vinci",
+        "Pablo Picasso",
+        "Michelangelo"
+      ],
+      "respuesta": "Leonardo da Vinci"
+    },
+    {
+      "id": 41,
+      "categoria": "Arte",
+      "enunciado": "¿Qué movimiento artístico está asociado con obras como 'Noche estrellada' de Vincent van Gogh?",
+      "opciones": [
+        "Renacimiento",
+        "Impresionismo",
+        "Cubismo",
+        "Expresionismo"
+      ],
+      "respuesta": "Impresionismo"
+    },
+    {
+      "id": 42,
+      "categoria": "Entretenimiento",
+      "enunciado": "¿Qué película ganó el Oscar a la Mejor Película en 1994?",
+      "opciones": [
+        "Titanic",
+        "Forrest Gump",
+        "El rey león",
+        "Pulp Fiction"
+      ],
+      "respuesta": "Forrest Gump"
+    },
+    {
+      "id": 43,
+      "categoria": "Entretenimiento",
+      "enunciado": "¿En qué película de James Bond aparece el personaje Jaws?",
+      "opciones": [
+        "Vive y deja morir",
+        "GoldenEye",
+        "Moonraker",
+        "Casino Royale"
+      ],
+      "respuesta": "Moonraker"
+    },
+    {
+      "id": 44,
+      "categoria": "Entretenimiento",
+      "enunciado": "¿Quién interpretó a Neo en la película 'The Matrix'?",
+      "opciones": [
+        "Keanu Reeves",
+        "Laurence Fishburne",
+        "Hugo Weaving",
+        "Carrie-Anne Moss"
+      ],
+      "respuesta": "Keanu Reeves"
+    },
+    {
+      "id": 45,
+      "categoria": "Entretenimiento",
+      "enunciado": "¿Cuál es la película más taquillera de todos los tiempos?",
+      "opciones": [
+        "Avengers: Endgame",
+        "Avatar",
+        "Titanic",
+        "Star Wars: El despertar de la Fuerza"
+      ],
+      "respuesta": "Avatar"
+    },
+    {
+      "id": 46,
+      "categoria": "Entretenimiento",
+      "enunciado": "¿Cuál es el nombre del actor que interpretó a Tony Stark en las películas de Iron Man?",
+      "opciones": [
+        "Robert Downey Jr.",
+        "Chris Evans",
+        "Chris Hemsworth",
+        "Mark Ruffalo"
+      ],
+      "respuesta": "Robert Downey Jr."
     }
   ]
 }

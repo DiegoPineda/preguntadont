@@ -63,23 +63,27 @@ export class UsuarioService {
     return undefined;
   }
 
-  
-  
-
-
-  /* async getUsuarios(email: string, password:string): Promise <Usuario | undefined> {
-    try{
-      const resultado = await fetch(this.url+"?${email}=${"+email+"}", {method: "GET"})
-      const citas= resultado.json();
-      if(citas.password==password)
-      {
-        return citas;
-      }
-      
-    }catch(error){
+  async getUsuarioEstadistica (id: number): Promise<Estadistica | undefined>{
+    try {
+      const resultado = await fetch(this.url3+"/"+id, { method: "GET" })
+      const estadistica = resultado.json();
+      return estadistica;
+    } catch (error) {
       console.log(error);
     }
     return undefined;
-  } */
-  
+  }
+
+  async putUsuarioEstadistica(estadistica: Estadistica) {
+    try {
+      await fetch(`${this.url3}/${estadistica.id}`, {
+        method: "PUT",
+        body: JSON.stringify(estadistica),
+        headers: { "Content-type": "application/json" }
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 }

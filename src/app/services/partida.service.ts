@@ -18,6 +18,7 @@ export class PartidaService {
   ) { }
 
   url: string = "http://localhost:3002/partidas";
+  url2: string= "http://localhost:3002/partidasTerminadas";
 
   async getPartidas(): Promise<Partida[] | undefined> {
     try {
@@ -132,5 +133,31 @@ export class PartidaService {
       }
     }
   }
+
+  async deletePartida(partidaId: string) {
+    const deleteUrl = `${this.url}/${partidaId}`;
+
+    try {
+      await fetch(deleteUrl, { method: "DELETE" });
+      console.log(`Partida eliminada con éxito: ${partidaId}`);
+    } catch (error) {
+      console.log(`Error al eliminar la partida ${partidaId}:`, error);
+    }
+  }
+
+  async postPartidaTerminada(partida: Partida) {
+    try {
+      await fetch(this.url2, {
+        method: "POST",
+        body: JSON.stringify(partida),
+        headers: { "Content-type": "application/json" }
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+
+
 
 }
