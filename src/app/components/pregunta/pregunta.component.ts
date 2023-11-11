@@ -167,8 +167,8 @@ export class PreguntaComponent {
       if (this.timer > 0) {
         this.timer--;
       } else {
-        // vuelvo patra preguntar a diego
         this.timerSubscription?.unsubscribe(); 
+        this.sharingService.enviarResultado(false);
       }
     });
   }
