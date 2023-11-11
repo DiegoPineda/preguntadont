@@ -25,9 +25,9 @@
     {
       "id": 2,
       "monedas": 0,
-      "cantBombas": 0,
-      "cantConejos": 0,
-      "cantRelojes": 0,
+      "cantBombas": 1,
+      "cantConejos": 18,
+      "cantRelojes": 3,
       "cantReversa": 0
     }
   ],
@@ -58,17 +58,17 @@
       "partidasPerdidas": 0,
       "partidasEmpatadas": 0,
       "aciertosArte": 1,
-      "totalArte": 1,
+      "totalArte": 6,
       "aciertosCiencia": 2,
-      "totalCiencia": 2,
-      "aciertosDeporte": 0,
-      "totalDeporte": 0,
-      "aciertosEntretenimiento": 4,
-      "totalEntretenimiento": 4,
-      "aciertosGeografia": 1,
-      "totalGeografia": 1,
+      "totalCiencia": 6,
+      "aciertosDeporte": 1,
+      "totalDeporte": 7,
+      "aciertosEntretenimiento": 6,
+      "totalEntretenimiento": 12,
+      "aciertosGeografia": 3,
+      "totalGeografia": 8,
       "aciertosHistoria": 2,
-      "totalHistoria": 2
+      "totalHistoria": 4
     }
   ]
 }

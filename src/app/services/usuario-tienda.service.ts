@@ -16,17 +16,19 @@ export class UsuarioTiendaService {
     return this.http.get<Tienda>(this.url + userId);
   }
 
-  updateUserTienda(usuarioTienda: Tienda){
-    
-    this.http.put<Tienda>(this.url+usuarioTienda.id, usuarioTienda)
-      .subscribe({
-        next: data => {
-          console.log("Tienda del usuario actualizada correctamente");
-        },
-        error: error => {
-          console.error('Hubo un error al actualizar la tienda del usuario', error);
-        }
-      });
+  updateUserTienda(usuarioTienda: Tienda | undefined){
+    if(usuarioTienda !== undefined){
+      this.http.put<Tienda>(this.url+usuarioTienda.id, usuarioTienda)
+        .subscribe({
+          next: data => {
+            console.log("Tienda del usuario actualizada correctamente");
+          },
+          error: error => {
+            console.error('Hubo un error al actualizar la tienda del usuario', error);
+          }
+        });
+
+    }
   }
   
 }

@@ -14,7 +14,11 @@ import { NumeroPositivoValidator } from 'src/app/shared/validators/numero-positi
 })
 export class TiendaComponent {
 
-  constructor(private sharingObservableTienda: SharingService, private tiendaService: TiendaService, private usuarioTiendaService: UsuarioTiendaService, private auth: AuthService, private fb: FormBuilder) {
+  constructor(private sharingObservableTienda: SharingService, 
+              private tiendaService: TiendaService, 
+              private usuarioTiendaService: UsuarioTiendaService, 
+              private auth: AuthService, 
+              private fb: FormBuilder) {
   }
 
   listaProductos: Productos[] | undefined = [];
