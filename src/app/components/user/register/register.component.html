@@ -1,9 +1,12 @@
+<div>
+  <img src="../../assets/logo.png" alt="">
+</div>
 <section>
   <h2>Formulario registro</h2>
 
   <form method="POST" id="formRegister" (ngSubmit)="registrarUsuario()" [formGroup]="formRegister">
     <div class="campo">
-      <input type="text" id="nickname" class="nickname" placeholder="nickname" formControlName="nickname" (input)="validar('nickname', 'error')"/>
+      <input type="text" id="nickname" class="nickname input" placeholder="nickname" formControlName="nickname" (input)="validar('nickname', 'error')"/>
     </div>
     <div class="error" *ngIf="validar('nickname', 'nicknameTaken')">
       <span>El nombre de usuario ya está en uso.</span>
@@ -17,7 +20,7 @@
 
 
     <div class="campo">
-      <input type="email" id="email" class="email" placeholder="Email" formControlName="email" />
+      <input type="email" id="email" class="email input" placeholder="Email" formControlName="email" />
     </div>
     <div class="error" *ngIf="validar('email', 'emailTaken')">
       <span>El email ya está en uso.</span>
@@ -31,7 +34,7 @@
 
 
     <div class="campo">
-      <input type="password" id="password" class="password" placeholder="Contraseña" formControlName="password" />
+      <input type="password" id="password" class="password input" placeholder="Contraseña" formControlName="password" />
     </div>
     <div class="error" *ngIf="validar('email', 'minlength')">
       <span>La contraseña debe tener al menos 8 caracteres.</span>
@@ -46,10 +49,10 @@
     </div>
     
     <div class="campo">
-      <input type="submit" value="Registrarse" id="btnRegitro">
+      <input type="submit" value="Registrarse" id="btnRegistro">
     </div>
     <div class="textoLogin">
-      <a (click)="redireccionarARegistro()">Login</a>
+      <a (click)="redireccionarARegistro()">Mejor inicio sesión 🥱</a>
     </div>
   </form>
 </section>

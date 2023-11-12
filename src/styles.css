@@ -1,9 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
 
+
 :root {
-    --background-color: rgb(163, 172, 255);
-    --accent: rgb(0, 255, 221);
-    --boder-size: 2px;
+    --deportes: #feae00;
+    --historia: #b102b7;
+    --geografia: #1937e0;
+    --arte: #db70a2;
+    --entretenimiento: #e40000;
+    --ciencia: #26e400;
+    --backgroundcolor: #fff;
+    --letra-normal: #9e9e9e;
 }
 
 html {
@@ -16,10 +22,9 @@ html {
     font-family: 'Chewy', cursive;
     margin: 0;
 }
-
-body {
+html, body, app-root {
     height: 100%;
-    width: 100%;
+    margin: 0;
 }
 
 .oculto {

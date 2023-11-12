@@ -1,23 +1,49 @@
-.navegacion{
-    display: flex;
-    justify-content: end;
-    background-color: black;
-  }
-  div{
-    margin: 1rem;
-  }
-  
-  .navegacion a{
-    color: white;
-    text-decoration: none;
-    padding: .5rem 2rem;
-    margin-top: .5rem;
-    
-  }
-  
-  .user{
-    color: salmon;
-    font-size: 1.3rem;
-    font-weight: bold;
-  }
-  
+header{
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-content: space-between;
+  height: 5rem;
+  background-color: rgb(255, 234, 195);
+  color: rgb(0, 0, 0);
+}
+
+.logo{
+  grid-column: auto;
+}
+
+
+.logo img{
+  height: 5rem;
+  width: auto;
+  padding-left: 2rem;
+}
+
+.user {
+  grid-column: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.navegacion {
+  grid-column: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  text-align: right;
+}
+
+
+.navegacion a {
+  color: white;
+  text-decoration: none;
+  padding: .5rem 2rem;
+  font-size: 3rem;
+}
+

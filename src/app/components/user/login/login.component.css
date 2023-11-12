@@ -1,54 +1,85 @@
+
 section{
-  position: relative;
-  top: 25rem;
-  width: 50rem;
-  height: 45rem;
+  width: auto;
+  height: auto;
   margin: 0 auto;
   padding: 0 2rem;
   justify-content: center;
   text-align: center;
-  border-radius: 2rem;
-  background-color: rgba(255, 255, 255, 0.63);
+  align-items: center;
+  background-color: var(--backgroundcolor);
+  color: var(--letra-normal); 
+  border-radius: 2%;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 40rem;
+}
 
-.campo input, .campo button{
-  width: 80%;
-  margin: 0.5rem 0;
-  height: 4rem;
-  width: 95%;
+.campo .input{
+  width: 75%;
+  height: 5rem;
   text-align: center;
-  border-radius: 2rem;
-  border: none;
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 10rem;
   font-size: 2rem;
   transition: 0.3 ease;
 }
-
-h2{
-  font-size: 5rem;
-  margin-bottom: 3rem;
+.campo{
+  width: 100%;
 }
 
-.campo input:focus, .campo button:focus{
+.campo #ingresar{
+  width: 75%;
+  height: 5rem;
+  text-align: center;
+  border: none;
+  background-color: var(--ciencia);
+  border-radius: 10rem;
+  font-size: 2rem;
+  transition: 0.3 ease;
+  color: white;
+}
+h2{
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+
+.campo .input:focus, .campo #ingresar:focus{
   outline: none;
 }
 
-.campo input:hover, .campo button:hover{
-  background-color: aqua;
-  color: white;
+.campo .input:hover{
+  background-color: #dfdfdf;
+  color: rgb(0, 0, 0);
 }
 
-.container{
-  margin: 1rem 0 1rem 0;
+.campo #ingresar:hover{
+  background-color: var(--entretenimiento);
 }
 
 .textoRegistro{
-  margin-top: 3rem;
-  font-size: 2rem;
-  
+  font-size: 1.5rem;
+  width: 50%;
+  margin: 3rem 0;
 }
 
 .textoRegistro a{
   text-decoration: none;
-  color: black;
+  color: var(--letra-normal);
+}
+
+.textoRegistro a:hover{
+  color: var(--entretenimiento);
+}
+
+.error{
+  font-size: 2rem;
+  color: var(--entretenimiento);
 }

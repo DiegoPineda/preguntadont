@@ -1,17 +1,24 @@
-header{
+/* header{
     background-color: none;
     width: 60%;
     margin: 0 auto;
     padding-top: 2%;
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
-}
+} */
 
 nav{
+    background-color: none;
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 2%;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    color: white;
 }
 
 div {
@@ -25,21 +32,21 @@ div {
 
 a {
     text-decoration: none; 
-    color: black; 
+    color: rgb(255, 255, 255); 
     font-size: 3rem;
 }
 
 #jugar{
-    background-color: rgb(255, 0, 0);
+    background-color: var(--entretenimiento);
     border-top-left-radius: 2rem;
 }
 
 #tienda{
-    background-color: #FFD972;
+    background-color: var(--deportes);
 }
 
 #estadisticas{
-    background-color: #8E94F2;
+    background-color: var(--geografia);
     border-top-right-radius: 2rem;
 }
 

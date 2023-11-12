@@ -1,7 +1,15 @@
 <header>
-    <nav class="navegacion">
-        <div class="user">monedas: {{tiendaUsuario?.monedas}} bombas: {{tiendaUsuario?.cantBombas}} conejos: {{tiendaUsuario?.cantConejos}} relojes: {{tiendaUsuario?.cantRelojes}} reversa: {{tiendaUsuario?.cantReversa}}</div>
-      <div class="user">Bienvenido {{ getUser?.nickname }}!</div>
-      <a (click)="onLogOut()" class="logout">LogOut</a>
-    </nav>
+  <div class="logo">
+    <img src="../../assets/logo.png" alt="" />
+  </div>
+  <div class="user">
+    <div class="item">💲x{{ tiendaUsuario?.monedas }} </div>
+    <div class="item">💣x{{ tiendaUsuario?.cantBombas }}</div>
+    <div class="item">🐰x{{ tiendaUsuario?.cantConejos }}</div>
+    <div class="item">⌛x{{ tiendaUsuario?.cantRelojes }}</div>
+  </div>
+  <nav class="navegacion">
+    <div class="user">Bienvenido {{ getUser?.nickname }}!</div>
+    <a (click)="onLogOut()" class="logout">Salir 😖</a>
+  </nav>
 </header>
