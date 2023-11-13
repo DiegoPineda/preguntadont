@@ -38,7 +38,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: linear-gradient(to left, #ffffff63, #ffffff33); */
+    background: linear-gradient(to left, #ffffff63, #ffffff33);
 
 }
 
@@ -163,33 +163,31 @@
         background-color: #00ffff;
     }
     10% {
-        background-color: #00deff;
+        background-color: #00c1ea;
     }
     20% {
-        background-color: #78adff;
+        background-color: #0084c8;
     }
     30% {
-        background-color: #e766e1;
+        background-color: #004996;
     }
     40% {
-        background-color: #ff006a;
+        background-color: #000e57;
     }
     50% {
-        background-color: #ff006a;
+        background-color: #000e57;
     }
     70% {
-        background-color: #e766e1;
+        background-color: #004996;
     }
     80% {
-        background-color: #78adff;
+        background-color: #0084c8;
     }
     90% {
-        background-color: #00deff;
+        background-color: #00c1ea;
     }
     100% {
         background-color: #00ffff;
     }
-
-
 
 }

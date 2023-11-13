@@ -5,28 +5,21 @@
       "nombre": "BOOOOMB",
       "precio": 20,
       "descripcion": "¡Elimina una respuesta incorrecta!",
-      "urlImg": "../../assets/bomb-png-46607.png"
+      "urlImg": "💣"
     },
     {
       "id": 2,
       "nombre": "CONEJO",
       "precio": 20,
       "descripcion": "¡Permite saltar una pregunta!",
-      "urlImg": "../../assets/reloading.png"
+      "urlImg": "🐰"
     },
     {
       "id": 3,
-      "nombre": "REVERSA",
-      "precio": 20,
-      "descripcion": "¡Vuelve a intentarlo!",
-      "urlImg": "../../assets/bomb-png-46607.png"
-    },
-    {
-      "id": 4,
       "nombre": "RELOJ",
       "precio": 20,
       "descripcion": "¡Añade tiempo extra!",
-      "urlImg": "../../assets/bomb-png-46607.png"
+      "urlImg": "⌛"
     }
   ]
 }

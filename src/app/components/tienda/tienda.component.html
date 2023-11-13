@@ -2,7 +2,7 @@
   <div class="productos-container">
     <div class="producto" *ngFor="let producto of listaProductos">
       
-        <img [src]="producto.urlImg" alt="{{ producto.descripcion }}" class="image-producto"/>
+      <h3 class="image-producto">{{producto.urlImg}}</h3> 
         <div class="producto-info">
           
           <h3>{{ producto.nombre }}</h3>
@@ -11,8 +11,8 @@
         </div>
         
         <form [formGroup]="formCompra" (ngSubmit)="comprarProducto(producto.id, producto.precio)">
-          <input type="number" name="cantidad" id="cantidad" formControlName="cantidad">
-          <input type="submit" value="¡Comprar!">
+          <input type="number" name="cantidad" id="cantidad" class="cantidad" formControlName="cantidad">
+          <input type="submit" value="¡Comprar!" class="comprar">
         </form>
     </div>
   </div>
