@@ -9,40 +9,21 @@
       <div class="container-partidas">
         <table class="lista-partidas">
           <tbody>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
-            </tr>
-            <tr>
-              <td>ID: <span>12314</span></td>
-              <td>vs <span>Nickname rival</span></td>
-              <td>Aciertos: <span class="aciertos">8</span></td>
+            <tr *ngFor="let item of listaPendientes">
+              <td *ngIf="listaUsuarios !== undefined && listaUsuarios[item.idUsuario1-1] !== undefined">
+                <span *ngIf="listaUsuarios[item.idUsuario1-1] !== undefined">{{ listaUsuarios[item.idUsuario1-1].nickname }}</span>
+                <span *ngIf="listaUsuarios[item.idUsuario1-1] === undefined">-</span>
+                <span> VS </span>
+                <span *ngIf="listaUsuarios[item.idUsuario2-1] !== undefined" >{{ listaUsuarios[item.idUsuario2-1].nickname }}</span>
+                <span *ngIf="listaUsuarios[item.idUsuario2-1] === undefined">-</span>
+              </td>
+
+              <td *ngIf="item.idUsuario1 === idUsuario"><span class="aciertos">{{item.aciertosUsuario1}}</span></td>
+              <td *ngIf="item.idUsuario2 === idUsuario"><span class="aciertos">{{item.aciertosUsuario2}}</span></td>
+              
+              <td *ngIf="item.idUsuario1 === idUsuario"><button *ngIf="item.usuarioFinalizo1 === false">Retomar</button></td>
+              <td *ngIf="item.idUsuario2 === idUsuario"><button *ngIf="item.usuarioFinalizo2 === false">Retomar</button></td>
+
             </tr>
           </tbody>
         </table>

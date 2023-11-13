@@ -1,5 +1,9 @@
+import { UsuarioService } from './../../services/usuario.service';
+
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Partida, Usuario } from 'src/app/interfaces/interfaces';
+import { AuthService } from 'src/app/services/auth.service';
 import { PartidaService } from 'src/app/services/partida.service';
 
 
@@ -9,10 +13,19 @@ import { PartidaService } from 'src/app/services/partida.service';
   styleUrls: ['./dashboard-partidas.component.css']
 })
 export class DashboardPartidasComponent {
-  constructor(private router: Router, private partidaService:PartidaService) {}
+  listaPendientes: Partida[]|undefined;
+  listaTerminadas: Partida[]|undefined;
+  listaUsuarios: Usuario[] | undefined;
+  idUsuario:number|undefined;
 
-  ngOnInit():void{
-    
+  constructor(private router: Router, 
+              private partidaService:PartidaService,
+              private auth: AuthService,
+              private UsuarioService:UsuarioService) {}
+
+  async ngOnInit(){
+    await this.cargarPartidasPendientes();
+    await this.cargarUsuarios();
   }
   irAPlay() {
     
@@ -20,5 +33,17 @@ export class DashboardPartidasComponent {
     
   }
 
+
+  async cargarPartidasPendientes(){
+    this.idUsuario =  this.auth.currentUser?.id;
+    if(this.idUsuario){
+      this.listaPendientes = await this.partidaService.getPartidasDeUsuario(this.idUsuario);
+    }
+  }
   
+  async cargarUsuarios(){
+    this.listaUsuarios = await this.UsuarioService.getUsuarios();
+  }
+
+
 }

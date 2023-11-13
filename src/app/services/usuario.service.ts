@@ -52,9 +52,19 @@ export class UsuarioService {
     }
   }
 
-  async getUsuarios(): Promise <Usuario | undefined>{
+  async getUsuarios(): Promise <Usuario[] | undefined>{
     try {
       const resultados = await fetch(this.url, {method: 'GET'});
+      const usuarios = await resultados.json();
+      return usuarios;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
+  async getUsuario(id: number): Promise <Usuario | undefined>{
+    try {
+      const resultados = await fetch(`${this.url}/${id}`, {method: 'GET'});
       const usuarios = await resultados.json();
       return usuarios;
     } catch (error) {

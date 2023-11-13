@@ -42,6 +42,25 @@ export class PartidaService {
     return undefined;
   }
 
+  async getPartidasDeUsuario(id: number): Promise<Partida[] | undefined> {
+    try {
+      const totalPartidas = await this.getPartidas();
+      if (totalPartidas) {
+        const partidasUsuario:Partida[]=[];
+        for (let item of totalPartidas) {
+          if(item.idUsuario1 === id || item.idUsuario2 === id){
+            partidasUsuario.push(item);
+          }
+        }
+        return partidasUsuario;
+      } else {
+        return undefined;
+      }
+    } catch (error) {
+      console.log(error);
+      return undefined;
+    }
+  }
 
   async postPartida(partida: Partida) {
     try {
