@@ -10,7 +10,7 @@ export class UsuarioTiendaService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = "http://localhost:3000/tienda/";
+  url: string = "http://localhost:3200/tienda/";
 
   getUserTienda(userId: number): Observable<Tienda> {
     return this.http.get<Tienda>(this.url + userId);
@@ -31,4 +31,30 @@ export class UsuarioTiendaService {
     }
   }
   
+
+
+
+
+  async getUserTienda2(id: number): Promise<Tienda | undefined> {
+    try {
+      const resultado = await fetch(this.url+"/"+id, { method: "GET" })
+      const partidas = resultado.json();
+      return partidas;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
+
+  async putTiendaUsuario(partida: Tienda) {
+    try {
+      await fetch(`${this.url}/${partida.id}`, {
+        method: "PUT",
+        body: JSON.stringify(partida),
+        headers: { "Content-type": "application/json" }
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

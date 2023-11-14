@@ -11,9 +11,9 @@ export class UsuarioService {
 
   constructor(private router: Router, private http: HttpClient) { }
 
-  url: string = "http://localhost:3000/usuarios";
-  url2: string = "http://localhost:3000/tienda";
-  url3: string = "http://localhost:3000/estadisticas";
+  url: string = "http://localhost:3200/usuarios";
+  url2: string = "http://localhost:3200/tienda";
+  url3: string = "http://localhost:3200/estadisticas";
 
   async postUsuario(usuario : Usuario){
     try {
@@ -46,7 +46,6 @@ export class UsuarioService {
         body: JSON.stringify(estadistica),
         headers: {"Content-type" : "application/json"}
       })
-      this.router.navigate(["login"]);
     } catch (error) {  
     	console.log(error);
     }

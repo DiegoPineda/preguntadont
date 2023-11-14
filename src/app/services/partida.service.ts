@@ -17,8 +17,8 @@ export class PartidaService {
     private router: Router
   ) { }
 
-  url: string = "http://localhost:3002/partidas";
-  url2: string= "http://localhost:3002/partidasTerminadas";
+  url: string = "http://localhost:3100/partidas";
+  url2: string= "http://localhost:3100/partidasTerminadas";
 
   async getPartidas(): Promise<Partida[] | undefined> {
     try {

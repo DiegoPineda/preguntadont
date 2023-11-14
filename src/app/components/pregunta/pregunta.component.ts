@@ -41,10 +41,10 @@ export class PreguntaComponent {
 
   async ngOnInit() {
     await this.cargarPregunta();
-    this.actualizarConsumibles();
-    this.sharingService.tiendaUsuario.subscribe((tienda) => {
+    await this.actualizarConsumibles();
+    /* this.sharingService.tiendaUsuario.subscribe((tienda) => {
       this.tiendaUsuario = tienda;
-    });
+    }); */
     this.bloquearConsumibles();
     this.cuentaRegresiva();
   }
@@ -55,29 +55,26 @@ export class PreguntaComponent {
   get getUser(): Usuario | undefined {
     return this.authService.currentUser;
   }
-  getInfoTienda(id: number): Observable<Tienda | undefined> {
-    return this.usuarioTiendaService.getUserTienda(id);
+  getInfoTienda(id: number): Promise<Tienda | undefined> {
+    return this.usuarioTiendaService.getUserTienda2(id);
   }
 
-  actualizarConsumibles() {
+  async actualizarConsumibles() {
     this.idActual = this.authService.currentUser?.id;
-
+  
     if (this.idActual !== undefined) {
-      this.getInfoTienda(this.idActual)
-        .pipe(
-          tap((tienda) => {
-            this.tiendaUsuario = tienda;
-          }),
-          catchError((error) => {
-            console.error('Error al obtener los datos de la tienda', error);
-            return [];
-          })
-        )
-        .subscribe({
-          next: () => this.bloquearConsumibles()
-        });
+      try {
+        const tienda = await this.getInfoTienda(this.idActual);
+  
+        if (tienda !== undefined) {
+          this.tiendaUsuario = tienda;
+          this.bloquearConsumibles();
+        }
+      } catch (error) {
+        console.error('Error al obtener los datos de la tienda', error);
+      }
     }
-}
+  }
 
   async cargarPregunta() {
     this.sharingService.categoria.subscribe(async (categoria) => {

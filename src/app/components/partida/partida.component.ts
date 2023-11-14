@@ -1,12 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subscription, first } from 'rxjs';
-import { Estadistica, Partida, Usuario } from 'src/app/interfaces/interfaces';
+import { Subscription } from 'rxjs';
+import { Estadistica, Partida, Usuario, Tienda } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { PartidaService } from 'src/app/services/partida.service';
 import { SharingService } from 'src/app/services/sharing.service';
-import { PlayComponent } from '../play/play.component';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
+import { IfStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-partida',
@@ -64,7 +65,8 @@ export class PartidaComponent {
     private sharingService: SharingService,
     private route: ActivatedRoute,
     private usuarioService: UsuarioService,
-    private router:Router
+    private router: Router,
+    private usuarioTienda: UsuarioTiendaService
   ) { }
 
   mostrarPlay = false;
@@ -110,9 +112,9 @@ export class PartidaComponent {
 
     if ((this.usuario?.id === this.partida.idUsuario1) || (this.usuario?.id === this.partida.idUsuario2)) {
       if (this.usuario.id == this.partida.idUsuario1 && this.partida.usuarioFinalizo1 == true) {
-        alert("No tenes nada que hacer aca compa1");
+        this.router.navigate(["/home"]);
       } else if (this.usuario.id == this.partida.idUsuario2 && this.partida.usuarioFinalizo2 == true) {
-        alert("No tenes nada que hacer aca compa2");
+        this.router.navigate(["/home"]);
       } else {
         //ACA VA LA LOGICA
         //usuario1
@@ -139,19 +141,20 @@ export class PartidaComponent {
             this.mostrarPlay = false;
             console.log(this.categoria);
 
+            //aumentar 1 a los errores del usuario en la categoria y hacer put
+            this.forzarError();
+            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
+
+            //hacer un put del contador de usuario
+            this.partida.contadorUsuario1++;
+            await this.partidaService.putPartida(this.partida);
+
             this.mostrarPregunta = true;
             if (this.categoria != null) {
               this.sharingService.enviarCategoria(this.categoria);
             }
 
-            //aumentar 1 a los errores del usuario en la categoria y hacer put
-            this.forzarError();
-            this.usuarioService.putUsuarioEstadistica(this.estadistica);
-
-            //hacer un put del contador de usuario
-            this.partida.contadorUsuario1++;
-            this.partidaService.putPartida(this.partida);
-
+          
             //recibo true o false de preguntas
             const respuestaPregunta = await new Promise<boolean | null>((resolve) => {
               let sub: Subscription;
@@ -169,21 +172,23 @@ export class PartidaComponent {
             this.mostrarPregunta = false;
 
             //put en base a verdadero o falso 
-            this.arreglarError();
-            this.usuarioService.putUsuarioEstadistica(this.estadistica);
+            
+            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
             if (this.pregunta == true) {
+              this.arreglarError();
               this.partida.aciertosUsuario1++;
-              this.partidaService.putPartida(this.partida);
+              await this.partidaService.putPartida(this.partida);
             }
           }
-          if(this.partida.contadorUsuario1==5 && this.partida.contadorUsuario2 ==5){
-            this.partidaService.postPartidaTerminada(this.partida);
-            this.partidaService.deletePartida(this.partida.id);
-          }
-          if(this.partida.contadorUsuario1==5){
+          if (this.partida.contadorUsuario1 == 5) {
+            this.partida.usuarioFinalizo1 = true;
+            await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
-            this.router.navigate(["/home"]);
+
           }
+          this.partidaTermino();
+
+          this.router.navigate(["/home"]);
         } else {//usuario2
 
           while (this.partida.contadorUsuario2 < 5) {
@@ -200,23 +205,23 @@ export class PartidaComponent {
                 }
               });
             });
-
-
             this.mostrarPlay = false;
             console.log(this.categoria);
 
             this.mostrarPregunta = true;
+//aumentar 1 a los errores del usuario en la categoria y hacer put
+this.forzarError();
+await this.usuarioService.putUsuarioEstadistica(this.estadistica);
+
+//hacer un put del contador de usuario
+this.partida.contadorUsuario2++;
+await this.partidaService.putPartida(this.partida);
+
             if (this.categoria != null) {
               this.sharingService.enviarCategoria(this.categoria);
             }
 
-            //aumentar 1 a los errores del usuario en la categoria y hacer put
-            this.forzarError();
-            this.usuarioService.putUsuarioEstadistica(this.estadistica);
-
-            //hacer un put del contador de usuario
-            this.partida.contadorUsuario2++;
-            this.partidaService.putPartida(this.partida);
+            
 
             //recibo true o false de preguntas
             const respuestaPregunta = await new Promise<boolean | null>((resolve) => {
@@ -235,32 +240,77 @@ export class PartidaComponent {
             this.mostrarPregunta = false;
 
             //put en base a verdadero o falso 
-            this.arreglarError();
-            this.usuarioService.putUsuarioEstadistica(this.estadistica);
+            
+            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
             if (this.pregunta == true) {
-              this.partida.aciertosUsuario2++;
+              this.arreglarError();
+              this.partida.aciertosUsuario2++; 
               this.partidaService.putPartida(this.partida);
             }
           }
-          if(this.partida.contadorUsuario1==5 && this.partida.contadorUsuario2 ==5){
-            this.partidaService.postPartidaTerminada(this.partida);
-            this.partidaService.deletePartida(this.partida.id);
-          }
-          if(this.partida.contadorUsuario2==5){
+          if (this.partida.contadorUsuario2 == 5) {
+            this.partida.usuarioFinalizo2 = true;
+            this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
-            this.router.navigate(["/home"]);
           }
+          await this.partidaTermino();
 
+
+          this.router.navigate(["/home"]);
 
 
         }
       }
 
     } else {
-      alert("No tenes nada que hacer aca compa3")
+      this.router.navigate(["/home"]);
     }
-    
 
+
+  }
+
+  async partidaTermino() {
+    if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+      let monedasUsuario1 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario1);
+      const monedasUsuario2 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario2);
+
+      let estUsuario1 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario1);
+      let estUsuario2 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario2);
+
+       this.partidaService.postPartidaTerminada(this.partida);
+       this.partidaService.deletePartida(this.partida.id);
+      if (this.partida.aciertosUsuario1 > this.partida.aciertosUsuario2) {
+        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+          estUsuario1.partidasGanadas++;
+          estUsuario1.puntos += 3;
+          monedasUsuario1.monedas += 7;
+
+          estUsuario2.partidasPerdidas++;
+        }
+      } else if (this.partida.aciertosUsuario1 < this.partida.aciertosUsuario2) {
+        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+          estUsuario2.partidasGanadas++;
+          estUsuario2.puntos += 3;
+          monedasUsuario2.monedas += 7;
+
+          estUsuario1.partidasPerdidas++;
+        }
+      } else {
+        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+          estUsuario2.partidasEmpatadas++;
+          estUsuario1.partidasEmpatadas++;
+          estUsuario1.puntos += 1;
+          estUsuario2.puntos += 1;
+          monedasUsuario1.monedas += 4;
+          monedasUsuario2.monedas += 4;
+        }
+      }
+      if (estUsuario1) { await this.usuarioService.putUsuarioEstadistica(estUsuario1); }
+      if (estUsuario2) { await this.usuarioService.putUsuarioEstadistica(estUsuario2); }
+      if (monedasUsuario1) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario1); }
+      if (monedasUsuario2) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario2); }
+
+    }
   }
 
   forzarError() {
@@ -307,5 +357,6 @@ export class PartidaComponent {
         this.estadistica.aciertosCiencia++;
         break;
     }
+    this.usuarioService.putUsuarioEstadistica(this.estadistica);
   }
 }

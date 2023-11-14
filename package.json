@@ -7,9 +7,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "usuarios": "json-server ./db/users.json -p 3000 --watch",
+    "usuarios": "json-server ./db/users.json -p 3200 --watch",
     "preguntas": "json-server ./db/preguntas.json -p 3001 --watch",
-    "partidas": "json-server ./db/partidas.json -p 3002 --watch",
+    "partidas": "json-server ./db/partidas.json -p 3100 --watch",
     "tienda": "json-server ./db/tienda.json -p 3003 --watch"
   },
   "private": true,

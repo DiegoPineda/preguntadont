@@ -47,7 +47,7 @@ export class RegisterComponent {
     this.router.navigate(["/login"])
   }
 
-  registrarUsuario() {
+  async registrarUsuario() {
     if (this.formRegister.invalid) return;
 
     const usuario: Usuario = {
@@ -85,9 +85,10 @@ export class RegisterComponent {
         totalHistoria: 0,
 
     }
-    this.usuarioService.postUsuario(usuario);
-    this.usuarioService.postUsuarioTienda(tienda);
-    this.usuarioService.postUsuarioEstadistica(estadistica);
+    await this.usuarioService.postUsuario(usuario);
+    await this.usuarioService.postUsuarioTienda(tienda);
+    await this.usuarioService.postUsuarioEstadistica(estadistica);
+    this.redireccionarARegistro();
   }
 
   validar(field: string, error: string){

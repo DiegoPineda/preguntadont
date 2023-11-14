@@ -11,7 +11,7 @@ import { Observable, catchError, map, of, tap } from 'rxjs';
 export class AuthService {
 
 
-  private url: string = 'http://localhost:3000/usuarios'
+  private url: string = 'http://localhost:3200/usuarios'
   private user?: Usuario;
 
 
