@@ -253,7 +253,7 @@ await this.partidaService.putPartida(this.partida);
            await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
           }
-          await this.partidaTermino();
+          this.partidaTermino();
 
 
           this.router.navigate(["/home"]);
@@ -336,7 +336,7 @@ await this.partidaService.putPartida(this.partida);
     }
   }
 
-  arreglarError() {
+  async arreglarError() {
     switch (this.categoria) {
       case "Entretenimiento":
         this.estadistica.aciertosEntretenimiento++;
@@ -357,6 +357,6 @@ await this.partidaService.putPartida(this.partida);
         this.estadistica.aciertosCiencia++;
         break;
     }
-    this.usuarioService.putUsuarioEstadistica(this.estadistica);
+    await this.usuarioService.putUsuarioEstadistica(this.estadistica);
   }
 }

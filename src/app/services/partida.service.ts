@@ -124,13 +124,13 @@ export class PartidaService {
 
   async crearPartida() {
     let usuario: Usuario | undefined;
-
+    this.resetPartida();
     usuario = await this.auth.currentUser;
     this.listaPartidas=undefined;
     
     this.listaPartidas = await this.getPartidas();
     this.partida.id=this.getUniqueId(4);
-    if (this.listaPartidas) {
+    if (this.listaPartidas !== undefined) {
       for (const e of this.listaPartidas) {
         if (e.idUsuario1 !== usuario?.id && e.idUsuario2 === 0) {
           if (usuario?.id) {
@@ -176,6 +176,18 @@ export class PartidaService {
     }
   }
 
+  resetPartida(){
+    this.partida.id= "";
+    this.partida.idUsuario1= 0;
+    this.partida.idUsuario2= 0;
+    this.partida.aciertosUsuario1= 0;
+    this.partida.aciertosUsuario2= 0;
+    this.partida.usuarioFinalizo1= false;
+    this.partida.usuarioFinalizo2= false;
+    this.partida.contadorUsuario1= 0;
+    this.partida.contadorUsuario2= 0;
+    this.partida.amigo= false
+  }
 
 
 
