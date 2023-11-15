@@ -1,17 +1,17 @@
 {
-  "partidas": [
+  "partidas": [],
+  "partidasTerminadas": [
     {
-      "id": "08b2-9722-d9d2-b6e2",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 1,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": false,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 2,
-      "contadorUsuario2": 0,
+      "id": "0daf-0f91-a963-e25a",
+      "idUsuario1": 2,
+      "idUsuario2": 1,
+      "aciertosUsuario1": 4,
+      "aciertosUsuario2": 4,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 5,
+      "contadorUsuario2": 5,
       "amigo": false
     }
-  ],
-  "partidasTerminadas": []
+  ]
 }

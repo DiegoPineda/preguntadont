@@ -1,22 +1,22 @@
 {
   "usuarios": [
     {
-      "nickname": "Diego",
-      "email": "diegopineda819@gmail.com",
-      "password": "12345678",
+      "nickname": "Rafaelo",
+      "email": "rtoresani@gmail.com",
+      "password": "12341234",
       "id": 1
     },
     {
-      "nickname": "rafa",
-      "email": "rtoresani@gmail.com",
-      "password": "12345678",
+      "nickname": "asdasd",
+      "email": "asd@gmail.com",
+      "password": "12341234",
       "id": 2
     }
   ],
   "tienda": [
     {
       "id": 1,
-      "monedas": 0,
+      "monedas": 4,
       "cantBombas": 0,
       "cantConejos": 0,
       "cantRelojes": 0,
@@ -24,7 +24,7 @@
     },
     {
       "id": 2,
-      "monedas": 0,
+      "monedas": 4,
       "cantBombas": 0,
       "cantConejos": 0,
       "cantRelojes": 0,
@@ -34,41 +34,41 @@
   "estadisticas": [
     {
       "id": 1,
-      "puntos": 0,
+      "puntos": 1,
       "partidasGanadas": 0,
       "partidasPerdidas": 0,
-      "partidasEmpatadas": 0,
+      "partidasEmpatadas": 1,
       "aciertosArte": 0,
       "totalArte": 0,
-      "aciertosCiencia": 0,
-      "totalCiencia": 0,
-      "aciertosDeporte": 1,
+      "aciertosCiencia": 3,
+      "totalCiencia": 3,
+      "aciertosDeporte": 0,
       "totalDeporte": 1,
       "aciertosEntretenimiento": 0,
       "totalEntretenimiento": 0,
-      "aciertosGeografia": 0,
-      "totalGeografia": 0,
+      "aciertosGeografia": 1,
+      "totalGeografia": 1,
       "aciertosHistoria": 0,
-      "totalHistoria": 1
+      "totalHistoria": 0
     },
     {
       "id": 2,
-      "puntos": 0,
+      "puntos": 1,
       "partidasGanadas": 0,
       "partidasPerdidas": 0,
-      "partidasEmpatadas": 0,
+      "partidasEmpatadas": 1,
       "aciertosArte": 0,
       "totalArte": 0,
-      "aciertosCiencia": 0,
-      "totalCiencia": 0,
-      "aciertosDeporte": 0,
-      "totalDeporte": 0,
-      "aciertosEntretenimiento": 0,
-      "totalEntretenimiento": 0,
+      "aciertosCiencia": 1,
+      "totalCiencia": 1,
+      "aciertosDeporte": 1,
+      "totalDeporte": 1,
+      "aciertosEntretenimiento": 1,
+      "totalEntretenimiento": 2,
       "aciertosGeografia": 0,
       "totalGeografia": 0,
-      "aciertosHistoria": 0,
-      "totalHistoria": 0
+      "aciertosHistoria": 1,
+      "totalHistoria": 1
     }
   ]
 }

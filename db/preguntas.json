@@ -551,6 +551,30 @@
         "Mark Ruffalo"
       ],
       "respuesta": "Robert Downey Jr."
+    },
+    {
+      "id": 47,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuántas copas libertadores tiene el club atlético boca juniors?",
+      "opciones": [
+        "7",
+        "VII",
+        "7-1",
+        "SIETE"
+      ],
+      "respuesta": "7-1"
+    },
+    {
+      "id": 49,
+      "categoria": "Deportes",
+      "enunciado": "¿Cuándo murió el club atlético boca juniors?",
+      "opciones": [
+        "12 de diciembre del 2012",
+        "25 de mayo del 1999",
+        "9 de diciembre del 2018",
+        "No murió."
+      ],
+      "respuesta": "9 de diciembre del 2018"
     }
   ]
 }
