@@ -250,7 +250,7 @@ await this.partidaService.putPartida(this.partida);
           }
           if (this.partida.contadorUsuario2 == 5) {
             this.partida.usuarioFinalizo2 = true;
-            this.partidaService.putPartida(this.partida);
+           await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
           }
           await this.partidaTermino();
@@ -277,8 +277,8 @@ await this.partidaService.putPartida(this.partida);
       let estUsuario1 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario1);
       let estUsuario2 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario2);
 
-       this.partidaService.postPartidaTerminada(this.partida);
-       this.partidaService.deletePartida(this.partida.id);
+      await this.partidaService.postPartidaTerminada(this.partida);
+      await this.partidaService.deletePartida(this.partida.id);
       if (this.partida.aciertosUsuario1 > this.partida.aciertosUsuario2) {
         if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
           estUsuario1.partidasGanadas++;
