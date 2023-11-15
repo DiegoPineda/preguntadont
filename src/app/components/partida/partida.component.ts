@@ -173,9 +173,9 @@ export class PartidaComponent {
 
             //put en base a verdadero o falso 
             
-            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
             if (this.pregunta == true) {
               this.arreglarError();
+              await this.usuarioService.putUsuarioEstadistica(this.estadistica);
               this.partida.aciertosUsuario1++;
               await this.partidaService.putPartida(this.partida);
             }
@@ -241,9 +241,10 @@ await this.partidaService.putPartida(this.partida);
 
             //put en base a verdadero o falso 
             
-            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
+            
             if (this.pregunta == true) {
               this.arreglarError();
+              await this.usuarioService.putUsuarioEstadistica(this.estadistica);
               this.partida.aciertosUsuario2++; 
               await this.partidaService.putPartida(this.partida);
             }
@@ -357,6 +358,5 @@ await this.partidaService.putPartida(this.partida);
         this.estadistica.aciertosCiencia++;
         break;
     }
-    await this.usuarioService.putUsuarioEstadistica(this.estadistica);
   }
 }
