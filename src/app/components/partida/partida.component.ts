@@ -245,7 +245,7 @@ await this.partidaService.putPartida(this.partida);
             if (this.pregunta == true) {
               this.arreglarError();
               this.partida.aciertosUsuario2++; 
-              this.partidaService.putPartida(this.partida);
+              await this.partidaService.putPartida(this.partida);
             }
           }
           if (this.partida.contadorUsuario2 == 5) {
