@@ -18,19 +18,19 @@ export class DashboardPartidasComponent {
   listaUsuarios: Usuario[] | undefined;
   idUsuario:number|undefined;
 
-  constructor(private router: Router, 
+  constructor(
               private partidaService:PartidaService,
               private auth: AuthService,
               private UsuarioService:UsuarioService) {}
 
   async ngOnInit(){
     await this.cargarPartidasPendientes();
+    await this.cargarPartidasTerminadas();
     await this.cargarUsuarios();
   }
   irAPlay() {
     
     this.partidaService.crearPartida();
-    
   }
 
 
@@ -38,6 +38,13 @@ export class DashboardPartidasComponent {
     this.idUsuario =  this.auth.currentUser?.id;
     if(this.idUsuario){
       this.listaPendientes = await this.partidaService.getPartidasDeUsuario(this.idUsuario);
+    }
+  }
+
+  async cargarPartidasTerminadas(){
+    this.idUsuario = this.auth.currentUser?.id;
+    if(this.idUsuario){
+      this.listaTerminadas = await this.partidaService.getPartidasTerminadas();
     }
   }
   

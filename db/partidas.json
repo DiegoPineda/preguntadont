@@ -12,6 +12,18 @@
       "contadorUsuario1": 5,
       "contadorUsuario2": 5,
       "amigo": false
+    },
+    {
+      "id": "4fd6-e3d7-c897-384c",
+      "idUsuario1": 1,
+      "idUsuario2": 2,
+      "aciertosUsuario1": 3,
+      "aciertosUsuario2": 5,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 5,
+      "contadorUsuario2": 5,
+      "amigo": false
     }
   ]
 }

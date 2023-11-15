@@ -176,6 +176,17 @@ export class PartidaService {
     }
   }
 
+  async getPartidasTerminadas(): Promise<Partida[] | undefined> {
+    try {
+      const resultado = await fetch(this.url2, { method: "GET" })
+      const partidas = resultado.json();
+      return partidas;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
+
   resetPartida(){
     this.partida.id= "";
     this.partida.idUsuario1= 0;
