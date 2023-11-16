@@ -88,3 +88,8 @@ form input:hover{
     background-color: var(--negativo);
     color:var(--letra-negrita);
 }
+
+.btn:disabled{
+    background-color: grey;
+    cursor:not-allowed;
+}
