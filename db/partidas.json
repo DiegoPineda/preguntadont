@@ -1,125 +1,17 @@
 {
-  "partidas": [
+  "partidas": [],
+  "partidasTerminadas": [
     {
-      "id": "cef3-406e-e863-f68d",
+      "id": "7509-adbf-ba41-58ed",
       "idUsuario1": 1,
       "idUsuario2": 2,
-      "aciertosUsuario1": 5,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 2,
-      "amigo": false
-    },
-    {
-      "id": "f4d2-461e-d99b-5038",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
       "aciertosUsuario1": 3,
-      "aciertosUsuario2": 0,
+      "aciertosUsuario2": 3,
       "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
+      "usuarioFinalizo2": true,
       "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "1a5d-0294-7fae-a4a9",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 1,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "7cb1-87ec-dae7-a6c1",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 0,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": false,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 0,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "ed98-222d-1f03-7aad",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 0,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "88c2-fba7-17c3-1a85",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 0,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "fb2e-efd0-24a7-217a",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 2,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "d5d2-6c5b-e245-2c2e",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 2,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "25b8-47b6-8d3a-640b",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 1,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    },
-    {
-      "id": "c43d-93ef-ac98-d11f",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 0,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": false,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 1,
-      "contadorUsuario2": 0,
+      "contadorUsuario2": 5,
       "amigo": false
     }
-  ],
-  "partidasTerminadas": []
+  ]
 }

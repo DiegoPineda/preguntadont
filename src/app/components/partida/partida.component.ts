@@ -154,7 +154,7 @@ export class PartidaComponent {
               this.sharingService.enviarCategoria(this.categoria);
             }
 
-          
+
             //recibo true o false de preguntas
             const respuestaPregunta = await new Promise<boolean | null>((resolve) => {
               let sub: Subscription;
@@ -172,7 +172,7 @@ export class PartidaComponent {
             this.mostrarPregunta = false;
 
             //put en base a verdadero o falso 
-            
+
             if (this.pregunta == true) {
               this.arreglarError();
               await this.usuarioService.putUsuarioEstadistica(this.estadistica);
@@ -208,20 +208,22 @@ export class PartidaComponent {
             this.mostrarPlay = false;
             console.log(this.categoria);
 
-            this.mostrarPregunta = true;
-//aumentar 1 a los errores del usuario en la categoria y hacer put
-this.forzarError();
-await this.usuarioService.putUsuarioEstadistica(this.estadistica);
 
-//hacer un put del contador de usuario
-this.partida.contadorUsuario2++;
-await this.partidaService.putPartida(this.partida);
+            //aumentar 1 a los errores del usuario en la categoria y hacer put
+            this.forzarError();
+            await this.usuarioService.putUsuarioEstadistica(this.estadistica);
+
+            //hacer un put del contador de usuario
+            this.partida.contadorUsuario2++;
+            await this.partidaService.putPartida(this.partida);
+
+            this.mostrarPregunta = true;
 
             if (this.categoria != null) {
               this.sharingService.enviarCategoria(this.categoria);
             }
 
-            
+
 
             //recibo true o false de preguntas
             const respuestaPregunta = await new Promise<boolean | null>((resolve) => {
@@ -240,18 +242,18 @@ await this.partidaService.putPartida(this.partida);
             this.mostrarPregunta = false;
 
             //put en base a verdadero o falso 
-            
-            
+
+
             if (this.pregunta == true) {
               this.arreglarError();
               await this.usuarioService.putUsuarioEstadistica(this.estadistica);
-              this.partida.aciertosUsuario2++; 
+              this.partida.aciertosUsuario2++;
               await this.partidaService.putPartida(this.partida);
             }
           }
           if (this.partida.contadorUsuario2 == 5) {
             this.partida.usuarioFinalizo2 = true;
-           await this.partidaService.putPartida(this.partida);
+            await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
           }
           await this.partidaTermino();

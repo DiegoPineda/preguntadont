@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 db/partidas.json
 db/users.json
+db/users.json
+db/partidas.json
