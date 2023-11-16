@@ -34,7 +34,7 @@ export class PartidaService {
   async getPartida(id: string): Promise<Partida | undefined> {
     try {
       const resultado = await fetch(this.url+"/"+id, { method: "GET" })
-      const partidas = resultado.json();
+      const partidas = await resultado.json();
       return partidas;
     } catch (error) {
       console.log(error);
