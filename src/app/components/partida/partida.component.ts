@@ -186,7 +186,7 @@ export class PartidaComponent {
             alert("Gracias por jugar!")
 
           }
-          this.partidaTermino();
+          await this.partidaTermino();
 
           this.router.navigate(["/home"]);
         } else {//usuario2
@@ -254,7 +254,7 @@ await this.partidaService.putPartida(this.partida);
            await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
           }
-          this.partidaTermino();
+          await this.partidaTermino();
 
 
           this.router.navigate(["/home"]);

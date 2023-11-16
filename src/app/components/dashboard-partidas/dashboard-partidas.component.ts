@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { Partida, Usuario } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
 import { PartidaService } from 'src/app/services/partida.service';
+import { SharingService } from 'src/app/services/sharing.service';
+import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
 
 
 @Component({
@@ -21,7 +23,9 @@ export class DashboardPartidasComponent {
   constructor(
               private partidaService:PartidaService,
               private auth: AuthService,
-              private UsuarioService:UsuarioService) {}
+              private UsuarioService:UsuarioService,
+              private usuarioTiendaService: UsuarioTiendaService,
+              private sharingObservableTienda: SharingService) {}
 
   async ngOnInit(){
     await this.cargarPartidasPendientes();
@@ -31,6 +35,14 @@ export class DashboardPartidasComponent {
   irAPlay() {
     
     this.partidaService.crearPartida();
+
+
+    if (this.auth.currentUser?.id !== undefined) {
+      this.usuarioTiendaService.getUserTienda(this.auth.currentUser.id).subscribe(usuarioTienda => {
+        this.usuarioTiendaService.updateUserTienda(usuarioTienda);
+          this.sharingObservableTienda.updateTiendaUsuario(usuarioTienda);
+      });
+    }
   }
 
 
