@@ -38,8 +38,8 @@ export class UsuarioTiendaService {
   async getUserTienda2(id: number): Promise<Tienda | undefined> {
     try {
       const resultado = await fetch(this.url+"/"+id, { method: "GET" })
-      const partidas = resultado.json();
-      return partidas;
+      const tienda = await resultado.json();
+      return tienda;
     } catch (error) {
       console.log(error);
     }
@@ -52,7 +52,7 @@ export class UsuarioTiendaService {
         method: "PUT",
         body: JSON.stringify(partida),
         headers: { "Content-type": "application/json" }
-      })
+      });
     } catch (error) {
       console.log(error);
     }
