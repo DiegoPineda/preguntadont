@@ -1,19 +1,60 @@
 <section>
-    <div>
-        <h2>Desempeño</h2> 
-        <div>Ganados</div>
-        <div>Perdidos</div>
-        <div>Empates</div>
+  <article class="article-desempenio">
+    <h2>Desempeño</h2>
+    <div class="desempenio">
+      <div class="info-desempenio">
+        <span class="cantidad ganados">{{ datos?.partidasGanadas }}</span>
+        <span class="subtitle">Ganados</span>
+      </div>
+      <div class="info-desempenio">
+        <span class="cantidad perdidos">{{ datos?.partidasPerdidas }}</span>
+        <span class="subtitle">Perdidos</span>
+      </div>
+      <div class="info-desempenio">
+        <span class="cantidad empatados">{{ datos?.partidasEmpatadas }}</span>
+        <span class="subtitle">Empatados</span>
+      </div>
     </div>
-    <div>
-        <h2>Aciertos por categoria</h2> 
-        <div class="container-categorias">
-            <div>Entretenimiento</div>
-            <div>Arte</div>
-            <div>Deportes</div>
-            <div>Historia</div>
-            <div>Ciencia</div>
-            <div>Geografia</div>
-        </div>
+  </article>
+  <article>
+    <h2>Aciertos por categoria</h2>
+    <div class="container-categorias">
+      <div class="categoria">
+        <h3>Entretenimiento</h3>
+        <div class="emoticon"><p>🎮🎈</p></div>
+        <p class="entretenimiento porc">%{{ porcentajeEntretenimiento }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalEntretenimiento }}</p>
+      </div>
+      <div class="categoria">
+        <h3>Arte</h3>
+        <div class="emoticon"><p>🎭🎨</p></div>
+        <p class="arte porc">%{{ porcentajeArte }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalArte }}</p>
+      </div>
+      <div class="categoria">
+        <h3>Deportes</h3>
+        <div class="emoticon"><p>🏈⚽</p></div>
+        <p class="deportes porc">%{{ porcentajeDeporte }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalDeporte }}</p>
+      </div>
+      <div class="categoria">
+        <h3>Historia</h3>
+        <div class="emoticon"><p>🗿🏛</p></div>
+        <p class="historia porc">%{{ porcentajeHistoria }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalHistoria }}</p>
+      </div>
+      <div class="categoria">
+        <h3>Ciencia</h3>
+        <div class="emoticon"><p>🧪👨‍🔬</p></div>
+        <p class="ciencia porc">%{{ porcentajeCiencia }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalCiencia }}</p>
+      </div>
+      <div class="categoria">
+        <h3>Geografia</h3>
+        <div class="emoticon"><p>🌍🗺</p></div>
+        <p class="geografia porc">%{{ porcentajeGeografia }}</p>
+        <p class="preg">Preguntas: {{ datos?.totalGeografia }}</p>
+      </div>
     </div>
+  </article>
 </section>

@@ -41,10 +41,10 @@
               </td>
 
               <td *ngIf="item.idUsuario1 === idUsuario">
-                <button *ngIf="item.usuarioFinalizo1 === false" class="btn-retomar">Reanudar partida</button>
+                <button *ngIf="item.usuarioFinalizo1 === false" class="btn-retomar" (click)="reanudarPartida(item.id)">Reanudar partida</button>
               </td>
               <td *ngIf="item.idUsuario2 === idUsuario">
-                <button *ngIf="item.usuarioFinalizo2 === false" class="btn-retomar">Reanudar partida</button>
+                <button *ngIf="item.usuarioFinalizo2 === false" class="btn-retomar" (click)="reanudarPartida(item.id)">Reanudar partida</button>
               </td>
             </tr>
           </tbody>

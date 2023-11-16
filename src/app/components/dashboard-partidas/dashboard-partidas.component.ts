@@ -20,12 +20,14 @@ export class DashboardPartidasComponent {
   listaUsuarios: Usuario[] | undefined;
   idUsuario:number|undefined;
 
+
   constructor(
               private partidaService:PartidaService,
               private auth: AuthService,
               private UsuarioService:UsuarioService,
               private usuarioTiendaService: UsuarioTiendaService,
-              private sharingObservableTienda: SharingService) {}
+              private sharingObservableTienda: SharingService,
+              private router:Router) {}
 
   async ngOnInit(){
     await this.cargarPartidasPendientes();
@@ -65,4 +67,7 @@ export class DashboardPartidasComponent {
   }
 
 
+  reanudarPartida(id: string){
+    this.router.navigate(["/partida", id]);
+  }
 }

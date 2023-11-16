@@ -6,10 +6,99 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--geografia);
+    background-color: var(--backgroundcolor);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     gap: 2rem;
+    color: var(--letra-normal)
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    width: 90%;
+    justify-content: center;
 }
 
 
+
+.container-categorias{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+
+
+.desempenio{
+    display: flex;
+    flex-direction: row;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 30rem;
+}
+
+.info-desempenio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cantidad{
+    font-size: 5rem;
+}
+.subtitle{
+    font-size: 1.5rem;
+}
+.ganados{
+    color: var(--ciencia)
+}
+.perdidos{
+    color: var(--entretenimiento)
+}
+.empatados{
+    color: var(--deportes)
+}
+
+h2{
+    background-color: var(--acentuar);
+    padding: 0 2rem;
+    color: var(--letra-negrita);
+    border-radius: 1rem;
+}
+h3{
+    color: var(--letra-negrita)
+}
+.preg{
+    font-size: 1.5rem;
+}
+.emoticon{
+    font-size: 5rem;
+}
+.porc{
+    font-size: 5rem;
+}
+
+.entretenimiento{
+    color: var(--entretenimiento)
+}
+.arte{
+    color:var(--arte)
+}
+.deportes{
+    color:var(--deportes)
+}
+.historia{
+    color:var(--historia)
+}
+.ciencia{
+    color:var(--ciencia)
+}
+.geografia{
+    color:var(--geografia)
+}
