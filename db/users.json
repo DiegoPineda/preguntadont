@@ -1,11 +1,74 @@
 {
   "usuarios": [
-    
+    {
+      "nickname": "Rafael",
+      "email": "rtoresani@gmail.com",
+      "password": "12341234",
+      "id": 1
+    },
+    {
+      "nickname": "DieguiihtoohFiif:$",
+      "email": "diego10@gmail.com",
+      "password": "12341234",
+      "id": 2
+    }
   ],
   "tienda": [
-    
+    {
+      "id": 1,
+      "monedas": 0,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    },
+    {
+      "id": 2,
+      "monedas": 0,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    }
   ],
   "estadisticas": [
-    
+    {
+      "id": 1,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 2,
+      "totalArte": 6,
+      "aciertosCiencia": 1,
+      "totalCiencia": 5,
+      "aciertosDeporte": 3,
+      "totalDeporte": 5,
+      "aciertosEntretenimiento": 1,
+      "totalEntretenimiento": 4,
+      "aciertosGeografia": 3,
+      "totalGeografia": 10,
+      "aciertosHistoria": 1,
+      "totalHistoria": 8
+    },
+    {
+      "id": 2,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 2,
+      "aciertosGeografia": 0,
+      "totalGeografia": 0,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    }
   ]
 }

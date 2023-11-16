@@ -8,27 +8,28 @@ section{
     margin: 0 auto;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--backgroundcolor);
     padding: 1rem;
-    
+
 }
 
 .timer{
     display: flex;
     font-size: 5rem;
-    background-color: red;
+    background-color: var(--negativo);
     width: 8rem;
     height: 8rem;
     text-align: center;
     justify-content: center;
     align-items: center;
-   border-radius: 100%;
+    border-radius: 100%;
 }
 
 h3{
     font-size: 5rem;
     text-align: center;
     margin-bottom: 2rem;
+    color: var(--letra-negrita);
 }
 
 form{
@@ -47,6 +48,15 @@ form input{
     border: none;
     width: 90%;
     padding: 1rem;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s ease-in-out;
+    color: var(--letra-negrita)
+}
+
+form input:hover{
+    font-size: 4.5rem;
+    color: var(--acentuar2)
 }
 
 .consumibles{
@@ -63,6 +73,18 @@ form input{
     width: 25rem;
     height: 12.5rem;
     border: none;
-
 }
 
+
+
+
+
+.rtaCorrecta{
+    background-color: var(--positivo);
+    color:var(--letra-negrita);
+}
+
+.rtaIncorrecta{
+    background-color: var(--negativo);
+    color:var(--letra-negrita);
+}

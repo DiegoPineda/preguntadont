@@ -2,12 +2,13 @@ section{
   width: 60%;
   height: 70rem;
   margin: 0 auto;
-  background-color: var(--deportes);
+  background-color: var(--backgroundcolor);
   display: flex;
   flex-direction: row;
   color: rgb(0, 0, 0);
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
+  color: var(--letra-negrita)
 }
 
 .productos-container {
@@ -34,6 +35,11 @@ section{
 .image-producto{
   font-size: 10rem;
   text-align: center;
+  transition: 0.5s ease-in-out;
+}
+
+.image-producto:hover{
+  font-size: 15rem;
 }
 
 form{
@@ -51,5 +57,15 @@ form input{
   text-align: center;
   border-radius: 10rem;
   border: 1px solid var(--letra-normal);
+  transition: 0.5s ease-in-out;
+}
+.comprar{
+  background-color: var(--acentuar);
+  border: none;
+}
 
+.comprar:hover{
+  background-color: var(--positivo);
+  color: var(--letra-negrita);
+  font-size: 3.5rem;
 }

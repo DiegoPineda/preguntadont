@@ -34,17 +34,17 @@
               </td>
 
               <td *ngIf="item.idUsuario1 === idUsuario">
-                <span class="aciertos">{{ item.aciertosUsuario1 }}</span>
+                <span>Aciertos: {{ item.aciertosUsuario1 }}/{{item.contadorUsuario1}}</span>
               </td>
               <td *ngIf="item.idUsuario2 === idUsuario">
-                <span class="aciertos">{{ item.aciertosUsuario2 }}</span>
+                <span>Aciertos: {{ item.aciertosUsuario2 }}/{{item.contadorUsuario1}}</span>
               </td>
 
               <td *ngIf="item.idUsuario1 === idUsuario">
-                <button *ngIf="item.usuarioFinalizo1 === false">Retomar</button>
+                <button *ngIf="item.usuarioFinalizo1 === false" class="btn-retomar">Reanudar partida</button>
               </td>
               <td *ngIf="item.idUsuario2 === idUsuario">
-                <button *ngIf="item.usuarioFinalizo2 === false">Retomar</button>
+                <button *ngIf="item.usuarioFinalizo2 === false" class="btn-retomar">Reanudar partida</button>
               </td>
             </tr>
           </tbody>

@@ -37,15 +37,16 @@ form{
   height: 5rem;
   text-align: center;
   border: none;
-  background-color: var(--ciencia);
+  background-color: var(--acentuar);
   border-radius: 10rem;
   font-size: 2rem;
   transition: 0.3 ease;
-  color: white;
+  color: var(--letra-negrita);
 }
 
 .campo .input:focus, .campo #btnRegistro:focus{
   outline: none;
+
 }
 
 .campo .input:hover{
@@ -54,7 +55,8 @@ form{
 }
 
 .campo #btnRegistro:hover{
-  background-color: var(--entretenimiento);
+  background-color: var(--positivo);
+  color: var(--backgroundcolor)
 }
 
 
@@ -66,20 +68,21 @@ form{
 
 .textoLogin a{
   text-decoration: none;
-  color: var(--letra-normal);
+  color: var(--acentuar);
 }
 
 .textoLogin a:hover{
-  color: var(--entretenimiento);
+  color: var(--positivo);
 }
 
 .error{
   font-size: 2rem;
-  color: var(--entretenimiento);
+  color: var(--negativo);
 }
 
 
 h2{
   font-size: 3rem;
   padding: 2rem;
+  color: var(--letra-negrita)
 }

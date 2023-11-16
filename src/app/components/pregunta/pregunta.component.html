@@ -7,32 +7,50 @@
     <form action="">
       <input
         type="button"
-        class="btn btn-border-pop"
+        class="btn btn-background-slide"
         [value]="valores?.[0]"
-        (click)="verificarRespuesta(valores?.[0])"
+        (click)="verificarRespuesta(valores?.[0], 0)"
+        [ngClass]="{
+          'rtaCorrecta': rtaCorrecta === 0,
+          'rtaIncorrecta': rtaIncorrecta === 0
+        }"
         [disabled]="respuestasBloqueadas.has(valores?.[0])"
       />
       <input
         type="button"
+        class="btn btn-background-slide"
         [value]="valores?.[1]"
-        (click)="verificarRespuesta(valores?.[1])"
+        (click)="verificarRespuesta(valores?.[1], 1)"
+        [ngClass]="{
+          'rtaCorrecta': rtaCorrecta === 1,
+          'rtaIncorrecta': rtaIncorrecta === 1
+        }"
         [disabled]="respuestasBloqueadas.has(valores?.[1])"
       />
       <input
         type="button"
+        class="btn btn-background-slide"
         [value]="valores?.[2]"
-        (click)="verificarRespuesta(valores?.[2])"
+        (click)="verificarRespuesta(valores?.[2], 2)"
+        [ngClass]="{
+          'rtaCorrecta': rtaCorrecta === 2,
+          'rtaIncorrecta': rtaIncorrecta === 2
+        }"
         [disabled]="respuestasBloqueadas.has(valores?.[2])"
       />
       <input
         type="button"
+        class="btn btn-background-slide"
         [value]="valores?.[3]"
-        (click)="verificarRespuesta(valores?.[3])"
+        (click)="verificarRespuesta(valores?.[3], 3)"
+        [ngClass]="{
+          'rtaCorrecta': rtaCorrecta === 3,
+          'rtaIncorrecta': rtaIncorrecta === 3
+        }"
         [disabled]="respuestasBloqueadas.has(valores?.[3])"
       />
     </form>
-  </div>
-
+</div>
   <div class="consumibles">
     <button [ngClass]="{'bomba btn-bloqueado': bombaBloqueado}" (click)="bloquearPregunta()">💣x{{tiendaUsuario?.cantBombas}}</button>
     <button [ngClass]="{'conejo btn-bloqueado': conejoBloqueado}" (click)="saltarPregunta()">🐰x{{tiendaUsuario?.cantConejos}}</button>

@@ -6,25 +6,30 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--entretenimiento);
+    background-color: var(--backgroundcolor);
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
     gap: 2rem;
+    color: var(--letra-normal)
 }
 
 .jugar{
     width: 75%;
     height: 12rem;
-    background-color: #3185FC;
+    background-color: var(--acentuar);
     font-size: 5rem;
     margin: 2rem 0;
     border: none;
     border-radius: 2rem;
     transition: 0.2s ease-in-out;
+    color: var(--backgroundcolor);
+    transition: 0.5s ease-in-out;
 }
 
 .jugar:hover{
-    background-color: #34E5FF;
+    background-color: var(--positivo);
+    color: var(--letra-negrita);
+    font-size: 7rem;
 }
 
 .container-principal{
@@ -38,17 +43,24 @@ section{
 }
 
 .pendientes .encabezado{
-    background-color: #34E5FF;
+    background-color: var(--positivo);
+    color: var(--letra-negrita);
 }
 .finalizadas .encabezado{
-    background-color: #424651;
+    background-color: var(--acentuar2);
+    color: var(--letra-negrita)
 }
+
+table{
+    border-collapse: collapse;
+}
+
 
 .container-partidas{
     height: 15rem;
     overflow-y: auto;
     margin-bottom: 2rem;
-    color:rgb(255, 255, 255);
+    color: var(--letra-normal);
     text-align: center;
 }
 
@@ -56,10 +68,4 @@ section{
     width: 100%;
 }
 
-.aciertos{
-    background-color: black;
-    display: inline-block;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 100%;
-}
+
