@@ -59,10 +59,6 @@ export class TiendaComponent {
               break;
             case 3:
               // Acciones para el caso id igual a 3
-              usuarioTienda.cantReversa += cantidadComprada;
-              break;
-            case 4:
-              // Acciones para el caso id igual a 4
               usuarioTienda.cantRelojes += cantidadComprada;
               break;
           }
