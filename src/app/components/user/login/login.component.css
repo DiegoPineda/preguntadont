@@ -39,15 +39,16 @@ form{
   height: 5rem;
   text-align: center;
   border: none;
-  background-color: var(--ciencia);
+  background-color: var(--acentuar);
   border-radius: 10rem;
   font-size: 2rem;
   transition: 0.3 ease;
-  color: white;
+  color: var(--letra-negrita);
 }
 h2{
   font-size: 3rem;
   padding: 2rem;
+  color: var(--letra-negrita);
 }
 
 
@@ -56,12 +57,13 @@ h2{
 }
 
 .campo .input:hover{
-  background-color: #dfdfdf;
+  background-color: var(--acentuar-bg);
   color: rgb(0, 0, 0);
 }
 
 .campo #ingresar:hover{
-  background-color: var(--entretenimiento);
+  background-color: var(--positivo);
+  color: var(--backgroundcolor);
 }
 
 .textoRegistro{
@@ -72,14 +74,14 @@ h2{
 
 .textoRegistro a{
   text-decoration: none;
-  color: var(--letra-normal);
+  color: var(--acentuar);
 }
 
 .textoRegistro a:hover{
-  color: var(--entretenimiento);
+  color: var(--positivo);
 }
 
 .error{
   font-size: 2rem;
-  color: var(--entretenimiento);
+  color: var(--negativo);
 }

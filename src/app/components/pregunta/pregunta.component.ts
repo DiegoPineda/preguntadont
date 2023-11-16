@@ -32,6 +32,9 @@ export class PreguntaComponent {
   timer:number=10;
   timerSubscription: Subscription | undefined;
 
+  rtaCorrecta: number = -1;
+  rtaIncorrecta: number = -1;
+
   constructor(
     private preguntaService: PreguntaService,
     private sharingService: SharingService,
@@ -42,9 +45,6 @@ export class PreguntaComponent {
   async ngOnInit() {
     await this.cargarPregunta();
     await this.actualizarConsumibles();
-    /* this.sharingService.tiendaUsuario.subscribe((tienda) => {
-      this.tiendaUsuario = tienda;
-    }); */
     this.bloquearConsumibles();
     this.cuentaRegresiva();
   }
@@ -89,13 +89,20 @@ export class PreguntaComponent {
     });
   }
 
-  verificarRespuesta(respuestaSeleccionada: string | undefined) {
+  verificarRespuesta(respuestaSeleccionada: string | undefined, indice:number) {
+    this.timerSubscription?.unsubscribe();
     if (respuestaSeleccionada === this.pregunta?.respuesta) {
       console.log('¡Respuesta correcta!');
-      this.sharingService.enviarResultado(true);
+      this.rtaCorrecta = indice;
+      setTimeout(()=> {
+        this.sharingService.enviarResultado(true);
+      }, 2000)
     } else {
       console.log('Respuesta incorrecta. Intenta de nuevo.');
-      this.sharingService.enviarResultado(false);
+      this.rtaIncorrecta = indice;
+      setTimeout(()=> {
+        this.sharingService.enviarResultado(false);
+      }, 2000)
     }
   }
 

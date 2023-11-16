@@ -3,7 +3,7 @@ header{
   grid-template-columns: 1fr 2fr 1fr;
   justify-content: space-between;
   height: 5rem;
-  background-color: rgb(255, 234, 195);
+  background-color: white;
   color: rgb(0, 0, 0);
 }
 
