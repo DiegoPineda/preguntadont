@@ -180,13 +180,14 @@ export class PartidaComponent {
               await this.partidaService.putPartida(this.partida);
             }
           }
-          if (this.partida.contadorUsuario1 == 5) {
+          if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+            await this.partidaTermino();
+          } else if (this.partida.contadorUsuario1 == 5) {
             this.partida.usuarioFinalizo1 = true;
             await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
-
           }
-          await this.partidaTermino();
+
 
           this.router.navigate(["/home"]);
         } else {//usuario2
@@ -251,12 +252,15 @@ export class PartidaComponent {
               await this.partidaService.putPartida(this.partida);
             }
           }
-          if (this.partida.contadorUsuario2 == 5) {
+
+          if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+            await this.partidaTermino();
+          } else if (this.partida.contadorUsuario2 == 5) {
             this.partida.usuarioFinalizo2 = true;
             await this.partidaService.putPartida(this.partida);
             alert("Gracias por jugar!")
           }
-          await this.partidaTermino();
+
 
 
           this.router.navigate(["/home"]);
@@ -273,47 +277,47 @@ export class PartidaComponent {
   }
 
   async partidaTermino() {
-    if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
-      let monedasUsuario1 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario1);
-      const monedasUsuario2 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario2);
 
-      let estUsuario1 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario1);
-      let estUsuario2 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario2);
+    let monedasUsuario1 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario1);
+    const monedasUsuario2 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario2);
 
-      await this.partidaService.postPartidaTerminada(this.partida);
-      await this.partidaService.deletePartida(this.partida.id);
-      if (this.partida.aciertosUsuario1 > this.partida.aciertosUsuario2) {
-        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
-          estUsuario1.partidasGanadas++;
-          estUsuario1.puntos += 3;
-          monedasUsuario1.monedas += 7;
+    let estUsuario1 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario1);
+    let estUsuario2 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario2);
 
-          estUsuario2.partidasPerdidas++;
-        }
-      } else if (this.partida.aciertosUsuario1 < this.partida.aciertosUsuario2) {
-        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
-          estUsuario2.partidasGanadas++;
-          estUsuario2.puntos += 3;
-          monedasUsuario2.monedas += 7;
+    await this.partidaService.postPartidaTerminada(this.partida);
+    await this.partidaService.deletePartida(this.partida.id);
+    if (this.partida.aciertosUsuario1 > this.partida.aciertosUsuario2) {
+      if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+        estUsuario1.partidasGanadas++;
+        estUsuario1.puntos += 3;
+        monedasUsuario1.monedas += 7;
 
-          estUsuario1.partidasPerdidas++;
-        }
-      } else {
-        if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
-          estUsuario2.partidasEmpatadas++;
-          estUsuario1.partidasEmpatadas++;
-          estUsuario1.puntos += 1;
-          estUsuario2.puntos += 1;
-          monedasUsuario1.monedas += 4;
-          monedasUsuario2.monedas += 4;
-        }
+        estUsuario2.partidasPerdidas++;
       }
-      if (estUsuario1) { await this.usuarioService.putUsuarioEstadistica(estUsuario1); }
-      if (estUsuario2) { await this.usuarioService.putUsuarioEstadistica(estUsuario2); }
-      if (monedasUsuario1) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario1); }
-      if (monedasUsuario2) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario2); }
+    } else if (this.partida.aciertosUsuario1 < this.partida.aciertosUsuario2) {
+      if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+        estUsuario2.partidasGanadas++;
+        estUsuario2.puntos += 3;
+        monedasUsuario2.monedas += 7;
 
+        estUsuario1.partidasPerdidas++;
+      }
+    } else {
+      if (estUsuario1 && estUsuario2 && monedasUsuario2 && monedasUsuario1) {
+        estUsuario2.partidasEmpatadas++;
+        estUsuario1.partidasEmpatadas++;
+        estUsuario1.puntos += 1;
+        estUsuario2.puntos += 1;
+        monedasUsuario1.monedas += 4;
+        monedasUsuario2.monedas += 4;
+      }
     }
+    if (estUsuario1) { await this.usuarioService.putUsuarioEstadistica(estUsuario1); }
+    if (estUsuario2) { await this.usuarioService.putUsuarioEstadistica(estUsuario2); }
+    if (monedasUsuario1) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario1); }
+    if (monedasUsuario2) { await this.usuarioTienda.putTiendaUsuario(monedasUsuario2); }
+
+
   }
 
   forzarError() {
