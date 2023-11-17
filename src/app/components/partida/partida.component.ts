@@ -279,7 +279,7 @@ export class PartidaComponent {
   async partidaTermino() {
 
     let monedasUsuario1 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario1);
-    const monedasUsuario2 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario2);
+    let monedasUsuario2 = await this.usuarioTienda.getUserTienda2(this.partida.idUsuario2);
 
     let estUsuario1 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario1);
     let estUsuario2 = await this.usuarioService.getUsuarioEstadistica(this.partida.idUsuario2);
