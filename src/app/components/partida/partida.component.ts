@@ -185,10 +185,10 @@ export class PartidaComponent {
           } else if (this.partida.contadorUsuario1 == 5) {
             this.partida.usuarioFinalizo1 = true;
             await this.partidaService.putPartida(this.partida);
-            alert("Gracias por jugar!")
+            
           }
 
-
+          alert("Gracias por jugar!")
           this.router.navigate(["/home"]);
         } else {//usuario2
 
@@ -258,11 +258,11 @@ export class PartidaComponent {
           } else if (this.partida.contadorUsuario2 == 5) {
             this.partida.usuarioFinalizo2 = true;
             await this.partidaService.putPartida(this.partida);
-            alert("Gracias por jugar!")
+            
           }
 
 
-
+          alert("Gracias por jugar!")
           this.router.navigate(["/home"]);
 
 
