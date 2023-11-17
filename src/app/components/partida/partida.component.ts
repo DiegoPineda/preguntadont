@@ -181,6 +181,7 @@ export class PartidaComponent {
             }
           }
           if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+            this.partida.usuarioFinalizo1 = true;
             await this.partidaTermino();
           } else if (this.partida.contadorUsuario1 == 5) {
             this.partida.usuarioFinalizo1 = true;
@@ -254,6 +255,7 @@ export class PartidaComponent {
           }
 
           if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+            this.partida.usuarioFinalizo2 = true;
             await this.partidaTermino();
           } else if (this.partida.contadorUsuario2 == 5) {
             this.partida.usuarioFinalizo2 = true;
