@@ -102,6 +102,8 @@ export class PreguntaComponent {
       this.rtaIncorrecta = indice;
       setTimeout(()=> {
         this.sharingService.enviarResultado(false);
+        this.enunciado = "";
+        this.valores = [];
       }, 2000)
     }
   }

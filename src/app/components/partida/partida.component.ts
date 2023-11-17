@@ -19,7 +19,7 @@ export class PartidaComponent {
   pregunta: boolean | undefined;
   usuario: Usuario | undefined;
   categoria: string | null = "";
-
+  cantPreguntas : number = 3;
 
 
   partida: Partida = {
@@ -122,7 +122,7 @@ export class PartidaComponent {
           // Lógica para el usuario 1
 
 
-          while (this.partida.contadorUsuario1 < 5) {
+          while (this.partida.contadorUsuario1 < this.cantPreguntas) {
 
             this.mostrarPlay = true;
             //recibo la categoria del spin
@@ -180,10 +180,10 @@ export class PartidaComponent {
               await this.partidaService.putPartida(this.partida);
             }
           }
-          if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+          if (this.partida.contadorUsuario1 == this.cantPreguntas && this.partida.contadorUsuario2 == this.cantPreguntas) {
             this.partida.usuarioFinalizo1 = true;
             await this.partidaTermino();
-          } else if (this.partida.contadorUsuario1 == 5) {
+          } else if (this.partida.contadorUsuario1 == this.cantPreguntas) {
             this.partida.usuarioFinalizo1 = true;
             await this.partidaService.putPartida(this.partida);
             
@@ -193,7 +193,7 @@ export class PartidaComponent {
           this.router.navigate(["/home"]);
         } else {//usuario2
 
-          while (this.partida.contadorUsuario2 < 5) {
+          while (this.partida.contadorUsuario2 < this.cantPreguntas) {
 
             this.mostrarPlay = true;
             //
@@ -254,10 +254,10 @@ export class PartidaComponent {
             }
           }
 
-          if (this.partida.contadorUsuario1 == 5 && this.partida.contadorUsuario2 == 5) {
+          if (this.partida.contadorUsuario1 == this.cantPreguntas && this.partida.contadorUsuario2 == this.cantPreguntas) {
             this.partida.usuarioFinalizo2 = true;
             await this.partidaTermino();
-          } else if (this.partida.contadorUsuario2 == 5) {
+          } else if (this.partida.contadorUsuario2 == this.cantPreguntas) {
             this.partida.usuarioFinalizo2 = true;
             await this.partidaService.putPartida(this.partida);
             
