@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Partida, Usuario } from '../interfaces/interfaces';
 import { AuthService } from './auth.service';
-import { SharingService } from './sharing.service';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -18,7 +17,7 @@ export class PartidaService {
   ) { }
 
   url: string = "http://localhost:3100/partidas";
-  url2: string= "http://localhost:3100/partidasTerminadas";
+  url2: string= "http://localhost:3090/partidasTerminadas";
 
   async getPartidas(): Promise<Partida[] | undefined> {
     try {

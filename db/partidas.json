@@ -1,17 +1,5 @@
 {
-  "partidas": [],
-  "partidasTerminadas": [
-    {
-      "id": "7509-adbf-ba41-58ed",
-      "idUsuario1": 1,
-      "idUsuario2": 2,
-      "aciertosUsuario1": 3,
-      "aciertosUsuario2": 3,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": true,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 5,
-      "amigo": false
-    }
+  "partidas": [
+    
   ]
 }

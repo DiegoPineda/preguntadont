@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Estadistica, Tienda, Usuario } from '../interfaces/interfaces';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +11,8 @@ export class UsuarioService {
   constructor(private router: Router, private http: HttpClient) { }
 
   url: string = "http://localhost:3200/usuarios";
-  url2: string = "http://localhost:3200/tienda";
-  url3: string = "http://localhost:3200/estadisticas";
+  url2: string = "http://localhost:3070/tienda";
+  url3: string = "http://localhost:3050/estadisticas";
 
   async postUsuario(usuario : Usuario){
     try {

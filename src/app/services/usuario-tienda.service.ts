@@ -10,7 +10,7 @@ export class UsuarioTiendaService {
 
   constructor(private http: HttpClient) { }
 
-  url: string = "http://localhost:3200/tienda/";
+  url: string = "http://localhost:3070/tienda/";
 
   getUserTienda(userId: number): Observable<Tienda> {
     return this.http.get<Tienda>(this.url + userId);
