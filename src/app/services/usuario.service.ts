@@ -35,7 +35,7 @@ export class UsuarioService {
         headers: {"Content-type" : "application/json"}
       })
     } catch (error) {  
-    	console.log(error);
+    	console.log("Error en postUsuarioTienda");
     }
   }
 
@@ -47,7 +47,7 @@ export class UsuarioService {
         headers: {"Content-type" : "application/json"}
       })
     } catch (error) {  
-    	console.log(error);
+    	console.log("Error en postUsuarioEstadistica");
     }
   }
 
@@ -78,7 +78,7 @@ export class UsuarioService {
       const estadistica = resultado.json();
       return estadistica;
     } catch (error) {
-      console.log(error);
+      console.log("Error en getUsuarioEstadistica");
     }
     return undefined;
   }
@@ -91,7 +91,7 @@ export class UsuarioService {
         headers: { "Content-type": "application/json" }
       })
     } catch (error) {
-      console.log(error);
+      console.log("Error en putUsuarioEstadistica");
     }
   }
 

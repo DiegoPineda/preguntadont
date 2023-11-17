@@ -70,7 +70,7 @@ export class PartidaService {
         headers: { "Content-type": "application/json" }
       })
     } catch (error) {
-      console.log(error);
+      console.log("Error en postPartida");
     }
   }
 
@@ -82,7 +82,7 @@ export class PartidaService {
         headers: { "Content-type": "application/json" }
       })
     } catch (error) {
-      console.log(error);
+      console.log("Error en putPartida");
     }
   }
 
