@@ -7,13 +7,13 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "1": "json-server ./db/users.json -p 3200 --watch",
-    "2": "json-server ./db/preguntas.json -p 3001 --watch",
-    "3": "json-server ./db/partidas.json -p 3100 --watch",
-    "4": "json-server ./db/tienda.json -p 3003 --watch",
-    "5": "json-server ./db/estadisticas.json -p 3050 --watch",
-    "6": "json-server ./db/tiendaUsuario.json -p 3070 --watch",
-    "7": "json-server ./db/partidasTerminadas.json -p 3090 --watch"
+    "1": "json-server ./db/users.json -p 3200 --watch --no-cors",
+    "2": "json-server ./db/preguntas.json -p 3001 --watch --no-cors",
+    "3": "json-server ./db/partidas.json -p 3100 --watch --no-cors",
+    "4": "json-server ./db/tienda.json -p 3003 --watch --no-cors",
+    "5": "json-server ./db/estadisticas.json -p 3050 --watch --no-cors",
+    "6": "json-server ./db/tiendaUsuario.json -p 3070 --watch --no-cors",
+    "7": "json-server ./db/partidasTerminadas.json -p 3090 --watch --no-cors"
 
   },
   "private": true,
