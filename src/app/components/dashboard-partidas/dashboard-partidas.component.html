@@ -63,7 +63,10 @@
               <td
                 *ngIf="
                   listaUsuarios !== undefined &&
-                  listaUsuarios[item.idUsuario1 - 1] !== undefined
+                  listaUsuarios[item.idUsuario1 - 1] !== undefined &&
+                  listaUsuarios[item.idUsuario2 - 1] !== undefined &&
+                  (listaUsuarios[item.idUsuario1 - 1].id === idUsuario ||
+                  listaUsuarios[item.idUsuario2 - 1].id === idUsuario )
                 "
               >
                 <span
@@ -93,12 +96,13 @@
               </td>
 
               <td>
-                <span *ngIf="item.idUsuario1 === idUsuario && item.aciertosUsuario1>item.aciertosUsuario2">GANASTE! 🥳</span>
+                <span *ngIf="item.idUsuario1 === idUsuario && item.aciertosUsuario1>item.aciertosUsuario2"  >GANASTE! 🥳</span>
                 <span *ngIf="item.idUsuario1 === idUsuario && item.aciertosUsuario1===item.aciertosUsuario2">EMPATE 🥱</span>
-                <span *ngIf="item.idUsuario1 === idUsuario &&  item.aciertosUsuario1<item.aciertosUsuario2">PERDISTE! 😲</span>
-                <span *ngIf="item.idUsuario2 === idUsuario &&  item.aciertosUsuario1<item.aciertosUsuario2">GANASTE! 🥳</span>
-                <span *ngIf="item.idUsuario2 === idUsuario &&  item.aciertosUsuario1===item.aciertosUsuario2">EMPATE 🥱</span>
-                <span *ngIf="item.idUsuario2 === idUsuario &&  item.aciertosUsuario1>item.aciertosUsuario2">PERDISTE! 😲</span>
+                <span *ngIf="item.idUsuario1 === idUsuario && item.aciertosUsuario1<item.aciertosUsuario2"  >PERDISTE! 😲</span>
+
+                <span *ngIf="item.idUsuario2 === idUsuario && item.aciertosUsuario1<item.aciertosUsuario2"  >GANASTE! 🥳</span>
+                <span *ngIf="item.idUsuario2 === idUsuario && item.aciertosUsuario1===item.aciertosUsuario2">EMPATE 🥱</span>
+                <span *ngIf="item.idUsuario2 === idUsuario && item.aciertosUsuario1>item.aciertosUsuario2"  >PERDISTE! 😲</span>
               </td>
             </tr>
           </tbody>

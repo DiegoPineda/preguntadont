@@ -178,7 +178,7 @@ export class PartidaService {
   async getPartidasTerminadas(): Promise<Partida[] | undefined> {
     try {
       const resultado = await fetch(this.url2, { method: "GET" })
-      const partidas = resultado.json();
+      const partidas = await resultado.json();
       return partidas;
     } catch (error) {
       console.log(error);
