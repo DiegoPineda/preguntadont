@@ -63,3 +63,26 @@ html, body, app-root {
     background-color: var(--positivo);
     color:white;
 }
+
+.customPopup{
+    width: 60rem;
+    height: 60rem;
+}
+
+.swal2-popup {
+    font-size: 24px !important;
+}
+
+.swal2-styled {
+    padding: 10px 32px 10px 32px !important;
+    margin: 20px 10px 0px 10px !important;
+    width: 170px;
+    height: 45px;
+}
+
+.editarUsuario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }

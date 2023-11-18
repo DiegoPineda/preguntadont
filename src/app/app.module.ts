@@ -23,6 +23,10 @@ import { PartidaPageComponent } from './pages/partida-page/partida-page.componen
 import { PreguntaComponent } from './components/pregunta/pregunta.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { RankingComponent } from './components/ranking/ranking.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 
@@ -53,6 +57,9 @@ import { RankingComponent } from './components/ranking/ranking.component';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatDialogModule,
+    MatInputModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

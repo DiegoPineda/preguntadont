@@ -10,6 +10,7 @@
   </div>
   <nav class="navegacion">
     <div class="user">Bienvenido {{ getUser?.nickname }}!</div>
+    <a (click)="editarUsuario()">⚙️</a>
     <a (click)="onLogOut()" class="logout">Salir 😖</a>
   </nav>
 </header>

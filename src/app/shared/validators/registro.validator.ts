@@ -18,3 +18,29 @@ export const checkEmail = (email: string) => {
       catchError(() => of(true)) // Manejo de errores
     );
 };
+
+export async function verificarNickName(nickname: string): Promise<boolean> {
+  try {
+    const resultados = await fetch("http://localhost:3200/usuarios", { method: 'GET' });
+
+    if (!resultados.ok) {
+      throw new Error(`Error al obtener la lista de usuarios. Código de estado: ${resultados.status}`);
+    }
+
+    const usuarios = await resultados.json();
+
+    if (usuarios) {
+      for (let item of usuarios) {
+        if (item.nickname === nickname) {
+          return true;
+        }
+      }
+      return false;
+    } else {
+      throw new Error("No se pudo obtener la lista de usuarios.");
+    }
+  } catch (error) {
+    console.error("Error al verificar el nickname:", error);
+    return false; // En caso de error, devolver false
+  }
+}

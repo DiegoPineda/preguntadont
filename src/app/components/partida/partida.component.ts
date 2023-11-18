@@ -8,6 +8,7 @@ import { SharingService } from 'src/app/services/sharing.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
 import { IfStmt } from '@angular/compiler';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-partida',
@@ -19,7 +20,7 @@ export class PartidaComponent {
   pregunta: boolean | undefined;
   usuario: Usuario | undefined;
   categoria: string | null = "";
-  cantPreguntas : number = 3;
+  cantPreguntas : number = 1;
 
 
   partida: Partida = {
@@ -189,7 +190,16 @@ export class PartidaComponent {
             
           }
 
-          alert("Gracias por jugar!")
+          await Swal.fire({
+            title: "Gracias por jugar!",
+            text: "Tu desempeño en esta partida: aciertos "+ this.partida.aciertosUsuario1 + " de "+this.partida.contadorUsuario1,
+            imageUrl: "../../assets/pregunta2.jpg",
+            imageWidth: 230,
+            imageHeight: 230,
+            imageAlt: "Custom image",
+            heightAuto: false,
+            customClass:{popup:"customPopup"}
+          });
           this.router.navigate(["/home"]);
         } else {//usuario2
 
@@ -264,7 +274,16 @@ export class PartidaComponent {
           }
 
 
-          alert("Gracias por jugar!")
+          await Swal.fire({
+            title: "Gracias por jugar!",
+            text: "Tu desempeño en esta partida: aciertos "+ this.partida.aciertosUsuario2 + " de "+this.partida.contadorUsuario2,
+            imageUrl: "../../assets/pregunta2.jpg",
+            imageWidth: 230,
+            imageHeight: 230,
+            imageAlt: "Custom image",
+            heightAuto: false,
+            customClass:{popup:"customPopup"}
+          });
           this.router.navigate(["/home"]);
 
 

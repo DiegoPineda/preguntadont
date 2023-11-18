@@ -6,6 +6,7 @@ import { SharingService } from 'src/app/services/sharing.service';
 import { TiendaService } from 'src/app/services/tienda.service';
 import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
 import { NumeroPositivoValidator } from 'src/app/shared/validators/numero-positivo.validator';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tienda',
@@ -66,11 +67,17 @@ export class TiendaComponent {
           this.usuarioTiendaService.updateUserTienda(usuarioTienda)
           this.sharingObservableTienda.updateTiendaUsuario(usuarioTienda);
 
-
-          alert("Gracias por la compra 😀")
+          Swal.fire({
+            title: "Gracias por tu compra! 😀",
+            icon: "success"
+          });
 
         } else {
-          alert("Monedas insuficientes");
+          Swal.fire({
+            icon: "error",
+            title: "Monedas insuficientes!",
+          });
+  
         }
       });
     }

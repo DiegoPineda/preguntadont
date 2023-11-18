@@ -106,4 +106,16 @@ export class UsuarioService {
     }
   }
 
+  async putUsuario(usuario: Usuario) {
+    try {
+      await fetch(`${this.url}/${usuario.id}`, {
+        method: "PUT",
+        body: JSON.stringify(usuario),
+        headers: { "Content-type": "application/json" }
+      })
+    } catch (error) {
+      console.log("Error en putUsuario");
+    }
+  }
+
 }

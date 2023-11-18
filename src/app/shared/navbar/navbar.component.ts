@@ -6,6 +6,8 @@ import { AuthService } from 'src/app/services/auth.service';
 import { SharingService } from 'src/app/services/sharing.service';
 import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import Swal from 'sweetalert2';
+import { verificarNickName } from '../validators/registro.validator';
 
 @Component({
   selector: 'app-navbar',
@@ -18,8 +20,8 @@ export class NavbarComponent {
     private authService: AuthService,
     private router: Router,
     private usuarioService: UsuarioService,
-    private usuarioTiendaService: UsuarioTiendaService
-  ) {}
+    private usuarioTiendaService: UsuarioTiendaService,
+  ) { }
 
   idActual: number | undefined;
   tiendaUsuario: Tienda | undefined;
@@ -58,5 +60,83 @@ export class NavbarComponent {
   onLogOut() {
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+
+  async editarUsuario() {
+
+
+
+
+    const { value: formValues } = await Swal.fire({
+      title: "Editar usuario",
+      html: `
+      <div class="editarUsuario">
+        <label for: "swal-input1">nickname</label>
+        <input id="swal-input1" class="swal2-input"">
+        <label for: "swal-input2">password</label>
+        <input type="password" id="swal-input2" class="swal2-input">
+        </div>
+      `,
+      focusConfirm: false,
+      preConfirm: () => {
+        const input1 = document.getElementById("swal-input1") as HTMLInputElement | null;
+        const input2 = document.getElementById("swal-input2") as HTMLInputElement | null;
+        return [
+          input1?.value,
+          input2?.value
+        ];
+      }
+    });
+    if (formValues) {
+      const [newNickname, newPassword] = formValues;
+    
+      // Realizar la comparación y actualización en el servidor JSON
+      const user = this.authService.currentUser; // Debes obtener el ID del usuario actual, por ejemplo, desde un token de autenticación.
+  
+      // Verificar y actualizar el nickname si no está vacío
+      if (newNickname !== "") {
+        const nicknameExists = await verificarNickName(newNickname); // Debes implementar esta función
+        console.log(nicknameExists);
+        if (!nicknameExists && user) {
+          user.nickname = newNickname;
+          console.log("newNickname");
+        }else{
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "El nickname ya se encuentra en uso!",
+          });
+          return ;
+        }
+      }
+    
+      // Verificar y actualizar la contraseña si no está vacía
+      if (newPassword !== "" && user) {
+        if(newPassword.length>=8){
+          user.password = newPassword;
+        }else{
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "La password debe tener al menos 8 caracteres!",
+          });
+          return;
+        }
+        
+      }
+    
+      // Enviar la actualización al servidor
+      if(user){
+        this.usuarioService.putUsuario(user);
+      }
+      
+    
+      await Swal.fire({
+        title: "Usuario modificado con exito!",
+        icon: "success"
+      });
+      window.location.reload();
+    }
+  
   }
 }
