@@ -20,7 +20,7 @@ export class PartidaComponent {
   pregunta: boolean | undefined;
   usuario: Usuario | undefined;
   categoria: string | null = "";
-  cantPreguntas : number = 1;
+  cantPreguntas : number = 5;
 
 
   partida: Partida = {
