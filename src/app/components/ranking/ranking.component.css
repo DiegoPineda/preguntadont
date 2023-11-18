@@ -37,6 +37,15 @@ tbody tr .nombre{
     padding-left: 2rem;
 }
 tbody{
-    background-color: var(--acentuar-bg);
+    background-color:   rgb(236, 236, 236);
 }
 
+.gold{
+    background-color:goldenrod;
+}
+.silver{
+    background-color: rgb(164, 164, 164);
+}
+.bronze{
+    background-color: #6e4d25;
+}

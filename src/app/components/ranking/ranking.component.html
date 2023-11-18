@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of topTen">
+            <tr *ngFor="let item of topTen" [ngClass]="{'gold': item.posicion === 1, 'silver': item.posicion === 2, 'bronze': item.posicion === 3}">
                 <td>{{item.posicion}}</td>
                 <td class="nombre">{{item.nickname}}</td>
                 <td>{{item.puntos}}</td>
