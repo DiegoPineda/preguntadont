@@ -31,7 +31,7 @@ export class PreguntaComponent {
 
   timer:number=10;
   timerSubscription: Subscription | undefined;
-
+  buttonHabilitado=true;
   rtaCorrecta: number = -1;
   rtaIncorrecta: number = -1;
 
@@ -90,6 +90,7 @@ export class PreguntaComponent {
   }
 
   verificarRespuesta(respuestaSeleccionada: string | undefined, indice:number) {
+    this.buttonHabilitado=false;
     this.timerSubscription?.unsubscribe();
     if (respuestaSeleccionada === this.pregunta?.respuesta) {
       console.log('¡Respuesta correcta!');
@@ -102,6 +103,7 @@ export class PreguntaComponent {
       this.rtaIncorrecta = indice;
       setTimeout(()=> {
         this.sharingService.enviarResultado(false);
+        this.buttonHabilitado=true;
         this.enunciado = "";
         this.valores = [];
       }, 2000)

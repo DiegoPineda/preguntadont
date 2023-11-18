@@ -9,7 +9,7 @@
         type="button"
         class="btn btn-background-slide"
         [value]="valores?.[0]"
-        (click)="verificarRespuesta(valores?.[0], 0)"
+        (click)="buttonHabilitado && verificarRespuesta(valores?.[0], 0)"
         [ngClass]="{
           'rtaCorrecta': rtaCorrecta === 0,
           'rtaIncorrecta': rtaIncorrecta === 0
@@ -20,7 +20,7 @@
         type="button"
         class="btn btn-background-slide"
         [value]="valores?.[1]"
-        (click)="verificarRespuesta(valores?.[1], 1)"
+        (click)="buttonHabilitado && verificarRespuesta(valores?.[1], 1)"
         [ngClass]="{
           'rtaCorrecta': rtaCorrecta === 1,
           'rtaIncorrecta': rtaIncorrecta === 1
@@ -31,7 +31,7 @@
         type="button"
         class="btn btn-background-slide"
         [value]="valores?.[2]"
-        (click)="verificarRespuesta(valores?.[2], 2)"
+        (click)="buttonHabilitado && verificarRespuesta(valores?.[2], 2)"
         [ngClass]="{
           'rtaCorrecta': rtaCorrecta === 2,
           'rtaIncorrecta': rtaIncorrecta === 2
@@ -42,7 +42,7 @@
         type="button"
         class="btn btn-background-slide"
         [value]="valores?.[3]"
-        (click)="verificarRespuesta(valores?.[3], 3)"
+        (click)="buttonHabilitado && verificarRespuesta(valores?.[3], 3)"
         [ngClass]="{
           'rtaCorrecta': rtaCorrecta === 3,
           'rtaIncorrecta': rtaIncorrecta === 3

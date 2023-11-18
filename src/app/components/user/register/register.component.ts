@@ -13,7 +13,11 @@ import { checkEmail, checkNickName } from 'src/app/shared/validators/registro.va
   styleUrls: ['./register.component.css']
 })
 
+
+
 export class RegisterComponent {
+
+  buttonHabilitado=true;
 
   formRegister: FormGroup = this.formBuilder.group({
     nickname: ["", [Validators.required, Validators.minLength(4)],[this.validateNickname.bind(this)]],
@@ -48,8 +52,9 @@ export class RegisterComponent {
   }
 
   async registrarUsuario() {
+    
     if (this.formRegister.invalid) return;
-
+    this.buttonHabilitado=false;
     const usuario: Usuario = {
       nickname: this.formRegister.controls["nickname"].value,
       email: this.formRegister.controls["email"].value,

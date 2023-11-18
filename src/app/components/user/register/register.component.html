@@ -4,7 +4,7 @@
 <section>
   <h2>REGISTRARSE</h2>
 
-  <form method="POST" id="formRegister" (ngSubmit)="registrarUsuario()" [formGroup]="formRegister">
+  <form method="POST" id="formRegister" (ngSubmit)="buttonHabilitado && registrarUsuario()" [formGroup]="formRegister">
     <div class="campo">
       <input type="text" id="nickname" class="nickname input" placeholder="nickname" formControlName="nickname" (input)="validar('nickname', 'error')"/>
     </div>

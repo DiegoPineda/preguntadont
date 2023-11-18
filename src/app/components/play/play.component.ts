@@ -17,6 +17,7 @@ export class PlayComponent {
   @ViewChild('wheel') wheelRef: ElementRef | undefined; // Cambia el nombre de la propiedad
   currentRotation: number = 0;
   numberOfElements: number = 6; // Número de elementos en la ruleta
+  divHabilitado= true;
 
    @Output() spinClick: EventEmitter<any> = new EventEmitter();
 
@@ -24,6 +25,7 @@ export class PlayComponent {
 
   girar() {
     if (this.wheelRef) {
+      this.divHabilitado = false;
       // Simula una rotación aleatoria de la ruleta
       const randomRotation = Math.ceil(Math.random()*3600);
       this.currentRotation += randomRotation;
@@ -62,6 +64,7 @@ export class PlayComponent {
 
         setTimeout(() => {
           this.sharingService.enviarCategoriaSpin(result);
+          this.divHabilitado = true;
         }, (this.currentRotation + 4000));
       } 
     }

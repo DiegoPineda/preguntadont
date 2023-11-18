@@ -19,7 +19,7 @@ export class DashboardPartidasComponent {
   listaTerminadas: Partida[]|undefined;
   listaUsuarios: Usuario[] | undefined;
   idUsuario:number|undefined;
-
+  buttonHabilitado=true;
 
   constructor(
               private partidaService:PartidaService,
@@ -35,7 +35,7 @@ export class DashboardPartidasComponent {
     await this.cargarUsuarios();
   }
   irAPlay() {
-    
+    this.buttonHabilitado=false;
     this.partidaService.crearPartida();
 
 

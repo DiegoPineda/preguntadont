@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Estadistica, Partida, Usuario, Tienda } from 'src/app/interfaces/interfaces';
 import { AuthService } from 'src/app/services/auth.service';
@@ -67,18 +67,36 @@ export class PartidaComponent {
     private route: ActivatedRoute,
     private usuarioService: UsuarioService,
     private router: Router,
-    private usuarioTienda: UsuarioTiendaService
+    private usuarioTienda: UsuarioTiendaService,
   ) { }
 
   mostrarPlay = false;
   mostrarPregunta = false;
 
   ngOnInit() {
+    this.detectarCambiosEnURL();
     this.iniciarPartida();
   }
 
+  private detectarCambiosEnURL() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        // Aquí puedes realizar acciones cuando la URL cambia
+        console.log('URL cambiada:', event.url);
 
+        // Ejemplo: redirigir al usuario a una ruta específica
+        if (event.url.includes('/home')) {
+          this.redireccionarAUnLugarEspecifico();
+        }
+      }
+    });
+  }
 
+  private redireccionarAUnLugarEspecifico() {
+    // Aquí puedes redirigir al usuario a donde quieras
+    this.router.navigate(['/home']);
+    window.location.reload();
+  }
 
 
 
