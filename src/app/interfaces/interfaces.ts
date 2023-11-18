@@ -66,3 +66,9 @@ export interface Partida{
     contadorUsuario2: number,
     amigo: boolean
 }
+
+export interface posicionTopTen{
+    posicion:number,
+    nickname: string,
+    puntos: number
+}

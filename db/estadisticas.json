@@ -1,5 +1,61 @@
 {
   "estadisticas": [
-    
+    {
+      "id": 1,
+      "puntos": 3,
+      "partidasGanadas": 1,
+      "partidasPerdidas": 1,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 1,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 1,
+      "totalEntretenimiento": 2,
+      "aciertosGeografia": 1,
+      "totalGeografia": 2,
+      "aciertosHistoria": 0,
+      "totalHistoria": 1
+    },
+    {
+      "id": 2,
+      "puntos": 0,
+      "partidasGanadas": 0,
+      "partidasPerdidas": 1,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 0,
+      "totalArte": 0,
+      "aciertosCiencia": 0,
+      "totalCiencia": 0,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 1,
+      "totalEntretenimiento": 1,
+      "aciertosGeografia": 0,
+      "totalGeografia": 1,
+      "aciertosHistoria": 0,
+      "totalHistoria": 1
+    },
+    {
+      "id": 3,
+      "puntos": 3,
+      "partidasGanadas": 1,
+      "partidasPerdidas": 0,
+      "partidasEmpatadas": 0,
+      "aciertosArte": 1,
+      "totalArte": 1,
+      "aciertosCiencia": 1,
+      "totalCiencia": 1,
+      "aciertosDeporte": 0,
+      "totalDeporte": 0,
+      "aciertosEntretenimiento": 0,
+      "totalEntretenimiento": 0,
+      "aciertosGeografia": 1,
+      "totalGeografia": 1,
+      "aciertosHistoria": 0,
+      "totalHistoria": 0
+    }
   ]
 }

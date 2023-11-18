@@ -1,0 +1,19 @@
+<section>
+    <h3>Ranking global</h3>
+    <table>
+        <thead>
+            <tr>
+                <td>Posición</td>
+                <td>Nombre de usuario</td>
+                <td>Puntos</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of topTen">
+                <td>{{item.posicion}}</td>
+                <td class="nombre">{{item.nickname}}</td>
+                <td>{{item.puntos}}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>

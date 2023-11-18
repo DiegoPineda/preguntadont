@@ -60,6 +60,18 @@ export class UsuarioService {
     }
     return undefined;
   }
+
+  async getEstadisticasUsuarios(): Promise <Estadistica[] | undefined>{
+    try {
+      const resultados = await fetch(this.url3, {method: 'GET'});
+      const usuarios = await resultados.json();
+      return usuarios;
+    } catch (error) {
+      console.log(error);
+    }
+    return undefined;
+  }
+  
   async getUsuario(id: number): Promise <Usuario | undefined>{
     try {
       const resultados = await fetch(`${this.url}/${id}`, {method: 'GET'});

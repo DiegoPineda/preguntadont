@@ -11,11 +11,13 @@ export class HomePageComponent {
   mostrarJugar: boolean = true;
   mostrarTienda: boolean = false;
   mostrarEstadisticas: boolean = false;
+  mostrarRanking: boolean = false;
 
   mostrar(componente: string) {
     this.mostrarJugar = false;
     this.mostrarTienda = false;
     this.mostrarEstadisticas = false;
+    this.mostrarRanking = false;
 
     switch (componente) {
       case 'jugar':
@@ -26,6 +28,9 @@ export class HomePageComponent {
         break;
       case 'estadisticas':
         this.mostrarEstadisticas = true;
+        break;
+      case 'ranking':
+        this.mostrarRanking = true;
         break;
       default:
         break;

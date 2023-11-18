@@ -1,5 +1,22 @@
 {
   "usuarios": [
-    
+    {
+      "nickname": "Rafael",
+      "email": "rtoresani@gmail.com",
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "nickname": "diego",
+      "email": "diego10@gmail.com",
+      "password": "12341234",
+      "id": 2
+    },
+    {
+      "nickname": "Joel",
+      "email": "joel@gmail.com",
+      "password": "12341234",
+      "id": 3
+    }
   ]
 }

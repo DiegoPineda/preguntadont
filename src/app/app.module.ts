@@ -22,6 +22,7 @@ import { PartidaComponent } from './components/partida/partida.component';
 import { PartidaPageComponent } from './pages/partida-page/partida-page.component';
 import { PreguntaComponent } from './components/pregunta/pregunta.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 
 
@@ -43,7 +44,8 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
     PartidaComponent,
     PartidaPageComponent,
     PreguntaComponent,
-    EstadisticasComponent
+    EstadisticasComponent,
+    RankingComponent
   ],
   imports: [
     BrowserModule,

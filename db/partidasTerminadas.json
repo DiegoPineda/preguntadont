@@ -1,5 +1,28 @@
 {
   "partidasTerminadas": [
-    
+    {
+      "id": "24b8-302e-e941-6e21",
+      "idUsuario1": 1,
+      "idUsuario2": 2,
+      "aciertosUsuario1": 2,
+      "aciertosUsuario2": 1,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 3,
+      "contadorUsuario2": 3,
+      "amigo": false
+    },
+    {
+      "id": "baa9-3a78-1d71-f035",
+      "idUsuario1": 3,
+      "idUsuario2": 1,
+      "aciertosUsuario1": 3,
+      "aciertosUsuario2": 0,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 3,
+      "contadorUsuario2": 3,
+      "amigo": false
+    }
   ]
 }

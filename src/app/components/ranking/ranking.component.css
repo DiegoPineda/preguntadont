@@ -1,0 +1,41 @@
+section{
+    width: 60%;
+    height: 70rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--backgroundcolor);
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    gap: 2rem;
+    color: var(--letra-normal)
+}
+
+h3{
+    font-size:3rem;
+}
+
+table{
+    width: 60%;
+    font-size: 2rem;
+}
+
+
+thead{
+    background-color: var(--positivo);
+    font-size: 2.3rem;
+}
+thead tr td{
+    padding: 1rem 0;
+}
+
+tbody tr .nombre{
+    text-align: left;
+    padding-left: 2rem;
+}
+tbody{
+    background-color: var(--acentuar-bg);
+}
+

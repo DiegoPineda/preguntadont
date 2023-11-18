@@ -4,8 +4,10 @@
     <div (click)="mostrar('jugar')" id="jugar"><p>Jugar</p></div>
     <div (click)="mostrar('tienda')" id="tienda"><p>Tienda</p></div>
     <div (click)="mostrar('estadisticas')" id="estadisticas"><p>Estadisticas</p></div>
+    <div (click)="mostrar('ranking')" id="ranking"><p>Ranking</p></div>
   </nav>
 
 <app-dashboard-partidas *ngIf="mostrarJugar"></app-dashboard-partidas>
 <app-tienda *ngIf="mostrarTienda"></app-tienda>
 <app-estadisticas *ngIf="mostrarEstadisticas"></app-estadisticas>
+<app-ranking *ngIf="mostrarRanking"></app-ranking>
