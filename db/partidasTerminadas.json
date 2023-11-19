@@ -23,6 +23,18 @@
       "contadorUsuario1": 3,
       "contadorUsuario2": 3,
       "amigo": false
+    },
+    {
+      "id": "033f-31ce-1cba-d7ab",
+      "idUsuario1": 1,
+      "idUsuario2": 2,
+      "aciertosUsuario1": 5,
+      "aciertosUsuario2": 1,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 5,
+      "contadorUsuario2": 5,
+      "amigo": false
     }
   ]
 }

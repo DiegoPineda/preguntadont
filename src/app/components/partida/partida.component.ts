@@ -7,7 +7,6 @@ import { PartidaService } from 'src/app/services/partida.service';
 import { SharingService } from 'src/app/services/sharing.service';
 import { UsuarioService } from 'src/app/services/usuario.service';
 import { UsuarioTiendaService } from 'src/app/services/usuario-tienda.service';
-import { IfStmt } from '@angular/compiler';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -102,7 +101,7 @@ export class PartidaComponent {
 
   async iniciarPartida() {
 
-    this.usuario = await this.auth.currentUser;
+    this.usuario = this.auth.currentUser;
 
     //consigo las estadisticas del usuario
     if (this.usuario?.id !== undefined) {
