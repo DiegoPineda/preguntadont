@@ -17,6 +17,12 @@
       "email": "joel@gmail.com",
       "password": "12341234",
       "id": 3
+    },
+    {
+      "nickname": "elpepe",
+      "email": "pepe@gmail.com",
+      "password": "12345678",
+      "id": 4
     }
   ]
 }

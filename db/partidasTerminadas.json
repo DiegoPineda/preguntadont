@@ -35,6 +35,30 @@
       "contadorUsuario1": 5,
       "contadorUsuario2": 5,
       "amigo": false
+    },
+    {
+      "id": "ec20-e263-1780-84d5",
+      "idUsuario1": 1,
+      "idUsuario2": 3,
+      "aciertosUsuario1": 2,
+      "aciertosUsuario2": 4,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 5,
+      "contadorUsuario2": 5,
+      "amigo": false
+    },
+    {
+      "id": "64fd-8042-6769-2a44",
+      "idUsuario1": 4,
+      "idUsuario2": 3,
+      "aciertosUsuario1": 5,
+      "aciertosUsuario2": 4,
+      "usuarioFinalizo1": true,
+      "usuarioFinalizo2": true,
+      "contadorUsuario1": 5,
+      "contadorUsuario2": 5,
+      "amigo": false
     }
   ]
 }

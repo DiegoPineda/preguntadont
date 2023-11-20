@@ -18,6 +18,14 @@
     },
     {
       "id": 3,
+      "monedas": 800,
+      "cantBombas": 0,
+      "cantConejos": 0,
+      "cantRelojes": 0,
+      "cantReversa": 0
+    },
+    {
+      "id": 4,
       "monedas": 7,
       "cantBombas": 0,
       "cantConejos": 0,

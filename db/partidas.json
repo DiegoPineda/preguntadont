@@ -1,16 +1,3 @@
 {
-  "partidas": [
-    {
-      "id": "ec20-e263-1780-84d5",
-      "idUsuario1": 1,
-      "idUsuario2": 0,
-      "aciertosUsuario1": 2,
-      "aciertosUsuario2": 0,
-      "usuarioFinalizo1": true,
-      "usuarioFinalizo2": false,
-      "contadorUsuario1": 5,
-      "contadorUsuario2": 0,
-      "amigo": false
-    }
-  ]
+  "partidas": []
 }
