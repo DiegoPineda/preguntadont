@@ -20,9 +20,9 @@ export class RegisterComponent {
   buttonHabilitado=true;
 
   formRegister: FormGroup = this.formBuilder.group({
-    nickname: ["", [Validators.required, Validators.minLength(4)],[this.validateNickname.bind(this)]],
+    nickname: ["", [Validators.required, Validators.minLength(4),Validators.maxLength(16)],[this.validateNickname.bind(this)]],
     email: ["", [Validators.required, Validators.email],[this.validateEmail.bind(this)]],
-    password: ["", [Validators.required, Validators.minLength(8)]],
+    password: ["", [Validators.required, Validators.minLength(8),Validators.maxLength(16)]],
     id: 0
   })
 

@@ -12,7 +12,10 @@
       <span>El nombre de usuario ya está en uso.</span>
     </div>
     <div class="error" *ngIf="validar('nickname', 'minlength')">
-      <span>El nombre de usuario debe tener al menos 4 caracteres.</span>
+      <span>El nombre de usuario debe tener entre 4 y 16 caracteres.</span>
+    </div>
+    <div class="error" *ngIf="validar('nickname', 'maxlength')">
+      <span>El nombre de usuario debe tener entre 4 y 16 caracteres.</span>
     </div>
     <div class="error" *ngIf="validar('nickname', 'required')">
       <span>El nombre de usuario es requerido.</span>
@@ -36,10 +39,13 @@
     <div class="campo">
       <input type="password" id="password" class="password input" placeholder="Contraseña" formControlName="password" />
     </div>
-    <div class="error" *ngIf="validar('email', 'minlength')">
-      <span>La contraseña debe tener al menos 8 caracteres.</span>
+    <div class="error" *ngIf="validar('password', 'minlength')">
+      <span>La contraseña debe tener entre 8 y 16 caracteres.</span>
     </div>
-    <div class="error" *ngIf="validar('email', 'required')">
+    <div class="error" *ngIf="validar('password', 'maxlength')">
+      <span>La contraseña debe tener entre 8 y 16 caracteres.</span>
+    </div>
+    <div class="error" *ngIf="validar('password', 'required')">
       <span>La contraseña es requerida.</span>
     </div>
 

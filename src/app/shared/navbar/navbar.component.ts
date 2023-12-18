@@ -108,17 +108,29 @@ export class NavbarComponent {
           });
           return ;
         }
+        //Verificar que tenga entre 4 y 16 caracteres
+        if (newNickname.length>=4 && newNickname.length<=16) {
+          user.nickname = newNickname;
+          console.log("newNickname");
+        }else{
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "El nickname debe tener entre 4 y 16 caracteres!",
+          });
+          return ;
+        }
       }
     
       // Verificar y actualizar la contraseña si no está vacía
       if (newPassword !== "" && user) {
-        if(newPassword.length>=8){
+        if(newPassword.length>=8 && newPassword.length<=16){
           user.password = newPassword;
         }else{
           Swal.fire({
             icon: "error",
             title: "Error",
-            text: "La password debe tener al menos 8 caracteres!",
+            text: "La contraseña debe tener entre 8 y 16 caracteres!",
           });
           return;
         }
